@@ -19,3 +19,4 @@ Route::get('/admin/index', 'Admin\AdminController@index');
 Route::get('/admin/captcha/{tem}', 'Admin\AdminController@captcha');
 Route::get('/home/', 'Home\HomeController@index');
 Route::get('/home/index', 'Home\HomeController@index');
+Route::get('/home/captcha/{tem}', 'Home\HomeController@captcha');

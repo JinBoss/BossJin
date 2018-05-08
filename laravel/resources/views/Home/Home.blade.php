@@ -1,5 +1,5 @@
 <?php 
-$url = url('admin/captcha/');
+$url = url('home/captcha/');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +8,7 @@ $url = url('admin/captcha/');
 	<title>后台</title>
 </head>
 <body>
-	<img src="{{ url('admin/captcha/1')}}" onclick="this.src='{{ $url }}/'+Math.random();" alt="">
+<h2>{{ $data }}</h2>
+	<img src="{{ url('home/captcha/1')}}" onclick="this.src='{{ $url }}/'+Math.random();" alt="">
 </body>
 </html>

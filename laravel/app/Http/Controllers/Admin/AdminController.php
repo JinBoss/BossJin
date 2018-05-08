@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;  
 use Gregwar\Captcha\CaptchaBuilder;
 use Session;
+use App\Http\Models\Admin\AdminModel;  
 
 class AdminController extends Controller
 {
@@ -16,7 +17,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('Admin/Admin');
+        $data = AdminModel::ce();
+        return view('Admin/Admin',['data'=>$data]);
     }
     public function captcha($tem)
     {
