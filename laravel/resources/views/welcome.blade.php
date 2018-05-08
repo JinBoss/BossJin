@@ -75,8 +75,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <!-- Laravel -->
-                    <img src="{{ url('/admin/captcha/1') }}" alt="">
+                    Laravel
+                    <!-- <img src="{{ url('/admin/captcha/1') }}" alt=""> -->
                 </div>
 
                 <div class="links">
