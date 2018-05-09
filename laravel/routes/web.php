@@ -10,9 +10,11 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/', function () {
+    echo "123";
 });
 Route::get('/admin/', 'Admin\AdminController@index');
 Route::get('/admin/index', 'Admin\AdminController@index');
