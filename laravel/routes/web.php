@@ -25,3 +25,5 @@ Route::get('/home/captcha/{tem}', 'Home\HomeController@captcha');
 // Route::post('/home/add/', 'Home\HomeController@add');
 Route::post('home/add/','Home\HomeController@add');
 Route::post('admin/add/','Admin\AdminController@add');
+Route::get('login/index/','Admin\LoginController@index');
+Route::get('login/','Admin\LoginController@index');
