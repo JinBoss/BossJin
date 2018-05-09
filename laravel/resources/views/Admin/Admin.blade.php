@@ -10,7 +10,7 @@ $url = url('admin/captcha/');
 <body>
 <h2>{{ $data }}</h2>
 	<img src="{{ url('admin/captcha/1')}}" onclick="this.src='{{ $url }}/'+Math.random();" alt="">
-	<form action="home/add" method="post" enctype="mutipart/form-data">
+	<form action="home/add" method="post" enctype="multipart/form-data">
 	{{csrf_field()}}
 		<input type="file"name ="img">
 
