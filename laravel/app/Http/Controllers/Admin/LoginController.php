@@ -21,7 +21,7 @@ class AdminController extends Controller
     public function index()
     {
         $data = AdminModel::ce();
-        return view('Admin/index');
+        return view('Admin/page-login');
     }
     public function captcha($tem)
     {
