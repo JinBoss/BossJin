@@ -16,39 +16,39 @@
         
 		<!-- Favicon and touch icons -->
 		<link rel="shortcut icon" href="{{ URL::asset('/back/assets/ico/favicon.ico') }}" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png" />
-		<link rel="apple-touch-icon" sizes="57x57" href="assets/ico/apple-touch-icon-57x57.png" />
-		<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png" />
-		<link rel="apple-touch-icon" sizes="76x76" href="assets/ico/apple-touch-icon-76x76.png" />
-		<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png" />
-		<link rel="apple-touch-icon" sizes="120x120" href="assets/ico/apple-touch-icon-120x120.png" />
-		<link rel="apple-touch-icon" sizes="144x144" href="assets/ico/apple-touch-icon-144x144.png" />
-		<link rel="apple-touch-icon" sizes="152x152" href="assets/ico/apple-touch-icon-152x152.png" />
+		<link rel="apple-touch-icon" href="{{ URL::asset('/back/assets/ico/apple-touch-icon.png') }}" />
+		<link rel="apple-touch-icon" sizes="57x57" href="{{ URL::asset('/back/assets/ico/apple-touch-icon-57x57.png') }}" />
+		<link rel="apple-touch-icon" sizes="72x72" href="{{ URL::asset('/back/assets/ico/apple-touch-icon-72x72.png') }}" />
+		<link rel="apple-touch-icon" sizes="76x76" href="{{ URL::asset('/back/assets/ico/apple-touch-icon-76x76.png') }}" />
+		<link rel="apple-touch-icon" sizes="114x114" href="{{ URL::asset('/back/assets/ico/apple-touch-icon-114x114.png') }}" />
+		<link rel="apple-touch-icon" sizes="120x120" href="{{ URL::asset('/back/assets/ico/apple-touch-icon-120x120.png') }}" />
+		<link rel="apple-touch-icon" sizes="144x144" href="{{ URL::asset('/back/assets/ico/apple-touch-icon-144x144.png') }}" />
+		<link rel="apple-touch-icon" sizes="152x152" href="{{ URL::asset('/back/assets/ico/apple-touch-icon-152x152.png') }}" />
 		
 	    <!-- start: CSS file-->
 		
 		<!-- Vendor CSS-->
-		<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
-		<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+		<link href="{{ URL::asset('/back/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+		<link href="{{ URL::asset('/back/assets/vendor/skycons/css/skycons.css') }}" rel="stylesheet" />
+		<link href="{{ URL::asset('/back/assets/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
 		
 		<!-- Plugins CSS-->
-		<link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
-		<link href="assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
-		<link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />					
+		<link href="{{ URL::asset('/back/assets/plugins/bootkit/css/bootkit.css') }}" rel="stylesheet" />
+		<link href="{{ URL::asset('/back/assets/plugins/fullcalendar/css/fullcalendar.css') }}" rel="stylesheet" />
+		<link href="{{ URL::asset('/back/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css') }}" rel="stylesheet" />					
 		
 		<!-- Theme CSS -->
-		<link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
+		<link href="{{ URL::asset('/back/assets/css/jquery.mmenu.css') }}" rel="stylesheet" />
 		
 		<!-- Page CSS -->		
-		<link href="assets/css/style.css" rel="stylesheet" />
-		<link href="assets/css/add-ons.min.css" rel="stylesheet" />
+		<link href="{{ URL::asset('/back/assets/css/style.css') }}" rel="stylesheet" />
+		<link href="{{ URL::asset('/back/assets/css/add-ons.min.css') }}" rel="stylesheet" />
 		
 		<!-- end: CSS file-->	
 	    
 		
 		<!-- Head Libs -->
-		<script src="assets/plugins/modernizr/js/modernizr.js"></script>
+		<script src="{{ URL::asset('/back/assets/plugins/modernizr/js/modernizr.js') }}"></script>
 		
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,8 +66,8 @@
 			<div class="container-fluid container-nav">
 				<!-- Navbar Action -->
 				<ul class="nav navbar-nav navbar-actions navbar-left">
-					<li class="visible-md visible-lg"><a href="calendar.html#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a></li>
-					<li class="visible-xs visible-sm"><a href="calendar.html#" id="sidebar-menu"><i class="fa fa-navicon"></i></a></li>			
+					<li class="visible-md visible-lg"><a href="{{ URL::asset('/back/assets/ico/favicon.ico') }}calendar.html#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a></li>
+					<li class="visible-xs visible-sm"><a href="{{ URL::asset('/back/assets/ico/favicon.ico') }}calendar.html#" id="sidebar-menu"><i class="fa fa-navicon"></i></a></li>			
 				</ul>
 				<!-- Navbar Left -->
 				<div class="navbar-left">
@@ -86,7 +86,7 @@
 					<!-- Notifications -->
 					<ul class="notifications hidden-sm hidden-xs">
 						<li>
-							<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+							<a href="{{ URL::asset('/back/assets/ico/favicon.ico') }}#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
 								<i class="fa fa-tasks"></i>
 								<span class="badge">10</span>
 							</a>
@@ -119,35 +119,35 @@
 								</li>
 								<li class="avatar">
 									<a href="page-inbox.html">
-										<img class="avatar" src="assets/img/avatar1.jpg" alt="" />
+										<img class="avatar" src="{{ URL::asset('/back/assets/img/avatar1.jpg') }}" alt="" />
 										<div><div class="point point-primary point-lg"></div>New message</div>
 										<span><small>1 minute ago</small></span>							
 									</a>
 								</li>
 								<li class="avatar">
 									<a href="page-inbox.html">
-										<img class="avatar" src="assets/img/avatar2.jpg" alt="" />
+										<img class="avatar" src="{{ URL::asset('/back/assets/img/avatar2.jpg') }}" alt="" />
 										<div><div class="point point-primary point-lg"></div>New message</div>
 										<span><small>3 minute ago</small></span>								
 									</a>
 								</li>
 								<li class="avatar">
 									<a href="page-inbox.html">
-										<img class="avatar" src="assets/img/avatar3.jpg" alt="" />
+										<img class="avatar" src="{{ URL::asset('/back/assets/img/avatar3.jpg') }}" alt="" />
 										<div><div class="point point-primary point-lg"></div>New message</div>
 										<span><small>4 minute ago</small></span>								
 									</a>
 								</li>
 								<li class="avatar">
 									<a href="page-inbox.html">
-										<img class="avatar" src="assets/img/avatar4.jpg" alt="" />
+										<img class="avatar" src="{{ URL::asset('/back/assets/img/avatar4.jpg') }}" alt="" />
 										<div><div class="point point-primary point-lg"></div>New message</div>
 										<span><small>30 minute ago</small></span>
 									</a>
 								</li>
 								<li class="avatar">
 									<a href="page-inbox.html">
-										<img class="avatar" src="assets/img/avatar5.jpg" alt="" />
+										<img class="avatar" src="{{ URL::asset('/back/assets/img/avatar5.jpg') }}" alt="" />
 										<div><div class="point point-primary point-lg"></div>New message</div>
 										<span><small>1 hours ago</small></span>
 									</a>
@@ -266,7 +266,7 @@
 					<div class="sidebar-collapse">
 						<!-- Sidebar Header Logo-->
 						<div class="sidebar-header">
-							<img src="assets/img/logo.png" class="img-responsive" alt="" />
+							<img src="{{ URL::asset('/back/assets/img/logo.png') }}" class="img-responsive" alt="" />
 						</div>
 						<!-- Sidebar Menu-->
 						<div class="sidebar-menu">						
@@ -274,7 +274,7 @@
 								<ul class="nav nav-sidebar">
 									<div class="panel-body text-center">								
 										<div class="bk-avatar">
-											<img src="assets/img/avatar.jpg" class="img-circle bk-img-60" alt="" />
+											<img src="{{ URL::asset('/back/assets/img/avatar.jpg') }}" class="img-circle bk-img-60" alt="" />
 										</div>
 										<div class="bk-padding-top-10">
 											<i class="fa fa-circle text-success"></i> <small>Administrator</small>
@@ -544,23 +544,23 @@
 		<!-- start: JavaScript-->
 		
 		<!-- Vendor JS-->				
-		<script src="assets/vendor/js/jquery.min.js"></script>
-		<script src="assets/vendor/js/jquery-2.1.1.min.js"></script>
-		<script src="assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
-		<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/vendor/skycons/js/skycons.js"></script>
+		<script src="{{ URL::asset('/back/assets/vendor/js/jquery.min.js') }}"></script>
+		<script src="{{ URL::asset('/back/assets/vendor/js/jquery-2.1.1.min.js') }}"></script>
+		<script src="{{ URL::asset('/back/assets/vendor/js/jquery-migrate-1.2.1.min.js') }}"></script>
+		<script src="{{ URL::asset('/back/assets/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+		<script src="{{ URL::asset('/back/assets/vendor/skycons/js/skycons.js') }}"></script>
 		
 		<!-- Plugins JS-->
-		<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
-		<script src="assets/plugins/moment/js/moment.min.js"></script>	
-		<script src="assets/plugins/fullcalendar/js/fullcalendar.min.js"></script>			
+		<script src="{{ URL::asset('/back/assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js') }}"></script>
+		<script src="{{ URL::asset('/back/assets/plugins/moment/js/moment.min.js') }}"></script>	
+		<script src="{{ URL::asset('/back/assets/plugins/fullcalendar/js/fullcalendar.min.js') }}"></script>			
 		
 		<!-- Theme JS -->		
-		<script src="assets/js/jquery.mmenu.min.js"></script>
-		<script src="assets/js/core.min.js"></script>
+		<script src="{{ URL::asset('/back/assets/js/jquery.mmenu.min.js') }}"></script>
+		<script src="{{ URL::asset('/back/assets/js/core.min.js') }}"></script>
 		
 		<!-- Pages JS -->
-		<script src="assets/js/pages/calendar.js"></script>
+		<script src="{{ URL::asset('/back/assets/js/pages/calendar.js') }}"></script>
 		
 		<!-- end: JavaScript-->
 		

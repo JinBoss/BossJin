@@ -122,35 +122,35 @@
 								</li>
 								<li class="avatar">
 									<a href="page-inbox.html">
-										<img class="avatar" src="assets/img/avatar1.jpg" alt="" />
+										<img class="avatar" src="{{ URL::asset('/back/assets/img/avatar1.jpg') }}" alt="" />
 										<div><div class="point point-primary point-lg"></div>New message</div>
 										<span><small>1 minute ago</small></span>							
 									</a>
 								</li>
 								<li class="avatar">
 									<a href="page-inbox.html">
-										<img class="avatar" src="assets/img/avatar2.jpg" alt="" />
+										<img class="avatar" src="{{ URL::asset('/back/assets/img/avatar2.jpg') }}" alt="" />
 										<div><div class="point point-primary point-lg"></div>New message</div>
 										<span><small>3 minute ago</small></span>								
 									</a>
 								</li>
 								<li class="avatar">
 									<a href="page-inbox.html">
-										<img class="avatar" src="assets/img/avatar3.jpg" alt="" />
+										<img class="avatar" src="{{ URL::asset('/back/assets/img/avatar3.jpg') }}" alt="" />
 										<div><div class="point point-primary point-lg"></div>New message</div>
 										<span><small>4 minute ago</small></span>								
 									</a>
 								</li>
 								<li class="avatar">
 									<a href="page-inbox.html">
-										<img class="avatar" src="assets/img/avatar4.jpg" alt="" />
+										<img class="avatar" src="{{ URL::asset('/back/assets/img/avatar4.jpg') }}" alt="" />
 										<div><div class="point point-primary point-lg"></div>New message</div>
 										<span><small>30 minute ago</small></span>
 									</a>
 								</li>
 								<li class="avatar">
 									<a href="page-inbox.html">
-										<img class="avatar" src="assets/img/avatar5.jpg" alt="" />
+										<img class="avatar" src="{{ URL::asset('/back/assets/img/avatar5.jpg') }}" alt="" />
 										<div><div class="point point-primary point-lg"></div>New message</div>
 										<span><small>1 hours ago</small></span>
 									</a>
@@ -269,7 +269,7 @@
 					<div class="sidebar-collapse">
 						<!-- Sidebar Header Logo-->
 						<div class="sidebar-header">
-							<img src="assets/img/logo.png" class="img-responsive" alt="" />
+							<img src="{{ URL::asset('/back/assets/img/logo.png') }}" class="img-responsive" alt="" />
 						</div>
 						<!-- Sidebar Menu-->
 						<div class="sidebar-menu">						
@@ -378,7 +378,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="calendar.html">
+										<a href="calendar.php">
 											<i class="fa fa-calendar" aria-hidden="true"></i><span>Calendar</span>
 										</a>
 									</li>
@@ -396,7 +396,7 @@
 							<li><a href="index.html#">About</a></li>
 						</ul>
 						<div class="copyright text-center">
-							<small>Nadhif <i class="fa fa-coffee"></i> Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></small>
+							<small>Nadhif <i class="fa fa-coffee"></i> Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="未来图书馆">未来图书馆</a></small>
 						</div>					
 					</div>
 					<!-- End Sidebar Footer-->
