@@ -13,7 +13,6 @@ $url = url('home/captcha/');
 	<form action="home/add" method="post" enctype="multipart/form-data">
 	{{csrf_field()}}
 		<input type="file"name ="img">
-
 		<input type="text" name="nn" value="123">
 		<input type="submit" >
 	</form>

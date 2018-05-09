@@ -15,7 +15,7 @@
         <link href="http://fonts.useso.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css" />
         
 		<!-- Favicon and touch icons -->
-		<link rel="shortcut icon" href="{{ URL::asset('assets/Admin/assets/ico/favicon.ico') }}assets/ico/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="{{ URL::asset('/back/assets/ico/favicon.ico') }}" type="image/x-icon" />
 		<link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png" />
 		<link rel="apple-touch-icon" sizes="57x57" href="assets/ico/apple-touch-icon-57x57.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png" />
