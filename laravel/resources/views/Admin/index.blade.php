@@ -378,7 +378,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="calendar.php">
+										<a href="{{ url('Calendar/index')}}">
 											<i class="fa fa-calendar" aria-hidden="true"></i><span>Calendar</span>
 										</a>
 									</li>
