@@ -12,4 +12,4 @@
     </script>  
   
 <input type="file" name="file" onchange="showPreview(this)" />  
-<img id="portrait" src="" width="200" height="200">  
+<img id="portrait" width="200" height="200">  
