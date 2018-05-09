@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use Gregwar\Captcha\CaptchaBuilder;
 use Session;
 use App\Http\Models\Admin\AdminModel;  
-
+use Illuminate\Support\Facades\Storage;
+// use Illuminate\Http\Request;
+// use App\Http\Requests;
+use Request;
 class AdminController extends Controller
 {
     /**
@@ -28,6 +31,11 @@ class AdminController extends Controller
         Session::flash('milkcaptcha', $phrase); 
         ob_clean();
         return response($builder->output())->header('Content-type','image/jpeg');
+    }
+     public function add()
+    {
+        $data =  Request::file('img');
+        var_dump($data);
     }
 }
 
