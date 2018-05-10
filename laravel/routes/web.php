@@ -26,3 +26,4 @@ Route::get('admin/login/index','Admin\LoginController@index');
 Route::get('admin/login/','Admin\LoginController@index');
 Route::get('admin/register/','Admin\RegisterController@index');
 Route::get('admin/calendar/','Admin\CalendarController@index');
+Route::get('admin/calendar/add','Admin\CalendarController@add');
