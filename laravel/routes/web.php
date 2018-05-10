@@ -13,9 +13,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/', function () {
-    echo "123";
-});
 Route::get('/admin/', 'Admin\AdminController@index');
 Route::get('/admin/index', 'Admin\AdminController@index');
 Route::get('/admin/captcha/{tem}', 'Admin\AdminController@captcha');
@@ -29,3 +26,4 @@ Route::get('admin/login/index','Admin\LoginController@index');
 Route::get('admin/login/','Admin\LoginController@index');
 Route::get('admin/register/','Admin\RegisterController@index');
 Route::get('admin/calendar/','Admin\CalendarController@index');
+Route::get('admin/calendar/add','Admin\CalendarController@add');
