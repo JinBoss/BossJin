@@ -23,16 +23,24 @@ class LoginController extends Controller
         $data = AdminModel::ce();
         return view('Admin/page-login');
     }
-    public function captcha($tem)
+    public function checkCode()
     {
-        $builder = new CaptchaBuilder();
-        $builder->build(150,32);
-        $phrase = $builder->getPhrase();
-        Session::flash('milkcaptcha', $phrase); 
-        ob_clean();
-        return response($builder->output())->header('Content-type','image/jpeg');
+        echo  session('code');
     }
-     public function add()
+    public function login()
+    {
+        // 接值
+        $data = Request::all();
+        // 判断验证吗
+        // if($data['code'] != session('code'))
+        // {
+        //     echo '验证码不正确';
+        //     $url = url('/admin/login');
+        //     header("Refresh:2;url=$url");
+        // }
+        print_r($data);
+    }
+    public function add()
     {
         $data =  Request::file('img');
         var_dump($data);
