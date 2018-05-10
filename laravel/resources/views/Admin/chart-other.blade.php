@@ -90,6 +90,7 @@
 								<i class="fa fa-tasks"></i>
 								<span class="badge">10</span>
 							</a>
+
 							<ul class="dropdown-menu update-menu" role="menu">
 								<li><a href="#"><i class="fa fa-database bk-fg-primary"></i> Database </a></li>
 								<li><a href="#"><i class="fa fa-bar-chart-o bk-fg-primary"></i> Connection </a></li>
