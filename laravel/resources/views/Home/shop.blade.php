@@ -16,17 +16,17 @@
 		}
 	</script>
 	<!-- Custom Theme files -->
-	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link href="{{URL::asset('/front/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
 	<!-- shop css -->
-	<link href="css/shop.css" type="text/css" rel="stylesheet" media="all">
+	<link href="{{URL::asset('/front/css/shop.css')}}" type="text/css" rel="stylesheet" media="all">
 	<!-- checkout css -->
-	<link href="css/checkout.css" type="text/css" rel="stylesheet" media="all">
+	<link href="{{URL::asset('/front/css/checkout.css')}}" type="text/css" rel="stylesheet" media="all">
 	<!-- Range-slider-css -->
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css">
+	<link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/jquery-ui1.css')}}">
 	<!-- common-css -->
-	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="{{URL::asset('/front/css/style.css')}}" type="text/css" rel="stylesheet" media="all">
 	<!-- font-awesome icons -->
-	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="{{URL::asset('/front/css/font-awesome.css')}}" rel="stylesheet">
 
 	<!-- //Custom Theme files -->
 	<!-- online-fonts -->
@@ -423,7 +423,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib8.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib8.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -483,7 +483,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib7.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib7.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -543,7 +543,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib3.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib3.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -603,7 +603,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib6.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib6.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -665,7 +665,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib6.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib6.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -725,7 +725,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib2.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib2.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -785,7 +785,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib5.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib5.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -845,7 +845,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib4.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib4.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -907,7 +907,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib7.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib7.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -967,7 +967,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib1.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib1.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -1027,7 +1027,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib2.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib2.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -1087,7 +1087,7 @@
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="images/lib3.jpg" alt="">
+											<img src="{{URL::asset('/front/images/lib3.jpg')}}" alt="">
 										</a>
 									</div>
 									<div class="caption">
@@ -1217,7 +1217,7 @@
 				<div class="blog1">
 					<div class="col-md-3 col-sm-3 col-xs-2 bl1">
 						<a href="#">
-							<img src="images/b1.jpg" alt="" class="img-responsive" />
+							<img src="{{URL::asset('/front/images/b1.jpg')}}" alt="" class="img-responsive" />
 						</a>
 					</div>
 					<div class="col-md-9 col-sm-9 col-xs-10 bl2">
@@ -1229,7 +1229,7 @@
 				<div class="blog1">
 					<div class="col-md-3 col-sm-3 col-xs-2 bl1">
 						<a href="#">
-							<img src="images/b2.jpg" alt="" class="img-responsive" />
+							<img src="{{URL::asset('/front/images/b2.jpg')}}" alt="" class="img-responsive" />
 						</a>
 					</div>
 					<div class="col-md-9 col-sm-9 col-xs-10 bl2">
@@ -1302,10 +1302,10 @@
 <!-- //home -->
 	<!-- js -->
 	<!-- Common js -->
-	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="{{URL::asset('/front/js/jquery-2.2.3.min.js')}}"></script>
 	<!--// Common js -->
 	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
+	<script src="{{URL::asset('/front/js/minicart.js')}}"></script>
 	<script>
 		chr.render();
 
@@ -1321,7 +1321,7 @@
 	</script>
 	<!-- //cart-js -->
 	<!-- price range (top products) -->
-	<script src="js/jquery-ui.js"></script>
+	<script src="{{URL::asset('/front/js/jquery-ui.js')}}"></script>
 	<script>
 		//<![CDATA[ 
 		$(window).load(function () {
@@ -1357,18 +1357,18 @@
 	</script>
 	<!-- //dropdown nav -->
 	<!--search jQuery-->
-	<script src="js/main.js"></script>
+	<script src="{{URL::asset('/front/js/main.js')}}"></script>
 	<!--search jQuery-->
 
 	<!-- Scrolling Nav JavaScript -->
-	<script src="js/scrolling-nav.js"></script>
+	<script src="{{URL::asset('/front/js/scrolling-nav.js')}}"></script>
 	<!-- //fixed-scroll-nav-js -->
 	<!--//scripts-->
 
-	<script src="js/bootstrap.js"></script>
+	<script src="{{URL::asset('/front/js/bootstrap.js')}}"></script>
 	<!-- start-smoth-scrolling -->
-	<script src="js/move-top.js"></script>
-	<script src="js/easing.js"></script>
+	<script src="{{URL::asset('/front/js/move-top.js')}}"></script>
+	<script src="{{URL::asset('/front/js/easing.js')}}"></script>
 	<script>
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {
@@ -1400,7 +1400,7 @@
 	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- smoothscroll -->
-	<script src="js/SmoothScroll.min.js"></script>
+	<script src="{{URL::asset('/front/js/SmoothScroll.min.js')}}"></script>
 	<!-- //smoothscroll -->
 
 </body>

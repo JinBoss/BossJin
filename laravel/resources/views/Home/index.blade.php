@@ -16,12 +16,12 @@
         }
     </script>
     <!-- Custom Theme files -->
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="{{URL::asset('/front/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
     <!-- shop css -->
-    <link href="css/shop.css" type="text/css" rel="stylesheet" media="all">
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="{{URL::asset('/front/css/shop.css')}}" type="text/css" rel="stylesheet" media="all">
+    <link href="{{URL::asset('/front/css/style.css')}}" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
-    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="{{URL::asset('/front/css/font-awesome.css')}}" rel="stylesheet">
     <!-- //Custom Theme files -->
     <!-- online-fonts -->
     <!-- logo -->
@@ -418,7 +418,7 @@
                         <!-- team individual grid -->
                         <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
                             <div class="team-effect">
-                                <img src="images/t3.jpg" alt="img" class="img-responsive">
+                                <img src="{{URL::asset('/front/images/t3.jpg')}}" alt="img" class="img-responsive">
                                 <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>
@@ -447,7 +447,7 @@
                                 <p>vallis molestie arcu morbi dapibus suscipit ante sit efficitur eu ante vesti.</p>
                             </div>
                             <div class="team-effect">
-                                <img src="images/t1.jpg" alt="img" class="img-responsive">
+                                <img src="{{URL::asset('/front/images/t1.jpg')}}" alt="img" class="img-responsive">
                                 <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>
@@ -483,7 +483,7 @@
                                 <p>vallis molestie arcu morbi dapibus suscipit ante sit efficitur eu ante vesti.</p>
                             </div>
                             <div class="team-effect">
-                                <img src="images/t2.jpg" alt="img" class="img-responsive">
+                                <img src="{{URL::asset('/front/images/t2.jpg')}}" alt="img" class="img-responsive">
                                 <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>
@@ -501,7 +501,7 @@
                         <!-- team individual grid -->
                         <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
                             <div class="team-effect">
-                                <img src="images/t4.jpg" alt="img" class="img-responsive">
+                                <img src="{{URL::asset('/front/images/t4.jpg')}}" alt="img" class="img-responsive">
                                 <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>
@@ -551,7 +551,7 @@
                                             <h5>Davidson</h5>
                                         </div>
                                         <div class="col-md-3 col-sm-3 col-xs-3  img-testi">
-                                            <img class="img-responsive" src="images/c3.jpg" alt="">
+                                            <img class="img-responsive" src="{{URL::asset('/front/images/c3.jpg')}}" alt="">
                                         </div>
                                         <div class="clearfix"> </div>
                                     </div>
@@ -559,7 +559,7 @@
                                 <div class="col-md-6  testi-main">
                                     <div class="testi-grids t2">
                                         <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                            <img class="img-responsive" src="images/c2.jpg" alt="">
+                                            <img class="img-responsive" src="{{URL::asset('/front/css/bootstrap.css')}}images/c2.jpg" alt="">
                                         </div>
                                         <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
                                             <h6>Cras rutrum</h6>
@@ -578,7 +578,7 @@
                                             <h5>Mercurio</h5>
                                         </div>
                                         <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                            <img class="img-responsive" src="images/c4.jpg" alt="">
+                                            <img class="img-responsive" src="{{URL::asset('/front/images/c4.jpg')}}" alt="">
                                         </div>
                                         <div class="clearfix"> </div>
                                     </div>
@@ -586,7 +586,7 @@
                                 <div class="col-md-6  testi-main">
                                     <div class="testi-grids t2">
                                         <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                            <img class="img-responsive" src="images/c1.jpg" alt="">
+                                            <img class="img-responsive" src="{{URL::asset('/front/images/c1.jpg')}}" alt="">
                                         </div>
                                         <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
                                             <h6>Cras rutrum</h6>
@@ -610,7 +610,7 @@
                                             <h5>Davidson</h5>
                                         </div>
                                         <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                            <img class="img-responsive" src="images/c3.jpg" alt="">
+                                            <img class="img-responsive" src="{{URL::asset('/front/images/c3.jpg')}}" alt="">
                                         </div>
                                         <div class="clearfix"> </div>
                                     </div>
@@ -618,7 +618,7 @@
                                 <div class="col-md-6 testi-main">
                                     <div class="testi-grids t2">
                                         <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                            <img class="img-responsive" src="images/c2.jpg" alt="">
+                                            <img class="img-responsive" src="{{URL::asset('/front/images/c2.jpg')}}" alt="">
                                         </div>
                                         <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
                                             <h6>Cras rutrum</h6>
@@ -637,7 +637,7 @@
                                             <h5>Mercurio</h5>
                                         </div>
                                         <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                            <img class="img-responsive" src="images/c4.jpg" alt="">
+                                            <img class="img-responsive" src="{{URL::asset('/front/images/c4.jpg')}}" alt="">
                                         </div>
                                         <div class="clearfix"> </div>
                                     </div>
@@ -645,7 +645,7 @@
                                 <div class="col-md-6  testi-main">
                                     <div class="testi-grids t2">
                                         <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
-                                            <img class="img-responsive" src="images/c1.jpg" alt="">
+                                            <img class="img-responsive" src="{{URL::asset('/front/images/c1.jpg')}}" alt="">
                                         </div>
                                         <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
                                             <h6>Cras rutrum</h6>
@@ -678,22 +678,22 @@
                 </h4>
                 <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
                     <a href="footer1.html">
-                        <img src="images/f1.png" class="img-responsive" alt="chronicle-image">
+                        <img src="{{URL::asset('/front/images/f1.png')}}" class="img-responsive" alt="chronicle-image">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
                     <a href="footer2.html">
-                        <img src="images/f2.png" class="img-responsive" alt="chronicle-image">
+                        <img src="{{URL::asset('/front/images/f2.png')}}" class="img-responsive" alt="chronicle-image">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
                     <a href="footer3.html">
-                        <img src="images/f3.png" class="img-responsive" alt="chronicle-image">
+                        <img src="{{URL::asset('/front/images/f3.png')}}" class="img-responsive" alt="chronicle-image">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
                     <a href="footer4.html">
-                        <img src="images/f4.png" class="img-responsive" alt="chronicle-image">
+                        <img src="{{URL::asset('/front/images/f4.png')}}" class="img-responsive" alt="chronicle-image">
                     </a>
                 </div>
                 <div class="clearfix"> </div>
@@ -760,7 +760,7 @@
                         <div class="blog1">
                             <div class="col-md-3 col-sm-3 col-xs-2 bl1">
                                 <a href="#">
-                                    <img src="images/b1.jpg" alt="" class="img-responsive" />
+                                    <img src="{{URL::asset('/front/images/b1.jpg')}}" alt="" class="img-responsive" />
                                 </a>
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-10 bl2">
@@ -772,7 +772,7 @@
                         <div class="blog1">
                             <div class="col-md-3 col-sm-3 col-xs-2 bl1">
                                 <a href="#">
-                                    <img src="images/b2.jpg" alt="" class="img-responsive" />
+                                    <img src="{{URL::asset('/front/images/b2.jpg')}}" alt="" class="img-responsive" />
                                 </a>
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-10 bl2">
@@ -844,13 +844,13 @@
     </div>
     <!-- //home -->
     <!-- js -->
-    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="{{URL::asset('/front/js/jquery-2.2.3.min.js')}}"></script>
     <!-- //js -->
     <!--search jQuery-->
-    <script src="js/main.js"></script>
+    <script src="{{URL::asset('/front/js/main.js')}}"></script>
     <!--search jQuery-->
     <!-- cart-js -->
-    <script src="js/minicart.js"></script>
+    <script src="{{URL::asset('/front/js/minicart.js')}}"></script>
     <script>
         chr.render();
 
@@ -866,7 +866,7 @@
     </script>
     <!-- //cart-js -->
     <!-- Scrolling Nav JavaScript -->
-    <script src="js/scrolling-nav.js"></script>
+    <script src="{{URL::asset('/front/js/scrolling-nav.js')}}"></script>
     <!-- //fixed-scroll-nav-js -->
     <!-- dropdown nav -->
     <script>
@@ -885,8 +885,8 @@
     </script>
     <!-- //dropdown nav -->
     <!-- start-smooth-scrolling -->
-    <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
+    <script src="{{URL::asset('/front/js/move-top.js')}}"></script>
+    <script src="{{URL::asset('/front/js/easing.js')}}"></script>
     <script>
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {
@@ -917,15 +917,15 @@
 
         });
     </script>
-    <script src="js/SmoothScroll.min.js"></script>
+    <script src="{{URL::asset('/front/js/SmoothScroll.min.js')}}"></script>
     <!-- //smooth-scrolling-of-move-up -->
     <!-- about bottom grid Numscroller -->
-    <script src="js/numscroller-1.0.js"></script>
+    <script src="{{URL::asset('/front/js/numscroller-1.0.js')}}"></script>
     <!-- //about bottom grid Numscroller -->
     <!-- Bootstrap core JavaScript
  ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+    <script src="{{URL::asset('/front/js/bootstrap.js')}}"></script>
 </body>
 
 </html>

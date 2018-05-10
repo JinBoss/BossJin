@@ -16,15 +16,15 @@
 		}
 	</script>
 	<!-- Custom Theme files -->
-	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link href="{{URL::asset('/front/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
 	<!-- shop css -->
-	<link href="css/shop.css" type="text/css" rel="stylesheet" media="all">
-	<link href="css/checkout.css" type="text/css" rel="stylesheet" media="all">
+	<link href="{{URL::asset('/front/css/shop.css')}}" type="text/css" rel="stylesheet" media="all">
+	<link href="{{URL::asset('/front/css/checkout.css')}}" type="text/css" rel="stylesheet" media="all">
 	<!-- easy-responsive-tabs css -->
-	<link rel="stylesheet" href="css/easy-responsive-tabs.css" type="text/css" media="all" />
-	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link rel="stylesheet" href="{{URL::asset('/front/css/easy-responsive-tabs.css')}}" type="text/css" media="all" />
+	<link href="{{URL::asset('/front/css/style.css')}}" type="text/css" rel="stylesheet" media="all">
 	<!-- font-awesome icons -->
-	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="{{URL::asset('/front/css/font-awesome.css')}}" rel="stylesheet">
 	<!-- //Custom Theme files -->
 	<!-- online-fonts -->
 	<!-- logo -->
@@ -489,7 +489,7 @@
 						<div class="blog1">
 							<div class="col-md-3 col-sm-3 col-xs-2 bl1">
 								<a href="#">
-									<img src="images/b1.jpg" alt="" class="img-responsive" />
+									<img src="{{URL::asset('/front/images/b1.jpg')}}" alt="" class="img-responsive" />
 								</a>
 							</div>
 							<div class="col-md-9 col-sm-9 col-xs-10 bl2">
@@ -501,7 +501,7 @@
 						<div class="blog1">
 							<div class="col-md-3 col-sm-3 col-xs-2 bl1">
 								<a href="#">
-									<img src="images/b2.jpg" alt="" class="img-responsive" />
+									<img src="{{URL::asset('/front/images/b2.jpg')}}" alt="" class="img-responsive" />
 								</a>
 							</div>
 							<div class="col-md-9 col-sm-9 col-xs-10 bl2">
@@ -572,11 +572,11 @@
 	</div>
 	<!-- //home -->
 	<!-- Common js -->
-	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="{{URL::asset('/front/js/jquery-2.2.3.min.js')}}"></script>
 	<!--// Common js -->
 
 	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
+	<script src="{{URL::asset('/front/js/minicart.js')}}"></script>
 	<script>
 		chr.render();
 
@@ -593,7 +593,7 @@
 	<!-- //cart-js -->
 
 	<!-- easy-responsive-tabs -->
-	<script src="js/easy-responsive-tabs.js"></script>
+	<script src="{{URL::asset('/front/js/easy-responsive-tabs.js')}}"></script>
 	<script>
 		$(document).ready(function () {
 			$('#horizontalTab').easyResponsiveTabs({
@@ -615,8 +615,8 @@
 	<!-- //easy-responsive-tabs -->
 
 	<!-- credit-card -->
-	<script src="js/creditly.js"></script>
-	<link rel="stylesheet" href="css/creditly.css" type="text/css" media="all" />
+	<script src="{{URL::asset('/front/js/creditly.js')}}"></script>
+	<link rel="stylesheet" href="{{URL::asset('/front/css/creditly.css')}}" type="text/css" media="all" />
 
 	<script>
 		$(function () {
@@ -654,17 +654,17 @@
 	</script>
 	<!-- //dropdown nav -->
 	<!--search jQuery-->
-	<script src="js/main.js"></script>
+	<script src="{{URL::asset('/front/js/main.js')}}"></script>
 	<!--search jQuery-->
 
 	<!-- Scrolling Nav JavaScript -->
-	<script src="js/scrolling-nav.js"></script>
+	<script src="{{URL::asset('/front/js/scrolling-nav.js')}}"></script>
 	<!-- //fixed-scroll-nav-js -->
 	<!--//scripts-->
 	<!-- //gallery-js  -->
 	<!-- start-smooth-scrolling -->
-	<script src="js/move-top.js"></script>
-	<script src="js/easing.js"></script>
+	<script src="{{URL::asset('/front/js/move-top.js')}}"></script>
+	<script src="{{URL::asset('/front/js/easing.js')}}"></script>
 	<script>
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {
@@ -695,12 +695,12 @@
 
 		});
 	</script>
-	<script src="js/SmoothScroll.min.js"></script>
+	<script src="{{URL::asset('/front/js/SmoothScroll.min.js')}}"></script>
 	<!-- //smooth-scrolling-of-move-up -->
 	<!-- Bootstrap core JavaScript
 	 ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/bootstrap.js"></script>
+	<script src="{{URL::asset('/front/js/bootstrap.js')}}"></script>
 </body>
 
 </body>

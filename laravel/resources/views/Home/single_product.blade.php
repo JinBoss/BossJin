@@ -16,14 +16,14 @@
 		}
 	</script>
 	<!-- Custom Theme files -->
-	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link href="{{URL::asset('/front/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
 	<!-- shop css -->
-	<link href="css/shop.css" type="text/css" rel="stylesheet" media="all">
+	<link href="{{URL::asset('/front/css/shop.css')}}" type="text/css" rel="stylesheet" media="all">
 	<!-- flexslider-css -->
-	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link rel="stylesheet" href="{{URL::asset('/front/css/flexslider.css')}}" type="text/css" media="screen" />
+	<link href="{{URL::asset('/front/css/style.css')}}" type="text/css" rel="stylesheet" media="all">
 	<!-- font-awesome icons -->
-	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="{{URL::asset('/front/css/font-awesome.css')}}" rel="stylesheet">
 	<!-- //Custom Theme files -->
 	<!-- online-fonts -->
 	<!-- logo -->
@@ -203,15 +203,15 @@
 							<ul class="slides">
 								<li data-thumb="images/s1.jpg">
 									<div class="thumb-image">
-										<img src="images/lib8.jpg" data-imagezoom="true" alt=" " class="img-responsive"> </div>
+										<img src="{{URL::asset('/front/images/lib8.jpg')}}" data-imagezoom="true" alt=" " class="img-responsive"> </div>
 								</li>
 								<li data-thumb="images/s2.jpg">
 									<div class="thumb-image">
-										<img src="images/s2.jpg" data-imagezoom="true" alt=" " class="img-responsive"> </div>
+										<img src="{{URL::asset('/front/images/s2.jpg')}}" data-imagezoom="true" alt=" " class="img-responsive"> </div>
 								</li>
 								<li data-thumb="images/s3.png">
 									<div class="thumb-image">
-										<img src="images/s3.png" data-imagezoom="true" alt=" " class="img-responsive"> </div>
+										<img src="{{URL::asset('/front/images/s3.png')}}" data-imagezoom="true" alt=" " class="img-responsive"> </div>
 								</li>
 							</ul>
 							<div class="clearfix"></div>
@@ -328,7 +328,7 @@
 						<div class="product-chr-info chr">
 							<div class="thumbnail">
 								<a href="single_product.html">
-									<img src="images/lib7.jpg" alt="">
+									<img src="{{URL::asset('/front/images/lib7.jpg')}}" alt="">
 								</a>
 							</div>
 							<div class="caption">
@@ -388,7 +388,7 @@
 						<div class="product-chr-info chr">
 							<div class="thumbnail">
 								<a href="single_product.html">
-									<img src="images/lib1.jpg" alt="">
+									<img src="{{URL::asset('/front/images/lib1.jpg')}}" alt="">
 								</a>
 							</div>
 							<div class="caption">
@@ -448,7 +448,7 @@
 						<div class="product-chr-info chr">
 							<div class="thumbnail">
 								<a href="single_product.html">
-									<img src="images/lib2.jpg" alt="">
+									<img src="{{URL::asset('/front/images/lib2.jpg')}}" alt="">
 								</a>
 							</div>
 							<div class="caption">
@@ -508,7 +508,7 @@
 						<div class="product-chr-info chr">
 							<div class="thumbnail">
 								<a href="single_product.html">
-									<img src="images/lib3.jpg" alt="">
+									<img src="{{URL::asset('/front/images/lib3.jpg')}}" alt="">
 								</a>
 							</div>
 							<div class="caption">
@@ -633,7 +633,7 @@
 						<div class="blog1">
 							<div class="col-md-3 col-sm-3 col-xs-2 bl1">
 								<a href="#">
-									<img src="images/b1.jpg" alt="" class="img-responsive" />
+									<img src="{{URL::asset('/front/images/b1.jpg')}}" alt="" class="img-responsive" />
 								</a>
 							</div>
 							<div class="col-md-9 col-sm-9 col-xs-10 bl2">
@@ -645,7 +645,7 @@
 						<div class="blog1">
 							<div class="col-md-3 col-sm-3 col-xs-2 bl1">
 								<a href="#">
-									<img src="images/b2.jpg" alt="" class="img-responsive" />
+									<img src="{{URL::asset('/front/images/b2.jpg')}}" alt="" class="img-responsive" />
 								</a>
 							</div>
 							<div class="col-md-9 col-sm-9 col-xs-10 bl2">
@@ -716,10 +716,10 @@
 	</div>
 	<!-- //home -->
 	<!-- Common js -->
-	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="{{URL::asset('/front/js/jquery-2.2.3.min.js')}}"></script>
 	<!--// Common js -->
 	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
+	<script src="{{URL::asset('/front/js/minicart.js')}}"></script>
 	<script>
 		chr.render();
 
@@ -735,11 +735,11 @@
 	</script>
 	<!-- //cart-js -->
 	<!-- zoom -->
-	<script src="js/imagezoom.js"></script>
+	<script src="{{URL::asset('/front/js/imagezoom.js')}}"></script>
 	<!-- zoom-->
 	<!-- single -->
 	<!-- FlexSlider -->
-	<script src="js/jquery.flexslider.js"></script>
+	<script src="{{URL::asset('/front/js/jquery.flexslider.js')}}"></script>
 	<script>
 		// Can also be used with $(document).ready()
 		$(window).load(function () {
@@ -768,17 +768,17 @@
 	</script>
 	<!-- //dropdown nav -->
 	<!--search jQuery-->
-	<script src="js/main.js"></script>
+	<script src="{{URL::asset('/front/js/main.js')}}"></script>
 	<!--search jQuery-->
 
 	<!-- Scrolling Nav JavaScript -->
-	<script src="js/scrolling-nav.js"></script>
+	<script src="{{URL::asset('/front/js/scrolling-nav.js')}}"></script>
 	<!-- //fixed-scroll-nav-js -->
 	<!--//scripts-->
-	<script src="js/bootstrap.js"></script>
+	<script src="{{URL::asset('/front/js/bootstrap.js')}}"></script>
 	<!-- start-smoth-scrolling -->
-	<script src="js/move-top.js"></script>
-	<script src="js/easing.js"></script>
+	<script src="{{URL::asset('/front/js/move-top.js')}}"></script>
+	<script src="{{URL::asset('/front/js/easing.js')}}"></script>
 	<script>
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {
@@ -810,7 +810,7 @@
 	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- smoothscroll -->
-	<script src="js/SmoothScroll.min.js"></script>
+	<script src="{{URL::asset('/front/js/SmoothScroll.min.js')}}"></script>
 	<!-- //smoothscroll -->
 
 </body>
