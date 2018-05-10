@@ -12,18 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use Request;
 class HomeController extends Controller
 {
-    /**
-     * 为指定用户显示详情
-     *
-     * @param int $id
-     * @return Response
-     */
-    public function index()
-    {
-        echo "123";die;
-        // $data = HomeModel::ce();
-        return view('Home/index');
-    }
+    /**验证码*/
     public function captcha($tem)
     {
         $builder = new CaptchaBuilder();
@@ -38,8 +27,29 @@ class HomeController extends Controller
         $data =  Request::file('img');
         var_dump($data);
     }
+    /**首页*/
+    public function index()
+    {
+        return view('Home/index');
+    }
+    /**图书馆*/
     public function about()
     {
         return view("Home/about");
+    }
+    /**商品页面*/
+    public function shop()
+    {
+        return view("Home/shop");
+    }
+    /**活动页面*/
+    public function footer()
+    {
+        return view("Home/footer");
+    }
+    /**联系我们*/
+    public function contact()
+    {
+        return view("Home/contact");
     }
 }

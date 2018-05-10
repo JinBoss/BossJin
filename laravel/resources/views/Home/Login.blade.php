@@ -50,7 +50,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <h1>
-                            <a class="navbar-brand" href="{{url('Home/index')}}">未来图书馆</a>
+                            <a class="navbar-brand" href="{{ url('/Home/home/index') }}">未来图书馆</a>
                         </h1>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -61,13 +61,13 @@
                                 <a class="page-scroll" href="#page-top"></a>
                             </li>
                             <li>
-                                <a href="{{URL('Home/index')}}">首页</a>
+                                <a href="{{ url('/Home/home/index') }}">首页</a>
                             </li>
                             <li>
-                                <a href="{{URL('Home/about')}}">图书馆</a>
+                                <a href="{{ url('/Home/home/about') }}">图书馆</a>
                             </li>
                             <li class="dropdown">
-                                <a href="{{URL('Home/shop')}}">图书目录</a>
+                                <a href="{{ url('/Home/home/shop') }}">图书目录</a>
                                 <!-- <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">图书目录
                                     <b class="caret"></b>
                                 </a> -->
@@ -87,7 +87,7 @@
                                 </ul> -->
                             </li>
                             <li class="dropdown">
-                                <a href="{{URL('Home/footer')}}">活动专区</a>
+                                <a href="{{ url('/Home/home/footer') }}">活动专区</a>
                                 <!-- <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">footers
                                     <b class="caret"></b>
                                 </a>
@@ -110,7 +110,7 @@
                                 </ul> -->
                             </li>
                             <li>
-                                <a href="{{URL('Home/contact')}}">联系我们</a>
+                                <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                             </li>
                             <li>
                                 <a href="login.html" title="我的资料">
@@ -201,14 +201,15 @@
                 <div id="loginbox" style="margin-top:30px;" class="mainbox  loginbox">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <div class="panel-title">Sign In</div>
+                            <div class="panel-title">登录</div>
                             <div class="fpassword">
-                                <a href="#">Forgot password?</a>
+                                <!-- <a href="#">忘记密码?</a> -->
                             </div>
                         </div>
                         <div style="padding-top:30px" class="panel-body">
                             <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                            <form id="loginform" class="form-horizontal" action="#" method="post">
+                            <form id="loginform" class="form-horizontal" action="{{ url('/Home/login/LoginCheck') }}" method="post">
+                                {{csrf_field()}} 
                                 <div style="margin-bottom: 25px" class="input-group">
                                     <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-user"></i>
@@ -225,23 +226,23 @@
                                 <div class="input-group">
                                     <div class="checkbox">
                                         <label>
-                                            <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                                            <input id="login-remember" type="checkbox" name="remember" value="1"> 记住我
                                         </label>
                                     </div>
                                 </div>
                                 <div style="margin-top:10px" class="form-group">
                                     <!-- Button -->
                                     <div class="col-sm-12 controls">
-                                        <a id="btn-login" href="#" class="btn btn-success">Login </a>
-                                        <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
+                                        <input type="submit" value="登陆" id="btn-login" class="btn btn-success">
+                                        <!-- <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a> -->
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12 control">
                                         <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
-                                            Don't have an account!
+                                            没有一个用户？
                                             <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                                Sign Up Here
+                                                注册
                                             </a>
                                         </div>
                                     </div>

@@ -49,7 +49,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <h1>
-                            <a class="navbar-brand" href="index.html">Chronicle</a>
+                            <a class="navbar-brand" href="{{ url('/Home/home/index') }}">未来图书馆</a>
                         </h1>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,16 +60,17 @@
                                 <a class="page-scroll" href="#page-top"></a>
                             </li>
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="{{ url('/Home/home/index') }}">首页</a>
                             </li>
                             <li>
-                                <a href="about.html">about us</a>
+                                <a href="{{ url('/Home/home/about') }}">图书馆</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">shop
+                                <a href="{{ url('/Home/home/shop') }}">图书目录</a>
+                                <!-- <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">图书目录
                                     <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
+                                </a> -->
+                              <!--   <ul class="dropdown-menu">
                                     <li>
                                         <a href="shop.html">product catalog</a>
                                     </li>
@@ -79,13 +80,14 @@
                                     <li>
                                         <a href="checkout.html">checkout</a>
                                     </li>
-									<li>
+                                    <li>
                                         <a href="payment.html">Payment</a>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">footers
+                                <a href="{{ url('/Home/home/footer') }}">活动专区</a>
+                                <!-- <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">footers
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -104,20 +106,20 @@
                                     <li>
                                         <a href="footer4.html">variant4</a>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li>
-                                <a href="contact.html">Contact us</a>
+                                <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                             </li>
                             <li>
-                                <a href="login.html" title="SignIn & SignUp">
+                                <a href="login.html" title="我的资料">
                                     <span class="fa fa-user nav-icon" aria-hidden="true"></span>
                                 </a>
                             </li>
 
                         </ul>
                         <!-- search-bar -->
-                        <div class="search-bar-agileits">
+                       <!--  <div class="search-bar-agileits">
                             <div class="cd-main-header">
                                 <ul class="cd-header-buttons">
                                     <li>
@@ -125,18 +127,18 @@
                                             <span></span>
                                         </a>
                                     </li>
-                                </ul>
+                                </ul> -->
                                 <!-- cd-header-buttons -->
-                            </div>
+                            <!-- </div>
                             <div id="cd-search" class="cd-search">
                                 <form action="#" method="post">
                                     <input name="Search" type="search" placeholder="Type and Hit Enter...">
                                 </form>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- //search-bar ends here -->
                         <!-- shopping cart -->
-                        <div class="cart-mainf">
+                       <!--  <div class="cart-mainf">
                             <div class="chrcart chrcart2 cart cart box_1">
                                 <form action="#" method="post" class="last">
                                     <input type="hidden" name="cmd" value="_cart">
@@ -146,7 +148,7 @@
                                     </button>
                                 </form>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- //shopping cart ends here -->
                     </div>
                     <!-- /.navbar-collapse -->
