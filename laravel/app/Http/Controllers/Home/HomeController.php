@@ -37,4 +37,8 @@ class HomeController extends Controller
         $data =  Request::file('img');
         var_dump($data);
     }
+    public function about()
+    {
+        return view("Home/about");
+    }
 }
