@@ -16,12 +16,12 @@
         }
     </script>
     <!-- Custom Theme files -->
-    <link href="{{URL::asset('/Home/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
+    <link href="{{URL::asset('/front/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
     <!-- shop css -->
-    <link href="{{URL::asset('/Home/css/shop.css')}}" type="text/css" rel="stylesheet" media="all">
-    <link href="{{URL::asset('/Home/css/style.css')}}" type="text/css" rel="stylesheet" media="all">
+    <link href="{{URL::asset('/front/css/shop.css')}}" type="text/css" rel="stylesheet" media="all">
+    <link href="{{URL::asset('/front/css/style.css')}}" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
-    <link href="{{URL::asset('/Home/css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('/front/css/font-awesome.css')}}" rel="stylesheet">
     <!-- //Custom Theme files -->
     <!-- online-fonts -->
     <!-- logo -->
@@ -50,7 +50,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <h1>
-                            <a class="navbar-brand" href="{{URL('Home/index')}}">么孩纸图书</a>
+                            <a class="navbar-brand" href="{{url('Home/index')}}">么孩纸图书</a>
                         </h1>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -61,13 +61,13 @@
                                 <a class="page-scroll" href="#page-top"></a>
                             </li>
                             <li>
-                                <a href="index.html">首页</a>
+                                <a href="{{URL('Home/index')}}">首页</a>
                             </li>
                             <li>
-                                <a href="about.html">图书馆</a>
+                                <a href="{{URL('Home/about')}}">图书馆</a>
                             </li>
                             <li class="dropdown">
-                                <a href="shop.html">图书目录</a>
+                                <a href="{{URL('Home/shop')}}">图书目录</a>
                                 <!-- <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">图书目录
                                     <b class="caret"></b>
                                 </a> -->
@@ -87,7 +87,7 @@
                                 </ul> -->
                             </li>
                             <li class="dropdown">
-                                <a href="footer.html">活动专区</a>
+                                <a href="{{URL('Home/footer')}}">活动专区</a>
                                 <!-- <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">footers
                                     <b class="caret"></b>
                                 </a>
@@ -110,7 +110,7 @@
                                 </ul> -->
                             </li>
                             <li>
-                                <a href="contact.html">联系我们</a>
+                                <a href="{{URL('Home/contact')}}">联系我们</a>
                             </li>
                             <li>
                                 <a href="login.html" title="SignIn & SignUp">
@@ -452,13 +452,13 @@
     </div>
 <!-- //home -->
     <!-- js -->
-    <script src="{{URL::asset('/Home/js/jquery-2.2.3.min.js')}}"></script>
+    <script src="{{URL::asset('/front/js/jquery-2.2.3.min.js')}}"></script>
     <!-- //js -->
     <!--search jQuery-->
-    <script src="{{URL::asset('/Home/js/main.js')}}"></script>
+    <script src="{{URL::asset('/front/js/main.js')}}"></script>
     <!--search jQuery-->
     <!-- cart-js -->
-    <script src="{{URL::asset('/Home/js/minicart.js')}}"></script>
+    <script src="{{URL::asset('/front/js/minicart.js')}}"></script>
     <script>
         chr.render();
 
@@ -492,11 +492,11 @@
     <!-- //dropdown nav -->
 
     <!-- Scrolling Nav JavaScript -->
-    <script src="{{URL::asset('/Home/js/scrolling-nav.js')}}"></script>
+    <script src="{{URL::asset('/front/js/scrolling-nav.js')}}"></script>
     <!-- //fixed-scroll-nav-js -->
     <!-- start-smooth-scrolling -->
-    <script src="{{URL::asset('/Home/js/move-top.js')}}"></script>
-    <script src="{{URL::asset('/Home/js/easing.js')}}"></script>
+    <script src="{{URL::asset('/front/js/move-top.js')}}"></script>
+    <script src="{{URL::asset('/front/js/easing.js')}}"></script>
     <script>
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {
@@ -527,12 +527,12 @@
 
         });
     </script>
-    <script src="{{URL::asset('/Home/js/SmoothScroll.min.js')}}"></script>
+    <script src="{{URL::asset('/front/js/SmoothScroll.min.js')}}"></script>
     <!-- //smooth-scrolling-of-move-up -->
     <!-- Bootstrap core JavaScript
  ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{URL::asset('/Home/js/bootstrap.js')}}"></script>
+    <script src="{{URL::asset('/front/js/bootstrap.js')}}"></script>
 </body>
 
 </html>
