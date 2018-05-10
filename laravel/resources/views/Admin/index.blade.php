@@ -378,7 +378,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="{{ url('Calendar/index')}}">
+										<a href="{{ url('admin/calendar/')}}">
 											<i class="fa fa-calendar" aria-hidden="true"></i><span>Calendar</span>
 										</a>
 									</li>
