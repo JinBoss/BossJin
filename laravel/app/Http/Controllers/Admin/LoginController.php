@@ -21,7 +21,7 @@ class LoginController extends Controller
     public function index()
     {
         $data = AdminModel::ce();
-        return view('Admin/page-login');
+        return view('Admin/login');
     }
     public function checkCode()
     {

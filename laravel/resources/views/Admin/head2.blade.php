@@ -12,10 +12,10 @@
 	<!-- 头部 -->
 	<div class="head">
 		<div class="headL">
-			<img class="headLogo" src="/static/img/aa.png"/>
+			<img class="headLogo" src="{{ URL::asset('/back/assets/img/aa.png') }}"/>
 		</div>
 		<div class="headR">
-			<span style="color:#FFF"><a href="{:url('index/login')}" target="_blank">【登录】</a></span> 
+			<span style="color:#FFF"><a href="{{url('admin/login') }}" target="_blank">【登录】</a></span> 
 		</div>
 	</div>
 </body>
