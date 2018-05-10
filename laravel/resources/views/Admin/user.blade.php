@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>管理员管理</title>
-<link rel="stylesheet" type="text/css" href="/static/css/css.css" />
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/static/css/css.css') }}" />
+<script type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.min.js') }}"></script>
 <!-- <script type="text/javascript" src="/static/js/page.js" ></script> -->
 </head>
 
@@ -12,7 +12,7 @@
 	<div id="pageAll">
 		<div class="pageTop">
 			<div class="page">
-				<img src="/static/img/coin02.png" /><span><a href="{:url('index/index')}">首页</a>&nbsp;-&nbsp;-</span>&nbsp;管理员管理
+				<img src="{{ URL::asset('/back/static/img/coin02.png') }}" /><span><a href="{:url('index/index')}">首页</a>&nbsp;-&nbsp;-</span>&nbsp;管理员管理
 			</div>
 		</div>
 
@@ -46,8 +46,8 @@
 								<td>{eq name="v['type']" value="1"}普通管理{/eq}{eq name="v['type']" value="2"}超级管理{/eq}</td>			
 								<td>{$v.addtime|date="Y-m-d H:i:s",###}</td>
 								<td><a href="{:url('user/update')}"><img class="operation"
-										src="/static/img/update.png"></a> <img class="operation delban"
-									src="/static/img/delete.png" id='{$v.user_id}'></td>
+										src="{{ URL::asset('/back/static/img/update.png') }}"></a> <img class="operation delban"
+									src="{{ URL::asset('/back/static/img/delete.png') }}" id='{$v.user_id}'></td>
 							</tr>
 						{/volist}
 
@@ -68,7 +68,7 @@
 	<div class="banDel">
 		<div class="delete">
 			<div class="close">
-				<a><img src="/static/img/shanchu.png" /></a>
+				<a><img src="{{ URL::asset('/back/static/img/shanchu.png') }}" /></a>
 			</div>
 			<p class="delP1">你确定要删除此条记录吗？</p>
 			<p class="delP2">
