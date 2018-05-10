@@ -560,7 +560,7 @@
 		<script src="{{ URL::asset('/back/assets/js/core.min.js') }}"></script>
 		
 		<!-- Pages JS -->
-		<script src="{{ URL::asset('/back/assets/js/pages/calendar.js') }}"></script>
+		<script src="{{ URL::asset('/back/assets/ico/favicon.ico') }}"></script>
 		
 		<!-- end: JavaScript-->
 		

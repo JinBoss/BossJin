@@ -10,9 +10,15 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+<<<<<<< HEAD
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+=======
+Route::get('/', function () {
+    return view('welcome');
+});
+>>>>>>> 791cfa32f971c0dec67f174505bfd1b8b35d1baa
 Route::get('/admin/', 'Admin\AdminController@index');
 Route::get('/admin/index', 'Admin\AdminController@index');
 Route::get('/admin/captcha/{tem}', 'Admin\AdminController@captcha');
@@ -29,3 +35,4 @@ Route::get('admin/login/index','Admin\LoginController@index');
 Route::get('admin/login/','Admin\LoginController@index');
 Route::get('admin/register/','Admin\RegisterController@index');
 Route::get('admin/calendar/','Admin\CalendarController@index');
+Route::get('admin/calendar/add','Admin\CalendarController@add');
