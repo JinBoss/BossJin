@@ -2,15 +2,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>公司管理</title>
-<link href="/static/css/styles.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="/static/css/css.css" />
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
-<script language="javascript" type="text/javascript" src="/static/js/jquery.js"></script>
+<link href="{{ URL::asset('/back/static/css/styles.css') }}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/static/css/css.css') }}" />
+<script type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.min.js') }}"></script>
+<script language="javascript" type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.js') }}"></script>
 <!-- <script language="javascript" type="text/javascript" src="/static/js/jquery.bstablecrosshair.js"></script> -->
-<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-<link href="/static/css/bootstrap-fileinput.css" rel="stylesheet">
-<script src="/static/js/jquery.min.js"></script>
-<script src="/static/js/bootstrap-fileinput.js"></script>
+<link href="{{ URL::asset('/back/static/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ URL::asset('/back/static/css/bootstrap-fileinput.css') }}" rel="stylesheet">
+<script src="{{ URL::asset('/back/static/js/jquery.min.js') }}"></script>
+<script src="{{ URL::asset('/back/static/js/bootstrap-fileinput.js') }}"></script>
 </head>
 <body>
 <center>
@@ -120,77 +120,5 @@
 		</div>
 	</div> -->
 	<!-- 删除弹出框  end-->
-
-<script type="text/javascript">
-
-// 广告弹出框
-$(".delban").click(function(){
-	$(this).attr('class','del')
-  	$(".banDel").show();
-});
-$(".close").click(function(){
-  	$(".banDel").hide();
-});
-$(".no").click(function(){
-  	$(".banDel").hide();
-});
-$(".yes").click(function(){
-  	var id = $('.del').attr('id');
-  	$(".banDel").hide();
-  	$.ajax({
-  		type:"post",
-			url:"{:url('Index/delete')}",
-			data:{company_id:id},
-			dataType:'json',
-			success:function(msg){
-  					$('.del').parent().parent().remove();
-  					$('.del').attr('class','delban');
-  					alert(msg.ms);
-			}
-  	})
-});
-</script>
-<script type="text/javascript">
-    $(function () {
-        //比较简洁，细节可自行完善
-        $('#uploadSubmit').click(function () {
-	     	var imageForm = new FormData($('#uploadForm'));
-	     	imageForm.append("upfile", $("#file").get(0).files[0]);
-	     	imageForm.append("company_name", $("#company_name").val());
-	     	imageForm.append("company_regtime", $("#company_regtime").val());
-	     	imageForm.append("company_email", $("#company_email").val());
-	     	imageForm.append("company_tel", $("#company_tel").val());
-	     	imageForm.append("company_desc", $("#company_desc").val());
-	     	imageForm.append("company_id", $("#company_id").val());
-	     	
-	     	$.ajax({
-		        url: "{:url('index/upcompany')}",
-		        type: 'POST',
-		        cache: false,
-		        data: imageForm,
-		        processData: false,
-		        contentType: false,
-		        dataType:"json",
-		        beforeSend: function(){
-		            uploading = true;
-		        },
-		        success : function(data) {
-		        	alert(data.msg)
-		        	if(data.state)
-		        	{
-		        		alert(data.msg)
-		        		history.go(0)
-		        	}
-		            uploading = false;
-		        }
-		    });
-	});
-});
-    
-    
-
-</script>
-
-
 </body>
 </html>

@@ -2,11 +2,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>留言管理</title>
-<link href="/static/css/styles.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="/static/css/css.css" />
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
-<script language="javascript" type="text/javascript" src="/static/js/jquery.js"></script>
-<script language="javascript" type="text/javascript" src="/static/js/jquery.bstablecrosshair.js"></script>
+<link href="{{ URL::asset('/back/static/css/styles.css') }}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/static/css/css.css') }}" />
+<script type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.min.js') }}"></script>
+<script language="javascript" type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.js') }}"></script>
+<script language="javascript" type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.bstablecrosshair.js') }}"></script>
 </head>
 <body>
 <center>
@@ -29,8 +29,8 @@
 		<td><?php echo $val['message_desc']?></td>
 		<td><?php echo date("Y-m-d H:i:s",$val['message_time'])?></td>
 		<td><a href="{:url('user/update')}"><img class="operation"
-										src="/static/img/update.png"></a> <img class="operation delban"
-									src="/static/img/delete.png" id='{$val.message_id}'></td>
+										src="{{ URL::asset('/back/static/img/update.png') }}"></a> <img class="operation delban"
+									src="{{ URL::asset('/back/static/img/delete.png') }}" id='{$val.message_id}'></td>
 	</tr>
 	<?php } ?>
 </table>
@@ -42,7 +42,7 @@
 	<div class="banDel">
 		<div class="delete">
 			<div class="close">
-				<a><img src="/static/img/shanchu.png" /></a>
+				<a><img src="{{ URL::asset('/back/static/img/shanchu.png') }}" /></a>
 			</div>
 			<p class="delP1">你确定要删除此条记录吗？</p>
 			<p class="delP2">

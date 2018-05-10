@@ -3,14 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>添加用户</title>
-<link rel="stylesheet" type="text/css" href="/static/css/css.css" />
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/static/css/css.css') }}" />
+<script type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.min.js') }}"></script>
 </head>
 <body>
 	<div id="pageAll">
 		<div class="pageTop">
 			<div class="page">
-				<img src="/static/img/coin02.png" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a href="#">成员管理</a>&nbsp;-</span>&nbsp;添加成员
+				<img src="{{ URL::asset('/back/static/img/coin02.png') }}" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a href="#">成员管理</a>&nbsp;-</span>&nbsp;添加成员
 			</div>
 		</div>
 		<div class="page">
