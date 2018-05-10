@@ -50,7 +50,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <h1>
-                            <a class="navbar-brand" href="{{url('Home/index')}}">么孩纸图书</a>
+                            <a class="navbar-brand" href="{{url('Home/index')}}">未来图书馆</a>
                         </h1>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -113,14 +113,14 @@
                                 <a href="{{URL('Home/contact')}}">联系我们</a>
                             </li>
                             <li>
-                                <a href="login.html" title="SignIn & SignUp">
+                                <a href="login.html" title="我的资料">
                                     <span class="fa fa-user nav-icon" aria-hidden="true"></span>
                                 </a>
                             </li>
 
                         </ul>
                         <!-- search-bar -->
-                        <div class="search-bar-agileits">
+                       <!--  <div class="search-bar-agileits">
                             <div class="cd-main-header">
                                 <ul class="cd-header-buttons">
                                     <li>
@@ -128,18 +128,18 @@
                                             <span></span>
                                         </a>
                                     </li>
-                                </ul>
+                                </ul> -->
                                 <!-- cd-header-buttons -->
-                            </div>
+                            <!-- </div>
                             <div id="cd-search" class="cd-search">
                                 <form action="#" method="post">
                                     <input name="Search" type="search" placeholder="Type and Hit Enter...">
                                 </form>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- //search-bar ends here -->
                         <!-- shopping cart -->
-                        <div class="cart-mainf">
+                       <!--  <div class="cart-mainf">
                             <div class="chrcart chrcart2 cart cart box_1">
                                 <form action="#" method="post" class="last">
                                     <input type="hidden" name="cmd" value="_cart">
@@ -149,7 +149,7 @@
                                     </button>
                                 </form>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- //shopping cart ends here -->
                     </div>
                     <!-- /.navbar-collapse -->

@@ -16,14 +16,14 @@
         }
     </script>
     <!-- Custom Theme files -->
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="{{URL::asset('/front/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
     <!-- shop css -->
-    <link href="css/shop.css" type="text/css" rel="stylesheet" media="all">
+    <link href="{{URL::asset('/front/css/shop.css')}}" type="text/css" rel="stylesheet" media="all">
     <!-- footer stylesheet -->
-    <link href="css/footer3.css" type="text/css" rel="stylesheet" media="all">
+    <link href="{{URL::asset('/front/css/footer3.css')}}" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="{{URL::asset('/front/css/style.css')}}" type="text/css" rel="stylesheet" media="all">
+    <link href="{{URL::asset('/front/css/font-awesome.css')}}" rel="stylesheet">
     <!-- //Custom Theme files -->
     <!-- online-fonts -->
     <!-- logo -->
@@ -237,47 +237,47 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                    <img src="images/lt1.jpg" alt="" class="img-responsive">
+                                    <img src="{{URL::asset('/front/images/lt1.jpg')}}" alt="" class="img-responsive">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="images/lt4.jpg" alt="" class="img-responsive">
+                                    <img src="{{URL::asset('/front/images/lt4.jpg')}}" alt="" class="img-responsive">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="images/lt3.jpg" alt="" class="img-responsive">
+                                    <img src="{{URL::asset('/front/images/lt3.jpg')}}" alt="" class="img-responsive">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="images/lt6.jpg" alt="" class="img-responsive">
+                                    <img src="{{URL::asset('/front/images/lt6.jpg')}}" alt="" class="img-responsive">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="images/lt5.jpg" alt="" class="img-responsive">
+                                    <img src="{{URL::asset('/front/images/lt5.jpg')}}" alt="" class="img-responsive">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="images/lt2.jpg" alt="" class="img-responsive">
+                                    <img src="{{URL::asset('/front/images/lt2.jpg')}}" alt="" class="img-responsive">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="images/lt3.jpg" alt="" class="img-responsive">
+                                    <img src="{{URL::asset('/front/images/lt3.jpg')}}" alt="" class="img-responsive">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="images/lt6.jpg" alt="" class="img-responsive">
+                                    <img src="{{URL::asset('/front/images/lt6.jpg')}}" alt="" class="img-responsive">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="images/lt6.jpg" alt="" class="img-responsive">
+                                    <img src="{{URL::asset('/front/images/lt6.jpg')}}" alt="" class="img-responsive">
                                 </a>
                             </li>
                         </ul>
@@ -302,13 +302,13 @@
     </div>
     <!-- //home -->
     <!-- js -->
-    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="{{URL::asset('/front/js/jquery-2.2.3.min.js')}}"></script>
     <!-- //js -->
     <!--search jQuery-->
-    <script src="js/main.js"></script>
+    <script src="{{URL::asset('/front/js/main.js')}}"></script>
     <!--search jQuery-->
     <!-- cart-js -->
-    <script src="js/minicart.js"></script>
+    <script src="{{URL::asset('/front/js/minicart.js')}}"></script>
     <script>
         chr.render();
 
@@ -340,13 +340,13 @@
     </script>
     <!-- //dropdown nav -->
     <!-- Scrolling Nav JavaScript -->
-    <script src="js/scrolling-nav.js"></script>
+    <script src="{{URL::asset('/front/js/scrolling-nav.js')}}"></script>
     <!-- //fixed-scroll-nav-js -->
     <!--//scripts-->
     <!-- //gallery-js  -->
     <!-- start-smooth-scrolling -->
-    <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
+    <script src="{{URL::asset('/front/js/move-top.js')}}"></script>
+    <script src="{{URL::asset('/front/js/easing.js')}}"></script>
     <script>
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {
@@ -377,12 +377,12 @@
 
         });
     </script>
-    <script src="js/SmoothScroll.min.js"></script>
+    <script src="{{URL::asset('/front/js/SmoothScroll.min.js')}}"></script>
     <!-- //smooth-scrolling-of-move-up -->
     <!-- Bootstrap core JavaScript
  ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+    <script src="{{URL::asset('/front/js/bootstrap.js')}}"></script>
 </body>
 
 </html>

@@ -20,8 +20,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = HomeModel::ce();
-        return view('Home/Home',['data'=>$data]);
+        echo "123";die;
+        // $data = HomeModel::ce();
+        return view('Home/index');
     }
     public function captcha($tem)
     {
