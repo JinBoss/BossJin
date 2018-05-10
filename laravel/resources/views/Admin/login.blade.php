@@ -3,29 +3,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>登录</title>
-<link rel="stylesheet" type="text/css" href="/static/css/public.css" />
-<link rel="stylesheet" type="text/css" href="/static/css/page.css" />
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
-<script type="text/javascript" src="/static/js/public.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/assets/css/public.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/assets/css/page.css') }}" />
+<script type="text/javascript" src="{{ URL::asset('/back/assets/js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('/back/assets/js/public.js') }}"></script>
 </head>
 <body>
 
 	<!-- 登录body -->
 	<div class="logDiv">
-		<img class="logBanner" src="/static/img/logBanner.png" />
+		<img class="logBanner" src="{{ URL::asset('/back/assets/img/logBanner.png') }}" />
 		<div class="logGet">
 			<!-- 头部提示信息 -->
-			<form action="{:url('Admin/login_add')}" method="post">
+			<form action="{{ url('admin/login/login') }}" method="post">
 				<div class="logD logDtip">
 					<p class="p1">登录</p>
 				</div>
 				<!-- 输入框 -->
 				<div class="lgD">
-					<img class="img1" src="/static/img/logName.png" /><input type="text"
+					<img class="img1" src="{{ URL::asset('/back/assets/img/logName.png') }}" /><input type="text"
 						placeholder="输入用户名" name="user_name" />
 				</div>
 				<div class="lgD">
-					<img class="img1" src="/static/img/logPwd.png" /><input type="password"
+					<img class="img1" src="{{ URL::asset('/back/assets/img/logPwd.png') }}" /><input type="password"
 						placeholder="输入用户密码" name="user_pwd" />
 				</div>
 				<div class="logC">

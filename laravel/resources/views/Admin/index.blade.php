@@ -5,12 +5,13 @@
 <title>首页</title>
 </head>
 <frameset rows="100,*" cols="*" scrolling="No" framespacing="0"
-	frameborder="no" border="0"> <frame src="{:url('index/head')}"
+	frameborder="no" border="0"> <frame src="{{url('admin/head') }}"
 	name="headmenu" id="mainFrame" title="mainFrame">
 	<!-- 引用头部 -->
-<!-- 引用左边和主体部分 --> <frameset rows="100*" cols="220,*" scrolling="No"
-	framespacing="0" frameborder="no" border="0"> <frame
-	src="{:url('index/left')}" name="leftmenu" id="mainFrame" title="mainFrame">
-<frame src="{:url('index/main')}" name="main" scrolling="yes" noresize="noresize"
+<!-- 引用左边和主体部分 --> 
+<frameset rows="100*" cols="220,*" scrolling="No"
+	framespacing="0" frameborder="no" border="0"> 
+	<frame src="{{url('admin/left') }}" name="leftmenu" id="mainFrame" title="mainFrame">
+<frame src="{{url('admin/main') }}" name="main" scrolling="yes" noresize="noresize"
 	id="rightFrame" title="rightFrame"></frameset></frameset>
 </html>

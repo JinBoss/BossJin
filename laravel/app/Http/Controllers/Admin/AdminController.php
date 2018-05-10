@@ -1,16 +1,57 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>首页</title>
-</head>
-<frameset rows="100,*" cols="*" scrolling="No" framespacing="0"
-    frameborder="no" border="0"> <frame src="{:url('index/head')}"
-    name="headmenu" id="mainFrame" title="mainFrame">
-    <!-- 引用头部 -->
-<!-- 引用左边和主体部分 --> <frameset rows="100*" cols="220,*" scrolling="No"
-    framespacing="0" frameborder="no" border="0"> <frame
-    src="{:url('index/left')}" name="leftmenu" id="mainFrame" title="mainFrame">
-<frame src="{{ url('index/main') }}" name="main" scrolling="yes" noresize="noresize"
-    id="rightFrame" title="rightFrame"></frameset></frameset>
-</html>
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;  
+use Gregwar\Captcha\CaptchaBuilder;
+use Session;
+use App\Http\Models\Admin\AdminModel;  
+use Illuminate\Support\Facades\Storage;
+// use Illuminate\Http\Request;
+// use App\Http\Requests;
+use Request;
+class AdminController extends Controller
+{
+    /**
+     * 为指定用户显示详情
+     *
+     * @param int $id
+     * @return Response
+     */
+    public function index()
+    {
+        $data = AdminModel::ce();
+        return view('Admin/index');
+    }
+    public function left()
+    {
+        return view('Admin/left');
+    }
+    public function head()
+    {
+        return view('Admin/head');
+    }
+    public function head2()
+    {
+        return view('Admin/head2');
+    }
+    public function main()
+    {
+        return view('Admin/main');
+    }
+    public function captcha($tem)
+    {
+        $builder = new CaptchaBuilder();
+        $builder->build(150,32);
+        $phrase = $builder->getPhrase();
+        Session::flash('code', $phrase); 
+        ob_clean();
+        return response($builder->output())->header('Content-type','image/jpeg');
+    }
+     public function add()
+    {
+        $data =  Request::file('img');
+        var_dump($data);
+    }
+}
+
