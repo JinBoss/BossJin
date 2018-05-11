@@ -7,8 +7,6 @@ use Gregwar\Captcha\CaptchaBuilder;
 use Session;
 use App\Http\Models\Admin\AdminModel;  
 use Illuminate\Support\Facades\Storage;
-// use Illuminate\Http\Request;
-// use App\Http\Requests;
 use Request;
 class AdminController extends Controller
 {
@@ -38,6 +36,13 @@ class AdminController extends Controller
     public function main()
     {
         return view('Admin/main');
+    }
+
+    public function message(){
+        return view('Admin/message');
+    }
+    public function tab(){
+        return view('Admin/tab');
     }
     public function captcha($tem)
     {

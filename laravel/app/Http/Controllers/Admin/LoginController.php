@@ -4,11 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;  
 use Gregwar\Captcha\CaptchaBuilder;
-use Session;
-use App\Http\Models\Admin\AdminModel;  
+use Session; 
+use App\Http\Models\Admin\LoginModel; 
 use Illuminate\Support\Facades\Storage;
-// use Illuminate\Http\Request;
-// use App\Http\Requests;
 use Request;
 class LoginController extends Controller
 {
@@ -18,9 +16,9 @@ class LoginController extends Controller
      * @param int $id
      * @return Response
      */
+    // 加载
     public function index()
     {
-        $data = AdminModel::ce();
         return view('Admin/login');
     }
     public function checkCode()
@@ -31,19 +29,44 @@ class LoginController extends Controller
     {
         // 接值
         $data = Request::all();
-        // 判断验证吗
-        // if($data['code'] != session('code'))
-        // {
-        //     echo '验证码不正确';
-        //     $url = url('/admin/login');
-        //     header("Refresh:2;url=$url");
-        // }
-        print_r($data);
-    }
-    public function add()
-    {
-        $data =  Request::file('img');
-        var_dump($data);
+        // 判断验证码
+        if($data['code'] != session('code'))
+        {
+            echo '验证码不正确.....';
+            $url = url('/admin/login');
+            header("Refresh:2;url=$url");
+        }
+        // 获取登录信息
+        $arr = LoginModel::login_check($data);
+        // 判断用户名是否为空
+        if(empty($arr))
+        {
+            echo '用户名不存在....';
+            $url = url('/admin/login');
+            header("Refresh:2;url=$url");
+        }
+        // 不为空
+        else
+        {
+            // 密码是否正确
+            if($arr[0]->au_pwd != md5(sha1($data['u_pwd'])))
+            {
+
+                echo '密码不正确....';
+                $url = url('/admin/login');
+                header("Refresh:2;url=$url");
+            }
+            // 密码正确
+            else
+            {
+                // 登录信息存入session
+                session(['user'=>$arr['0']]);
+                echo '登录成功....';
+                $url = url('/admin/index');
+                header("Refresh:2;url=$url");
+                
+            }
+        }
     }
 }
 

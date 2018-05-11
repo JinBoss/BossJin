@@ -10,9 +10,10 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('/admin/', 'Admin\AdminController@index');
 Route::get('/admin/index', 'Admin\AdminController@index');
 Route::get('/admin/captcha/{tem}', 'Admin\AdminController@captcha');
@@ -30,18 +31,27 @@ Route::get('/Home/home/footer', 'Home\HomeController@footer');
 Route::get('/Home/home/contact', 'Home\HomeController@contact');
 Route::get('/Home/home/prompt', 'Home\HomeController@prompt');
 Route::get('/home/captcha/{tem}', 'Home\HomeController@captcha');
-// Route::post('/home/add/', 'Home\HomeController@add');
+
 Route::get('/admin/left', 'Admin\AdminController@left');
 Route::get('/admin/main', 'Admin\AdminController@main');
 Route::get('/admin/head', 'Admin\AdminController@head');
 Route::get('/admin/head2', 'Admin\AdminController@head2');
-Route::post('home/add/','Home\HomeController@add');
-Route::post('admin/add/','Admin\AdminController@add');
-Route::get('admin/login/index','Admin\LoginController@index');
-Route::get('admin/login/','Admin\LoginController@index');
+Route::post('/home/add/','Home\HomeController@add');
+Route::post('/admin/add/','Admin\AdminController@add');
+Route::get('/admin/login/index','Admin\LoginController@index');
+Route::get('/admin/login/','Admin\LoginController@index');
 Route::any('/admin/login/login','Admin\LoginController@login');
+Route::post('/admin/book_add/','Admin\BookController@index');
 Route::any('/admin/login/checkcode','Admin\LoginController@checkCode');
-Route::get('admin/register/','Admin\RegisterController@index');
-Route::get('admin/calendar/','Admin\CalendarController@index');
-Route::get('admin/calendar/add','Admin\CalendarController@add');
-Route::post('admin/book_add/','Admin\BookController@index');
+Route::get('/admin/register/','Admin\RegisterController@index');
+Route::get('/admin/index','Admin\AdminController@index');
+Route::get('/admin/message','Admin\AdminController@message');
+Route::get('/admin/tab','Admin\AdminController@tab');
+Route::get('/admin/user/add','Admin\UserController@add');
+Route::post('/admin/user/check_name','Admin\UserController@check_name');
+Route::post('/admin/user/add_do','Admin\UserController@add_do');
+Route::get('/admin/user/show','Admin\UserController@show');
+Route::post('/admin/user/del','Admin\UserController@del');
+Route::post('/admin/user/update','Admin\UserController@update');
+
+

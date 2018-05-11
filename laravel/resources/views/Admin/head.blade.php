@@ -3,16 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>头部</title>
-<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/static/css/public.css') }}" />
-<script type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('/back/static/js/public.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/assets/css/public.css') }}" />
+<script type="text/javascript" src="{{ URL::asset('/back/assets/js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('/back/assets/js/public.js') }}"></script>
 </head>
 
 <body>
 	<!-- 头部 -->
 	<div class="head">
 		<div class="headL">
-			<img class="headLogo" src="{{ URL::asset('/back/static/img/aa.png') }}"/>
+			<img class="headLogo" src="{{ URL::asset('/back/assets/img/aa.png') }}"/>
 		</div>
 		<div class="headR">
 			<span style="color:#FFF">欢迎：admin</span> <a href="{{url('admin/head2')}}" rel="external">【退出】</a>

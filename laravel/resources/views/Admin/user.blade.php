@@ -3,16 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>管理员管理</title>
-<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/static/css/css.css') }}" />
-<script type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.min.js') }}"></script>
-<!-- <script type="text/javascript" src="/static/js/page.js" ></script> -->
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/assets/css/css.css') }}" />
+<script type="text/javascript" src="{{ URL::asset('/back/assets/js/jquery.min.js') }}"></script>
+<!-- <script type="text/javascript" src="/assets/js/page.js" ></script> -->
 </head>
 
 <body>
 	<div id="pageAll">
 		<div class="pageTop">
 			<div class="page">
-				<img src="{{ URL::asset('/back/static/img/coin02.png') }}" /><span><a href="{:url('index/index')}">首页</a>&nbsp;-&nbsp;-</span>&nbsp;管理员管理
+				<img src="{{ URL::asset('/back/assets/img/coin02.png') }}" /><span><a href="{:url('index/index')}">首页</a>&nbsp;-&nbsp;-</span>&nbsp;管理员管理
 			</div>
 		</div>
 
@@ -39,17 +39,22 @@
 							<td width="130px" class="tdColor">操作</td>
 						</tr>
 
-						{volist name="data" id="v" empty="暂时没有数据" }
-							<tr height="40px">
-								<td>{$v.user_id}</td>
-								<td class="uname" id="{$v.user_id}"><span class="sp">{$v.user_name}</span></td>
-								<td>{eq name="v['type']" value="1"}普通管理{/eq}{eq name="v['type']" value="2"}超级管理{/eq}</td>			
-								<td>{$v.addtime|date="Y-m-d H:i:s",###}</td>
-								<td><a href="{:url('user/update')}"><img class="operation"
-										src="{{ URL::asset('/back/static/img/update.png') }}"></a> <img class="operation delban"
-									src="{{ URL::asset('/back/static/img/delete.png') }}" id='{$v.user_id}'></td>
+						@foreach ($data as $v)
+								<tr height="40px">
+								<td>{{$v->au_id}}</td>
+								<td class="uname" id="{{$v->au_id}}"><span class="sp">{{$v->au_name}}</span></td>
+								<td>@if ($v->type == 1)
+							        	超级管理员
+									@else
+									    普通管理员
+									@endif
+							    </td>			
+								<td>{{date("Y-m-d H:i:s",$v->addtime)}}</td>
+								<td><a href="#"><img class="operation"
+										src="{{ URL::asset('/back/assets/img/update.png') }}"></a> <img class="operation delban"
+									src="{{ URL::asset('/back/assets/img/delete.png') }}" id='{{$v->au_id}}'></td>
 							</tr>
-						{/volist}
+						@endforeach
 
 
 						
@@ -68,7 +73,7 @@
 	<div class="banDel">
 		<div class="delete">
 			<div class="close">
-				<a><img src="{{ URL::asset('/back/static/img/shanchu.png') }}" /></a>
+				<a><img src="{{ URL::asset('/back/assets/img/shanchu.png') }}" /></a>
 			</div>
 			<p class="delP1">你确定要删除此条记录吗？</p>
 			<p class="delP2">
@@ -95,16 +100,24 @@ $(".yes").click(function(){
   	var id = $('.del').attr('id');
   	$(".banDel").hide();
   	$.ajax({
+  		// ajax post 方式请求 设置头信息
+			headers: {
+			//   csrf  token 生成
+	        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+	   		},
   		type:"post",
-			url:"{:url('user/del')}",
-			data:{user_id:id},
+			url:"{{url('/admin/user/del')}}",
+			data:{id:id},
+			dataType:"json",
 			success:function(msg){
-				if(msg.state == 1)
+				if(msg.state)
 				{
   					$('.del').parent().parent().remove();
   					$('.del').attr('class','delban');
   					alert(msg.msg);
 				}
+				else
+					alert(msg.msg)
 			}
   	})
   	 // $(".banDel").hide();
@@ -127,8 +140,13 @@ $(document).on('click','.sp',function(){
 			return false
 		}
 		$.ajax({
+			// ajax post 方式请求 设置头信息
+			headers: {
+			//   csrf  token 生成
+	        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+	   		},
 			type:'post',
-			url:"{:url('user/update')}",
+			url:"{{url('/admin/user/update')}}",
 			data:{id:id,name:una},
 			dataType:'json',
 			success:function(msg){
@@ -144,7 +162,13 @@ $(document).on('click','.sp',function(){
 					_this.html("<span class='sp'>"+name+"</span>");
 					alert(msg.msg)
 				}
-			}
+			},
+			error: function () {
+                    // 状态码
+                    _this.empty();
+					_this.html("<span class='sp'>"+name+"</span>");
+					alert('用户名重复修改失败')
+                }
 		})
 	});
 });

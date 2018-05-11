@@ -11,7 +11,7 @@
 <!-- 引用左边和主体部分 --> 
 <frameset rows="100*" cols="220,*" scrolling="No"
 	framespacing="0" frameborder="no" border="0"> 
-	<frame src="{{url('admin/left') }}" name="leftmenu" id="mainFrame" title="mainFrame">
-<frame src="{{url('admin/main') }}" name="main" scrolling="yes" noresize="noresize"
+	<frame src="{{ url('admin/left') }}" name="leftmenu" id="mainFrame" title="mainFrame">
+<frame src="{{ url('admin/main') }}" name="main" scrolling="yes" noresize="noresize"
 	id="rightFrame" title="rightFrame"></frameset></frameset>
 </html>
