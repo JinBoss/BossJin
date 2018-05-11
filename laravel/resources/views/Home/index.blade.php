@@ -182,15 +182,17 @@
             <div class="container">
                 <!-- about-left-grid -->
                 <div class="col-md-7 about-left-grid">
-                    @foreach($LibraryData as $key => $val)
+                    @foreach($LibraryData['LibraryData'] as $key => $val)
                         <div class="inner-about2">
-                            <h4>{{$val->library_name}}</h4>
-                            <p>{{$val->library_desc}}</p>
+                            <h4>{{$val['library_name']}}</h4>
+                            <p>{{$val['library_desc']}}</p>
                             <h5>相关标签</h5>
                             <ul class="about-list">
+                            @foreach($LibraryData['LableData'] as $key => $val)
                                 <li>
-                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>1</li>
-                                <!-- <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>{{$val['lable_name']}}</li>
+                            @endforeach
+                              <!--   <li>
                                     <i class="fa fa-play-circle-o" aria-hidden="true"></i>ebooks</li>
                                 <li>
                                     <i class="fa fa-play-circle-o" aria-hidden="true"></i>Manuscripts</li>
@@ -201,8 +203,8 @@
                                 <li>
                                     <i class="fa fa-play-circle-o" aria-hidden="true"></i>Cartography</li>
                                 <li>
-                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>Journals</li> -->
-
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>Journals</li>
+ -->
                             </ul>
                             <a href="#">进入图书馆</a>
                         </div>
