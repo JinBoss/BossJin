@@ -25,12 +25,12 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a class="cks" href="{:url('index/message')}"
+						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a class="cks" href="{{url('admin/user/add')}}"
 						target="main">添加用户</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
 				<dd>
 					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a class="cks" href="{:url('index/company')}"
+						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a class="cks" href="{{url('admin/user/show')}}"
 						target="main">用户展示</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
 			</dl>
@@ -51,24 +51,6 @@
 						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('user/show')}" target="main"
 						class="cks">图书总汇</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
-				<!-- <dd>
-					<img class="coin11" src="/assets/img/coin111.png" /><img class="coin22"
-						src="/assets/img/coin222.png" /><a href="{:url('user/show')}" target="main"
-						class="cks">用户列表</a><img class="icon5" src="/assets/img/coin21.png" />
-				</dd>
-			</dl>
-			<dl class="system_log">
-				<dt>
-					<img class="icon1" src="/assets/img/coin10.png" /><img class="icon2"
-						src="/assets/img/coin09.png" /> 其他管理<img class="icon3"
-						src="/assets/img/coin19.png" /><img class="icon4"
-						src="/assets/img/coin20.png" />
-				</dt>
-				<dd>
-					<img class="coin11" src="/assets/img/coin111.png" /><img class="coin22"
-						src="/assets/img/coin222.png" /><a class="cks">其他管理</a><img class="icon5"
-						src="/assets/img/coin21.png" />
-				</dd> -->
 			</dl>
 			<dl class="system_log">
 				<dt>
@@ -87,24 +69,6 @@
 						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('index/friend')}" target="main"
 						class="cks">会员展示</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
-				<!-- <dd>
-					<img class="coin11" src="/assets/img/coin111.png" /><img class="coin22"
-						src="/assets/img/coin222.png" /><a href="{:url('user/show')}" target="main"
-						class="cks">用户列表</a><img class="icon5" src="/assets/img/coin21.png" />
-				</dd>
-			</dl>
-			<dl class="system_log">
-				<dt>
-					<img class="icon1" src="/assets/img/coin10.png" /><img class="icon2"
-						src="/assets/img/coin09.png" /> 其他管理<img class="icon3"
-						src="/assets/img/coin19.png" /><img class="icon4"
-						src="/assets/img/coin20.png" />
-				</dt>
-				<dd>
-					<img class="coin11" src="/assets/img/coin111.png" /><img class="coin22"
-						src="/assets/img/coin222.png" /><a class="cks">其他管理</a><img class="icon5"
-						src="/assets/img/coin21.png" />
-				</dd> -->
 			</dl>
 			<dl class="system_log">
 				<dt>
@@ -118,11 +82,6 @@
 						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('content/addcon')}" target="main"
 						class="cks">积分总数</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
-				<!-- <dd>
-					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('content/show')}" target="main"
-						class="cks">文章列表</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
-				</dd> -->
 			</dl>
 			<dl class="system_log">
 				<dt>
@@ -143,11 +102,6 @@
 						src="{{ URL::asset('/back/assets/img/coin19.png') }}" /><img class="icon4"
 						src="{{ URL::asset('/back/assets/img/coin20.png') }}" />
 				</dt>
-				<!-- <dd>
-					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('goods/gadd')}" target="main" class="cks"></a><img class="icon5"
-						src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
-				</dd> -->
 				<dd>
 					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
 						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('goods/show')}" target="main" class="cks">用户押金列表</a><img class="icon5"

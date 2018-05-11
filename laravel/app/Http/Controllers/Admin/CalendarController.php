@@ -17,7 +17,6 @@ class CalendarController extends Controller
      */
     public function index()
     {
-        $data = AdminModel::ce();
         return view('Admin/calendar');
     }
 }

@@ -18,7 +18,7 @@
 			<!-- 会员注册页面样式 -->
 			<div class="banneradd bor">
 				<div class="baTopNo">
-					<span>会员注册</span>
+					<span>添加用户</span>
 				</div>
 				<div class="baBody">
 					<div class="bbD">
@@ -29,7 +29,7 @@
 						id='pwd'	class="input3" />
 					</div>
 					<div class="bbD">
-						用户等级：	<select id="type">
+						用户等级：	<select id="type" class="input3">
 										<option value="1">普通管理</option>
 										<option value="2">超级管理</option>
 									</select>
@@ -58,7 +58,7 @@ $('.input3').blur(function(){
 	{
 		$.ajax({
 			type:"post",
-			url:"{:url('user/vic')}",
+			url:"{{url('/admin/user/check_name') }}",
 			data:{user_name:name},
 			success:function(msg){
 				if(msg.state == 0)
