@@ -5,10 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;  
 use Gregwar\Captcha\CaptchaBuilder;
 use Session;
-use App\Http\Models\Admin\AdminModel;  
 use Illuminate\Support\Facades\Storage;
-// use Illuminate\Http\Request;
-// use App\Http\Requests;
 use Request;
 class BookController extends Controller
 {

@@ -38,8 +38,4 @@ Route::post('admin/add/','Admin\AdminController@add');
 Route::get('admin/login/index','Admin\LoginController@index');
 Route::get('admin/login/','Admin\LoginController@index');
 Route::any('/admin/login/login','Admin\LoginController@login');
-Route::any('/admin/login/checkcode','Admin\LoginController@checkCode');
-Route::get('admin/register/','Admin\RegisterController@index');
-Route::get('admin/calendar/','Admin\CalendarController@index');
-Route::get('admin/calendar/add','Admin\CalendarController@add');
 Route::post('admin/book_add/','Admin\BookController@index');
