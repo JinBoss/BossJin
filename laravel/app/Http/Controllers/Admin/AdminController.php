@@ -37,6 +37,13 @@ class AdminController extends Controller
     {
         return view('Admin/main');
     }
+
+    public function message(){
+        return view('Admin/message');
+    }
+    public function tab(){
+        return view('Admin/tab');
+    }
     public function captcha($tem)
     {
         $builder = new CaptchaBuilder();

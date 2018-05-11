@@ -28,7 +28,8 @@ Route::get('/Home/home/shop', 'Home\HomeController@shop');
 Route::get('/Home/home/footer', 'Home\HomeController@footer');
 Route::get('/Home/home/contact', 'Home\HomeController@contact');
 Route::get('/home/captcha/{tem}', 'Home\HomeController@captcha');
-// Route::post('/home/add/', 'Home\HomeController@add');
+// Route::post('/home/add/', 'Home\HomeController@add');、
+
 Route::get('/admin/left', 'Admin\AdminController@left');
 Route::get('/admin/main', 'Admin\AdminController@main');
 Route::get('/admin/head', 'Admin\AdminController@head');
@@ -38,4 +39,12 @@ Route::post('admin/add/','Admin\AdminController@add');
 Route::get('admin/login/index','Admin\LoginController@index');
 Route::get('admin/login/','Admin\LoginController@index');
 Route::any('/admin/login/login','Admin\LoginController@login');
+<<<<<<< Updated upstream
 Route::post('admin/book_add/','Admin\BookController@index');
+=======
+Route::any('/admin/login/checkcode','Admin\LoginController@checkCode');
+Route::get('admin/register/','Admin\RegisterController@index');
+Route::get('admin/index','Admin\AdminController@index');
+Route::get('admin/message','Admin\AdminController@message');
+Route::get('admin/tab','Admin\AdminController@tab');
+>>>>>>> Stashed changes

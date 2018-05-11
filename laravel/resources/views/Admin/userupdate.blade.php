@@ -3,21 +3,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>头部</title>
-<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/static/css/css.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/assets/css/css.css') }}" />
 </head>
 
 <body>
 	<div id="pageAll">
 		<div class="pageTop">
 			<div class="page">
-				<img src="{{ URL::asset('/back/static/img/coin02.png') }}" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
+				<img src="{{ URL::asset('/back/assets/img/coin02.png') }}" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
 					href="#">公共管理</a>&nbsp;-</span>&nbsp;意见管理
 			</div>
 		</div>
 		<div class="page">
 			<!-- main页面样式 -->
 			<div class="indexL">
-				<img class="indexBn" src="{{ URL::asset('/back/static/img/logBanner.png ') }}" />
+				<img class="indexBn" src="{{ URL::asset('/back/assets/img/logBanner.png ') }}" />
 			</div>
 			<!-- main页面样式end -->
 		</div>

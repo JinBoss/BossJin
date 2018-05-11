@@ -3,9 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>头部-有点</title>
-<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/static/css/public.css') }}" />
-<script type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('/back/static/js/public.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/assets/css/public.css') }}" />
+<script type="text/javascript" src="{{ URL::asset('/back/assets/js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('/back/assets/js/public.js') }}"></script>
 </head>
 
 <body>

@@ -2,15 +2,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>公司管理</title>
-<link href="{{ URL::asset('/back/static/css/styles.css') }}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/static/css/css.css') }}" />
-<script type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.min.js') }}"></script>
-<script language="javascript" type="text/javascript" src="{{ URL::asset('/back/static/js/jquery.js') }}"></script>
-<!-- <script language="javascript" type="text/javascript" src="/static/js/jquery.bstablecrosshair.js"></script> -->
-<link href="{{ URL::asset('/back/static/css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('/back/static/css/bootstrap-fileinput.css') }}" rel="stylesheet">
-<script src="{{ URL::asset('/back/static/js/jquery.min.js') }}"></script>
-<script src="{{ URL::asset('/back/static/js/bootstrap-fileinput.js') }}"></script>
+<link href="{{ URL::asset('/back/assets/css/styles.css') }}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/assets/css/css.css') }}" />
+<script type="text/javascript" src="{{ URL::asset('/back/assets/js/jquery.min.js') }}"></script>
+<script language="javascript" type="text/javascript" src="{{ URL::asset('/back/assets/js/jquery.js') }}"></script>
+<!-- <script language="javascript" type="text/javascript" src="/assets/js/jquery.bstablecrosshair.js"></script> -->
+<link href="{{ URL::asset('/back/assets/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ URL::asset('/back/assets/css/bootstrap-fileinput.css') }}" rel="stylesheet">
+<script src="{{ URL::asset('/back/assets/js/jquery.min.js') }}"></script>
+<script src="{{ URL::asset('/back/assets/js/bootstrap-fileinput.js') }}"></script>
 </head>
 <body>
 <center>
@@ -99,8 +99,8 @@
 		<td><?php echo $val['company_tel']?></td>
 		<td><?php echo $val['company_desc']?></td>
 		<td><a href="{:url('user/update')}"><img class="operation"
-										src="/static/img/update.png"></a> <img class="operation delban"
-									src="/static/img/delete.png" id='{$val.company_id}'></td>
+										src="/assets/img/update.png"></a> <img class="operation delban"
+									src="/assets/img/delete.png" id='{$val.company_id}'></td>
 	</tr>
 	
 </table>
@@ -111,7 +111,7 @@
 	<!-- <div class="banDel">
 		<div class="delete">
 			<div class="close">
-				<a><img src="/static/img/shanchu.png" /></a>
+				<a><img src="/assets/img/shanchu.png" /></a>
 			</div>
 			<p class="delP1">你确定要删除此条记录吗？</p>
 			<p class="delP2">
