@@ -60,7 +60,7 @@ class LoginController extends Controller
             else
             {
                 // 登录信息存入session
-                session('userinfo',$arr[0]);
+                session(['user'=>$arr['0']]);
                 echo '登录成功....';
                 $url = url('/admin/index');
                 header("Refresh:2;url=$url");

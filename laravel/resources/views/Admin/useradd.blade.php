@@ -26,7 +26,7 @@
 						<input type="text" class="input3" id="u_name"  /> <span id="check"></span>
 					<div class="bbD">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password"
-						id='pwd'	class="input3" />
+						id='pwd'	class="input3" /><span id="check1"></span>
 					</div>
 					<div class="bbD">
 						用户等级：	<select id="type" class="input3">
@@ -49,7 +49,9 @@
 </body>
 </html>
 <script>
-$('.input3').blur(function(){
+window.flog=false;
+window.flog1=false;
+$('#u_name').blur(function(){
 	var name = $('#u_name').val();
 	// console.log(name);
 	if(name == '')
@@ -57,31 +59,76 @@ $('.input3').blur(function(){
 	else
 	{
 		$.ajax({
+			// ajax post 方式请求 设置头信息
+			headers: {
+			//   csrf  token 生成
+	        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+	   		},
 			type:"post",
 			url:"{{url('/admin/user/check_name') }}",
-			data:{user_name:name},
+			data:{name:name},
+			dataType:'json',
 			success:function(msg){
-				if(msg.state == 0)
-					$('#check').text(msg.msg).css('color','red');
-				else
+				if(msg.state)
+				{
 					$('#check').text(msg.msg).css('color','green');
-				// console.log(msg)
+					window.flog=true;
+				}
+				else
+					$('#check').text(msg.msg).css('color','red');
 			}
 		})
 	}
 	
 });
+$('#pwd').blur(function(){
+	var name = $('#pwd').val();
+	var ret = /^[a-zA-Z0-9.]{6,16}$/;
+	if(name == '')
+		$('#check1').text('请输入密码').css('color','red');
+	else if(!ret.test(name))
+		$('#check1').text('密码6-16可以数字字母小数点').css('color','red');
+	else
+		window.flog1=true;
+
+});
+$('#u_name').focus(function(){
+	$('#check').empty();
+})
+$('#pwd').focus(function(){
+	$('#check1').empty();
+})
 $('.btn_yes').click(function(){
 	var name = $('#u_name').val();
 	var pwd = $('#pwd').val();
 	var type = $('#type').val();
-	$.ajax({
-		type:"post",
-		url:"{:url('user/add')}",
-		data:{user_name:name,user_pwd:pwd,type:type},
-		success:function(msg){
-			alert(msg.msg)
-		}
-	})
+	$('#u_name').trigger('blur');
+	$('#pwd').trigger('blur');
+	if(window.flog & window.flog1 )
+	{
+		$.ajax({ 
+			// ajax post 方式请求 设置头信息
+			headers: {
+			//   csrf  token 生成
+	        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+	   		},
+			type:"post",
+			async:false,
+			url:"{{url('/admin/user/add_do') }}",
+			data:{au_name:name,au_pwd:pwd,type:type},
+			dataType:'json',
+			success:function(msg){
+				if(msg.state)
+					window.flog=false;
+				alert(msg.msg)
+				
+			}
+		})	
+	}
+	else
+	{
+		return false;
+	}
+	
 });
 </script>

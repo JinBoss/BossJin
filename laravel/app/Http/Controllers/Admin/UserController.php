@@ -23,7 +23,46 @@ class UserController extends Controller
     public function check_name()
     {
         $name = Request::input('name');
-        print_r($name);
+        $data = UserModel::name_check($name);
+        if(empty($data))
+            return json_encode(array('state'=>true,'msg'=>"名称可以使用"));
+        else
+            return json_encode(array('state'=>false,'msg'=>"名称已存在"));
+    }
+    public function add_do()
+    {
+        $post = Request::all();
+        $id = UserModel::add_user($post);
+        if(empty($id))
+            return json_encode(array('state'=>true,'msg'=>"添加成功"));
+        else
+            return json_encode(array('state'=>false,'msg'=>"添加失败"));
+    }
+    public function show()
+    {
+        $data = UserModel::list();
+        // print_r($data);die;
+        return view('Admin/user',['data'=>$data]);
+    }
+    public function del()
+    {
+        $id = Request::input('id');
+        $user = session('user')->au_id;
+        if($id == $user)
+            return json_encode(array('state'=>false,'msg'=>"不能删除自己"));
+        if(UserModel::del($id))
+            return json_encode(array('state'=>true,'msg'=>"删除成功"));
+        else
+            return json_encode(array('state'=>false,'msg'=>"删除失败"));
+
+    }
+    public function update()
+    {
+        $data = Request::all();
+        if(UserModel::up($data))
+            return json_encode(array('state'=>true,'msg'=>"修改成功"));
+        else
+            return json_encode(array('state'=>false,'msg'=>"修改失败"));
     }
 }
 
