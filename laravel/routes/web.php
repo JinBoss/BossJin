@@ -39,12 +39,9 @@ Route::post('admin/add/','Admin\AdminController@add');
 Route::get('admin/login/index','Admin\LoginController@index');
 Route::get('admin/login/','Admin\LoginController@index');
 Route::any('/admin/login/login','Admin\LoginController@login');
-<<<<<<< Updated upstream
 Route::post('admin/book_add/','Admin\BookController@index');
-=======
 Route::any('/admin/login/checkcode','Admin\LoginController@checkCode');
 Route::get('admin/register/','Admin\RegisterController@index');
 Route::get('admin/index','Admin\AdminController@index');
 Route::get('admin/message','Admin\AdminController@message');
 Route::get('admin/tab','Admin\AdminController@tab');
->>>>>>> Stashed changes
