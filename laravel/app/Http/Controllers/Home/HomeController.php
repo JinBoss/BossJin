@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Gregwar\Captcha\CaptchaBuilder;
 use Session;
 use App\Http\Models\Home\HomeModel;  
+use App\Http\Models\Home\LibraryModel;  
 use Illuminate\Support\Facades\Storage;
 // use Illuminate\Http\Request;
 // use App\Http\Requests;
@@ -30,7 +31,9 @@ class HomeController extends Controller
     /**首页*/
     public function index()
     {
-        return view('Home/index');
+        //查询图书馆全部信息
+        $LibraryData = LibraryModel::library_data();
+        return view('Home/index')->with('LibraryData',$LibraryData);
     }
     /**图书馆*/
     public function about()
@@ -51,5 +54,10 @@ class HomeController extends Controller
     public function contact()
     {
         return view("Home/contact");
+    }
+    /**联系我们*/
+    public function prompt()
+    {
+        return view("Home/prompt");
     }
 }

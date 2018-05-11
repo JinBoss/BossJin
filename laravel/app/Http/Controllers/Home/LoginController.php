@@ -21,9 +21,16 @@ class LoginController extends Controller
     	if(request::isMethod('post')){
     		//接收所有提交信息
     		$UserPostData = input::all();
+            //查询用户信息
     		$UserData = LoginModel::login_check($UserPostData);
-    		echo $UserData;
-    		
+            //判断信息是否存在
+            if (!empty($UserData)) {
+                return redirect('home/index');
+            }else{
+                return redirect('Login/login');
+            }	
 		}
     }
+
+
 }

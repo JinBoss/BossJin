@@ -182,29 +182,31 @@
             <div class="container">
                 <!-- about-left-grid -->
                 <div class="col-md-7 about-left-grid">
-                    <div class="inner-about2">
-                        <h4>the splendid Central Library</h4>
-                        <p>Billed as the largest in the world,and the library's collection holds more than 3 million items.</p>
-                        <h5>the library catalogue</h5>
-                        <ul class="about-list">
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>International Collections</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>ebooks</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Manuscripts</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>scientific and Technical Information</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Comic Books</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Cartography</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Journals</li>
+                    @foreach($LibraryData as $key => $val)
+                        <div class="inner-about2">
+                            <h4>{{$val->library_name}}</h4>
+                            <p>{{$val->library_desc}}</p>
+                            <h5>相关标签</h5>
+                            <ul class="about-list">
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>1</li>
+                                <!-- <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>ebooks</li>
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>Manuscripts</li>
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>scientific and Technical Information</li>
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>Comic Books</li>
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>Cartography</li>
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>Journals</li> -->
 
-                        </ul>
-                        <a href="#">view more</a>
-                    </div>
+                            </ul>
+                            <a href="#">进入图书馆</a>
+                        </div>
+                    @endforeach
                     <!-- about left bottom - services -->
                     <div class="principles-grids principles-grids1">
                         <div class="abt-btm agileits w3layouts aos-init aos-animate">
