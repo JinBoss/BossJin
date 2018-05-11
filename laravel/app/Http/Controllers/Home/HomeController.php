@@ -33,6 +33,7 @@ class HomeController extends Controller
     {
         //查询图书馆全部信息
         $LibraryData = LibraryModel::library_data();
+        // print_r($LibraryData);die;
         return view('Home/index')->with('LibraryData',$LibraryData);
     }
     /**图书馆*/
