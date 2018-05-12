@@ -64,7 +64,7 @@
                                 <a href="{{ url('/Home/home/index') }}">首页</a>
                             </li>
                             <li>
-                                <a href="{{ url('/Home/home/about') }}">图书馆</a>
+                                <a href="{{ url('/Home/home/about') }}">关于我们</a>
                             </li>
                             <li class="dropdown">
                                 <a href="{{ url('/Home/home/shop') }}">图书目录</a>
@@ -311,115 +311,118 @@
         </div>
     </div>
     <!--//signin and signup form ends here-->
-     <!-- footer -->
-     <div class="footer-bottom section">
-        <div class="container">
-            <!-- newsletter -->
-            <div class="subscribe-main section-w3layouts text-center">
-                <h4 class="rad-txt">
-                    <span class="abtxt1">keep yourself</span>
-                    <span class="abtext">updated</span>
-                </h4>
-                <h5>subscribe to our newsletter to stay up-to-date with our projects.</h5>
-                <div class="subscribe-form">
-                    <form action="#" method="post" class="subscribe_form">
-                        <div class="email-news">
-                            <input type="email" placeholder="Email" required="">
-                        </div>
-                        <div class="sub-news">
-                            <input type="submit" value="subscribe">
-                        </div>
-                    </form>
-                    <div class="clearfix"> </div>
-                </div>
-                <p>We respect your privacy.No spam ever!</p>
+    <!-- footer -->
+   <div class="footer-bottom section">
+    <div class="container">
+        <!-- newsletter -->
+        <div class="subscribe-main section-w3layouts text-center">
+            <h4 class="rad-txt">
+                <span class="abtxt1">时刻保持</span>
+                <span class="abtext">更新自己</span>
+            </h4>
+            <h5>订阅我们的通讯，以保持最新的项目。</h5>
+            <div class="subscribe-form">
+                <form action="#" method="post" class="subscribe_form">
+                    <div class="email-news">
+                        <input type="email" placeholder="邮箱" required="">
+                    </div>
+                    <div class="sub-news">
+                        <input type="submit" value="订阅">
+                    </div>
+                </form>
+                <div class="clearfix"> </div>
             </div>
-            <!-- //newsletter ends here -->
-            <!-- footer grids-->
-            <div class="footer-cpy">
-                <!-- footer-grid1 -->
-                <div class="col-md-3 col-sm-6 footer-logo">
-                    <h3>
-                        <a href="index.html">Chronicle</a>
-                    </h3>
-                    <h4>about us</h4>
-                    <p>Vallis Molestie Arcu Morbi Dapibus Suscipit Ante Sit Efficitur Eu estie Arcu Mor Anestie Ate Vesti.</p>
-                </div>
-                <!-- //footer-grid1 -->
-                <!-- footer-grid2 -->
-                <div class="col-md-3 col-sm-6 footer-nav text-center">
-                    <h4>navigation</h4>
-                    <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="about.html">About us</a>
-                        </li>
-                        <li>
-                            <a href="shop.html">shop</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">contact us</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //footer-grid2 -->
-                <!-- footer-grid3 -->
-                <div class="col-md-3 col-sm-6 blog-footer">
-                    <h4>latest from blog</h4>
-                    <div class="blog1">
-                        <div class="col-md-3 col-sm-3 col-xs-2 bl1">
-                            <a href="#">
-                                <img src="{{URL::asset('/Home/images/b1.jpg')}}" alt="" class="img-responsive" />
-                            </a>
-                        </div>
-                        <div class="col-md-9 col-sm-9 col-xs-10 bl2">
-                            <a href="#">Dapibus Suscipit Ante Sit by instagram</a>
-                            <p>February 15, 2018</p>
-                        </div>
-                        <div class="clearfix"></div>
+            <p>我们尊重你的隐私。没有垃圾邮件!</p>
+        </div>
+        <!-- //newsletter ends here -->
+        <!-- footer grids-->
+        <div class="footer-cpy">
+            <!-- footer-grid1 -->
+            <div class="col-md-3 col-sm-6 footer-logo">
+                <h3>
+                    <a href="index.html">未来图书馆</a>
+                </h3>
+                <h4>关于我们</h4>
+                <p>希望您加入我们,未来图书馆会给您创造奇迹</p>
+            </div>
+            <!-- //footer-grid1 -->
+            <!-- footer-grid2 -->
+            <div class="col-md-3 col-sm-6 footer-nav text-center">
+                <h4>导航栏</h4>
+                <ul>
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="about.html">关于我们</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">图书目录</a>
+                    </li>
+                    <li>
+                        <a href="footer.html">图书活动</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">联系我们</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- //footer-grid2 -->
+            <!-- footer-grid3 -->
+            <div class="col-md-3 col-sm-6 blog-footer">
+                <h4>最新的书籍</h4>
+                <div class="blog1">
+                    <div class="col-md-3 col-sm-3 col-xs-2 bl1">
+                        <a href="#">
+                            <img src="{{URL::asset('/front/images/b1.jpg')}}" alt="" class="img-responsive" />
+                        </a>
                     </div>
-                    <div class="blog1">
-                        <div class="col-md-3 col-sm-3 col-xs-2 bl1">
-                            <a href="#">
-                                <img src="{{URL::asset('/Home/images/b2.jpg')}}" alt="" class="img-responsive" />
-                            </a>
-                        </div>
-                        <div class="col-md-9 col-sm-9 col-xs-10 bl2">
-                            <a href="#">Dapibus Suscipit Ante Sit by instagram</a>
-                            <p>February 20, 2018</p>
-                        </div>
-                        <div class="clearfix"></div>
+                    <div class="col-md-9 col-sm-9 col-xs-10 bl2">
+                        <a href="#">mysql高效编程</a>
+                        <p>2018年2月15日</p>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
-                <!-- //footer-grid3 -->
+                <div class="blog1">
+                    <div class="col-md-3 col-sm-3 col-xs-2 bl1">
+                        <a href="#">
+                            <img src="{{URL::asset('/front/images/b2.jpg')}}" alt="" class="img-responsive" />
+                        </a>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-10 bl2">
+                        <a href="#">哈弗心理学</a>
+                        <p>2018年2月20日</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- //footer-grid3 -->
                 <!-- footer-grid4 -->
-                <div class="col-md-3 col-sm-6 contact-foot text-right">
-                    <h4>contact us</h4>
-                    <ul>
-                        <li>
-                            <span class="fa fa-home"></span>
-                            1185 Burlington
-                            <br> Canada.
-                        </li>
-                        <li>
-                            <span class="fa fa-phone"></span>
-                            +12 345 678
-                        </li>
-                        <li>
-                            <span class="fa fa-envelope"></span>
-                            <a href="mailto:info@example.com">mail@chronicle.com</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //footer-grid4 -->
+            <div class="col-md-3 col-sm-6 contact-foot text-right">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>
+                        <span class="fa fa-home"></span>
+                        中国传媒大学内
+                        <br> 琳达.
+                    </li>
+                    <li>
+                        <span class="fa fa-phone"></span>
+                        +86 182 3576 1589
+                    </li>
+                    <li>
+                        <span class="fa fa-envelope"></span>
+                        <a href="mailto:info@example.com">2323881993@qq.com</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- //footer-grid4 -->
                 <div class="clearfix"></div>
             </div>
             <!-- //footer-grids -->
             <!-- footer social -->
             <div class="footer-social text-center">
-                <h4>stay connected</h4>
+                <h4>保持联系</h4>
                 <ul>
                     <li>
                         <a href="#">
@@ -449,8 +452,8 @@
     </div>
     <!-- //footer -->
     <div class="cpy-right">
-        <p></p>
-    </div>
+    <p>版权： @ 2018年。最终版权归未来图书馆所有。</p>
+</div>
 <!-- //home -->
     <!-- js -->
     <script src="{{URL::asset('/front/js/jquery-2.2.3.min.js')}}"></script>
