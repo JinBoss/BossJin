@@ -6,15 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="" />
-    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
     <!-- Custom Theme files -->
     <link href="{{URL::asset('/front/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
     <!-- shop css -->
@@ -206,7 +197,7 @@
                                     <i class="fa fa-play-circle-o" aria-hidden="true"></i>Journals</li>
  -->
                             </ul>
-                            <a href="#">进入图书馆</a>
+                            <a href="{{ url('/Home/home/about') }}">进入图书馆</a>
                         </div>
                     @endforeach
                     <!-- about left bottom - services -->
@@ -217,9 +208,9 @@
                                     <div class="icon-holder agileits w3layouts">
                                         <span class="fa fa-book agileits w3layouts service-icon" aria-hidden="true"></span>
                                     </div>
-                                    <h4 class="mission agileits w3layouts">law library</h4>
+                                    <h4 class="mission agileits w3layouts">{{$LibraryData['LibraryData'][0]['library_name']}}</h4>
                                     <div class="description agileits w3layouts">
-                                        <a href="#">Read More</a>
+                                        <a href="{{ url('/Home/home/about') }}">进入</a>
                                     </div>
                                 </div>
                             </div>
@@ -228,9 +219,9 @@
                                     <div class="icon-holder agileits w3layouts">
                                         <span class="fa fa-book agileits w3layouts service-icon" aria-hidden="true"></span>
                                     </div>
-                                    <h4 class="mission agileits w3layouts">asian materials</h4>
+                                    <h4 class="mission agileits w3layouts">全部书籍</h4>
                                     <div class="description agileits w3layouts">
-                                        <a href="#">Read More</a>
+                                        <a href="{{ url('/Home/home/shop') }}">进入</a>
                                     </div>
                                 </div>
                             </div>
@@ -249,29 +240,29 @@
         <!-- //about ends here -->
         <!-- about bottom -->
         <div class="about-bottom section">
+
             <div class="container-fluid">
                 <h4 class="rad-txt">
-                    <span class="abtxt1">wonderful</span>
-                    <span class="abtext"> world of reading</span>
+                    <span class="abtxt1">All</span>
+                    <span class="abtext">全部分类</span>
                 </h4>
                 <!-- about-bottom grid1 -->
                 <div class="col-md-6 about-bottom-right">
-                    <p class="abt-p">Etiam massa quam, efficitur eu ante vestibulum, convallis molestie arcu. Morbi dapibus suscipit ante,
-                        sit efficitur eu ante vestibulum, convallis molestie arcu. Morbi dapibus suscipit an amet pulvinar
-                        risus.
+                    <p class="abt-p">分类信息是WEB 2的衍生物，是新一代互联网应用模式，它让网络变得跟老百姓更普及更贴近生活方便生活。分类信息又称分类广告，我们日常在电视、报刊上所看到的广告，往往是不管你愿不愿意，它都会强加给你，我们称这类广告为被动广告；而人们主动去查询招聘、租房、旅游等方面的信息，对这些信息，我们称它为主动广告。在信息社会逐步发展的今天，被动广告越来越引起人们的反感，而主动广告却受到人们的广泛青睐。几乎每个地方的晚报、日报、生活娱乐报都少不了分类信息的身影，而且办得越好的报纸，分类信息的篇幅往往越大。
                     </p>
+                @foreach($BookTypeData as $val)
                     <div class="col-md-6 col-sm-6 col-xs-6 services-w3ls">
                         <div class="ab1">
                             <div class="col-md-3 col-sm-3 col-xs-3 ab1-icon">
                                 <span class="fa fa-book" aria-hidden="true"></span>
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-9 ab1-text">
-                                <h5>e-books</h5>
-                                <p>loremipsum is a dummy text</p>
+                                <h5>{{$val['type_name']}}</h5>
+                                <p>{{$val['type_desc']}}</p>
                             </div>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="ab1">
+                        <!-- <div class="ab1">
                             <div class="col-md-3 col-sm-3 col-xs-3 ab1-icon">
                                 <span class="fa fa-book" aria-hidden="true"></span>
                             </div>
@@ -342,78 +333,17 @@
                                 <p>loremipsum is a dummy text</p>
                             </div>
                             <div class="clearfix"></div>
-                        </div>
+                         </div> -->
                     </div>
+                @endforeach
                     <div class="clearfix"></div>
                 </div>
                 <!-- //about-bottom grid1 ends here -->
-                <div class="col-md-6 home-about2">
-                <!-- about-bottom grid2 -->
-                <div class="col-md-6 col-sm-6 col-xs-6 bg-right"></div>
-                <!-- //about-bottom grid2 ends here -->
-                <!-- about-bottom grid3 -->
-                <div class="col-md-6 col-sm-6 col-xs-6 w3ls-section  stats">
-                    <div class="stats-aboutinfo services-main">
-                        <div class="agileits_w3layouts-stats-grids text-center">
-                            <div class="stats-icon">
-                                <span class="fa fa-book" aria-hidden="true"></span>
-                            </div>
-                            <div class="stats-right">
-                                <h6>volumes</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='221073' data-delay='.5' data-increment="300">221073</div>
 
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </div>
-                        <div class="agileits_w3layouts-stats-grids text-center">
-                            <div class="stats-icon">
-                                <span class="fa fa-university" aria-hidden="true"></span>
-                            </div>
-                            <div class="stats-right">
-                                <h6>branches</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='780' data-delay='.5' data-increment="50">980</div>
-
-                            </div>
-                            <div class="clearfix"></div>
-
-
-                        </div>
-                        <div class="agileits_w3layouts-stats-grids text-center">
-                            <div class="stats-icon">
-                                <span class="fa fa-laptop" aria-hidden="true"></span>
-                            </div>
-                            <div class="stats-right">
-                                <h6>e-books</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='9800' data-delay='.5' data-increment="50">9800</div>
-
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </div>
-                        <div class="agileits_w3layouts-stats-grids text-center">
-                            <div class="stats-icon">
-                                <span class="fa fa-users" aria-hidden="true"></span>
-                            </div>
-                            <div class="stats-right">
-                                <h6>visitors</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='123623' data-delay='.5' data-increment="300">123623</div>
-
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                <div class="col-md-6 home-about2" style=" width: 650px; height: 750px;">
+                    <canvas id="canvas" width="650" height="750" >cccc</canvas>
                 </div>
-                <div class="clearfix"></div>
-               </div>
-                <!-- //about-bottom grid3 ends here -->
-                <!-- //Numscroller -->
-                <div class="clearfix"></div>
-            </div>
-            <!-- //about container ends here-->
-        </div>
+
         <!--//about bottom ends here-->
         <!-- team -->
         <div id="team" class="team section">
@@ -933,6 +863,62 @@
  ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{URL::asset('/front/js/bootstrap.js')}}"></script>
+    <script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+ctx.strokeStyle = '#00ffff';
+ctx.lineWidth = 17;
+ctx.shadowBlur = 15;
+ctx.shadowColor = '#00ffff'
+
+function degToRad(degree) {
+    var factor = Math.PI / 180;
+    return degree * factor;
+}
+
+function renderTime() {
+    var now = new Date();
+    var today = now.toDateString();
+    var time = now.toLocaleTimeString();
+    var hrs = now.getHours();
+    var min = now.getMinutes();
+    var sec = now.getSeconds();
+    var mil = now.getMilliseconds();
+    var smoothsec = sec + (mil / 1000);
+    var smoothmin = min + (smoothsec / 60);
+
+    //Background
+    gradient = ctx.createRadialGradient(250, 250, 5, 250, 250, 300);
+    gradient.addColorStop(0, "#03303a");
+    gradient.addColorStop(1, "black");
+    ctx.fillStyle = gradient;
+    //ctx.fillStyle = 'rgba(00 ,00 , 00, 1)';
+    ctx.fillRect(0, 0, 500, 500);
+    //Hours
+    ctx.beginPath();
+    ctx.arc(250, 250, 200, degToRad(270), degToRad((hrs * 30) - 90));
+    ctx.stroke();
+    //Minutes
+    ctx.beginPath();
+    ctx.arc(250, 250, 170, degToRad(270), degToRad((smoothmin * 6) - 90));
+    ctx.stroke();
+    //Seconds
+    ctx.beginPath();
+    ctx.arc(250, 250, 140, degToRad(270), degToRad((smoothsec * 6) - 90));
+    ctx.stroke();
+    //Date
+    ctx.font = "25px Helvetica";
+    ctx.fillStyle = 'rgba(00, 255, 255, 1)'
+    ctx.fillText(today, 175, 250);
+    //Time
+    ctx.font = "25px Helvetica Bold";
+    ctx.fillStyle = 'rgba(00, 255, 255, 1)';
+    ctx.fillText(time + ":" + mil, 175, 280);
+
+}
+setInterval(renderTime, 40);
+</script>
 </body>
 
 </html>
