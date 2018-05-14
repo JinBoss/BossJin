@@ -1,18 +1,20 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>管理员管理</title>
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/assets/css/css.css') }}" />
+<link href="{{ URL::asset('/back/assets/css/haiersoft.css') }}" rel="stylesheet" type="text/css" media="screen,print" />
 <script type="text/javascript" src="{{ URL::asset('/back/assets/js/jquery.min.js') }}"></script>
-<!-- <script type="text/javascript" src="/assets/js/page.js" ></script> -->
+<script type="text/javascript" src="{{ URL::asset('/js/app.js') }}" ></script>
 </head>
 
 <body>
 	<div id="pageAll">
 		<div class="pageTop">
 			<div class="page">
-				<img src="{{ URL::asset('/back/assets/img/coin02.png') }}" /><span><a href="{:url('index/index')}">首页</a>&nbsp;-&nbsp;-</span>&nbsp;管理员管理
+				<img src="{{ URL::asset('/back/assets/img/coin02.png') }}" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
+					href="#">用户管理</a>-</span>&nbsp;用户展示
 			</div>
 		</div>
 
@@ -31,6 +33,7 @@
 				<!-- user 表格 显示 -->
 				<div class="conShow">
 					<table border="1" cellspacing="0" cellpadding="0">
+					<thead>
 						<tr>
 							<td width="66px" class="tdColor tdC">序号</td>
 							<td width="400px" class="tdColor">用户名</td>
@@ -38,8 +41,9 @@
 							<td width="630px" class="tdColor">添加时间</td>
 							<td width="130px" class="tdColor">操作</td>
 						</tr>
-
-						@foreach ($data as $v)
+					</thead>
+					<tbody id="_tr">
+						@foreach ($data['data'] as $v)
 								<tr height="40px">
 								<td>{{$v->au_id}}</td>
 								<td class="uname" id="{{$v->au_id}}"><span class="sp">{{$v->au_name}}</span></td>
@@ -55,17 +59,31 @@
 									src="{{ URL::asset('/back/assets/img/delete.png') }}" id='{{$v->au_id}}'></td>
 							</tr>
 						@endforeach
+					</tbody>
 
 
 						
 					</table>
-					<div class="paging">此处是分页</div>
+					<div class="paging">
+						<ul id="PageNum">
+							<li><a href="javascript:;" class="pa" p="1">首页</a></li>	
+							<li><a href="javascript:;" class="pa" p="{{$data['up']}}">上一页</a></li>
+							<!-- <li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#">6</a></li> -->
+							<li><a href="javascript:;" class="pa" p="{{$data['next']}}">下一页</a></li>
+							<li><a href="javascript:;" class="pa" p="{{$data['last']}}">尾页</a></li>
+						</ul>
+				</div>
 				</div>
 				<!-- user 表格 显示 end-->
 			</div>
 			<!-- user页面样式end -->
 		</div>
-
+		
 	</div>
 
 
@@ -85,6 +103,51 @@
 </body>
 
 <script type="text/javascript">
+// ajax分页
+$(document).on('click','.pa',function(){
+	var p = $(this).attr('p');
+	var _this = $(this);
+	$.ajax({
+		// ajax post 方式请求 设置头信息
+			headers: {
+			//   csrf  token 生成
+	        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+	   		},
+  		type:"post",
+			url:"{{url('/admin/user/show')}}",
+			data:{page:p},
+			dataType:"json",
+			success:function(msg){
+				// console.log(msg);
+				data = msg.data;
+				str = '';
+				$.each(data,function(k,v){
+					// console.log(v.au_id)
+					str +='<tr height="40px">\
+								<td>'+v.au_id+'<\/td>\
+								<td class="uname" id="'+v.au_id+'"><span class="sp">'+v.au_name+'<\/span><\/td>\
+								<td>@if ('+v.type+' == 1)\
+							        	超级管理员\
+									@else\
+									    普通管理员\
+									@endif\
+							    <\/td>\
+								<td><\/td>\
+								<td><a href="#"><img class="operation"\
+										src="'+"{{ URL::asset('/back/assets/img/update.png') }}"+'"><\/a> <img class="operation delban"\
+									src="'+"{{ URL::asset('/back/assets/img/delete.png') }}"+'" id="'+v.au_id+'"><\/td>\
+							<\/tr>';
+				})
+				p = '<li><a href="javascript:;" class="pa" p="1">首页<\/a><\/li>\
+				<li><a href="javascript:;" class="pa" p="'+msg.up+'">上一页<\/a><\/li>\
+				<li><a href="javascript:;" class="pa" p="'+msg.next+'">下一页<\/a><\/li>\
+				<li><a href="javascript:;" class="pa" p="'+msg.last+'">尾页<\/a><\/li>'
+				$('#_tr').html(str);
+				$('#PageNum').html(p);
+				// console.log(str);
+			}
+	})
+})
 // 广告弹出框
 $(".delban").click(function(){
 	$(this).attr('class','del')
@@ -137,6 +200,13 @@ $(document).on('click','.sp',function(){
 			_this.empty();
 			_this.html("<span class='sp'>"+name+"</span>");
 			alert('内容没有修改');
+			return false
+		}
+		if(una == '')
+		{
+			_this.empty();
+			_this.html("<span class='sp'>"+name+"</span>");
+			alert('内容不能为空');
 			return false
 		}
 		$.ajax({

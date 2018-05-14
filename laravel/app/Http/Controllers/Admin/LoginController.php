@@ -34,7 +34,7 @@ class LoginController extends Controller
         {
             echo '验证码不正确.....';
             $url = url('/admin/login');
-            header("Refresh:2;url=$url");
+            header("Refresh:2;url=$url");die;
         }
         // 获取登录信息
         $arr = LoginModel::login_check($data);

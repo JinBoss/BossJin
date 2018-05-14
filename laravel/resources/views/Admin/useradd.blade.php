@@ -11,7 +11,7 @@
 		<div class="pageTop">
 			<div class="page">
 				<img src="{{ URL::asset('/back/assets/img/coin02.png') }}" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
-					href="#">公共管理</a>&nbsp;-</span>&nbsp;意见管理
+					href="#">用户管理</a>&nbsp;-</span>&nbsp;添加用户
 			</div>
 		</div>
 		<div class="page ">

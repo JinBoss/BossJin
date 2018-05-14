@@ -50,7 +50,8 @@ Route::get('/admin/tab','Admin\AdminController@tab');
 Route::get('/admin/user/add','Admin\UserController@add');
 Route::post('/admin/user/check_name','Admin\UserController@check_name');
 Route::post('/admin/user/add_do','Admin\UserController@add_do');
-Route::get('/admin/user/show','Admin\UserController@show');
+Route::any('/admin/user/show','Admin\UserController@show');
+Route::post('/admin/user/ajaxP','Admin\UserController@ajaxP');
 Route::post('/admin/user/del','Admin\UserController@del');
 Route::post('/admin/user/update','Admin\UserController@update');
 
