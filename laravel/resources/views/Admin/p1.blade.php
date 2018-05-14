@@ -38,84 +38,56 @@ dt.click(function(){dd.is(":hidden")?_show():_hide();});
 dd.find("a").click(function(){dt.html($(this).html());_hide();});
 $("body").click(function(i){ !$(i.target).parents(".select").first().is(s) ? _hide():"";});})})
 </script>
+<form action="{{ url('/admin/book/book_add')}}" method="post" enctype="multipart/form-data">
 <div class="form_boxC">
 <p>"<span class="f_cB">*</span>"号为必填项目</p>
 <table cellpadding="0" cellspacing="0">
 <tr>
-<th width="100">员工编码 <span class="f_cB">*</span></th>
-<td><div class="txtbox floatL" style="width:100px;"><input name="" type="text" size="5" value="110"></div></td>
+<th width="100">图书名称 <span class="f_cB">*</span></th>
+<td><div class="txtbox floatL" style="width:150px;"><input name="b_name" type="text" size="12" ></div></td>
 </tr>
 <tr>
-<th>员工姓名 <span class="f_cB">*</span></th>
-<td><div class="txtbox floatL" style="width:100px;"><input name="" type="text" size="5" value="张三"></div></td>
+<th width="100">图书作者 <span class="f_cB">*</span></th>
+<td><div class="txtbox floatL" style="width:150px;"><input name="b_auther" type="text" size="12" ></div></td>
 </tr>
 <tr>
-<th>员工岗位 <span class="f_cB">*</span></th>
-<td><!-- selectbox -->
-<div class="selectbox" style="width:230px;">
-<dl class="select">
-<dt>销售员1</dt>
-<dd><ul>
-<li><a href="#">销售A</a></li>
-<li><a href="#">销售B</a></li>
-<li><a href="#">销售C</a></li>
-<li><a href="#">销售D</a></li>
-<li><a href="#">销售E</a></li>
-</ul></dd></dl>
-</div>
-<!-- /selectbox --></td>
+<th width="100">图书封面 <span class="f_cB">*</span></th>
+<td><div class="txtbox floatL" style="width:300px;"><input name="b_img" type="file" size="12" ></div></td>
 </tr>
 <tr>
-<th>性别 <span class="f_cB">*</span></th>
-<td><!-- selectbox -->
-<div class="selectbox" style="width:230px;">
-<dl class="select">
-<dt>请选择</dt>
-<dd><ul>
-<li><a href="#"> 男 </a></li>
-<li><a href="#"> 女 </a></li>
-</ul></dd></dl>
-</div>
-<!-- /selectbox --></td>
+<th>图书介绍</th>
+<td><div class="txtbox"><textarea name="b_desc" cols="32" rows="5"></textarea></div><p class="f_cB pdg_t5"></p></td>
 </tr>
 <tr>
-<th>所属部门 <span class="f_cB">*</span></th>
-<td><!-- selectbox -->
-<div class="selectbox" style="width:230px;">
-<dl class="select">
-<dt>销售部</dt>
-<dd><ul>
-<li><a href="#">选项A</a></li>
-<li><a href="#">选项B</a></li>
-<li><a href="#">选项C</a></li>
-<li><a href="#">选项D</a></li>
-<li><a href="#">选项E</a></li>
-</ul></dd></dl>
-</div>
-<!-- /selectbox --></td>
+<th>添加时间 <span class="f_cB">*</span></th>
+<td><div class="txtbox floatL" style="width:200px;"><input name="adtime" type="date" size="15"></div></td>
 </tr>
 <tr>
-<th>是否启用</th>
-<td><input name="" type="checkbox" value=""></td>
+<th>添加人 <span class="f_cB">*</span></th>
+<td><div class="txtbox floatL" style="width:150px;"><input name="a_id" type="text" size="12"></div></td>
 </tr>
 <tr>
-<th>E-Mail <span class="f_cB">*</span></th>
-<td><div class="txtbox floatL"><input name="" type="text" value="zhangsan@qq.com"></div></td>
+<th>添加数量 <span class="f_cB">*</span></th>
+<td><div class="txtbox floatL" style="width:150px;"><input name="b_num" type="text" size="12"></div></td>
 </tr>
 <tr>
-<th>备注</th>
-<td><div class="txtbox"><textarea name="" cols="25" rows="5"></textarea></div><p class="f_cB pdg_t5">最多500字</p></td>
+<th>是否上架</th>
+<td>
+	<input name="b_shelf" type="radio" value="1">上架
+	<input name="b_shelf" type="radio" value="0">下架
+</td>
 </tr>
 </table>
 </div>
 </div>
 <!-- SubPopup -->
-
+{{csrf_field()}} 
 <div id="BtmBtn">
 <div class="btn_boxB floatR mag_l20"><input name="" type="button" value="取消" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'"></div>
-<div class="btn_box floatR"><input name="" type="button" value="提交" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'"></div>
+<div class="btn_box floatR"><input name="" type="submit" value="提交" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'"></div>
 </div>
 </div>
+</form>
 <!-- /Popup -->
 </body>
 </html>

@@ -3,6 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title></title>
+<style>
+	a{
+		text-decoration: none;
+	}
+</style>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="generator" content="" />
@@ -34,30 +39,57 @@
 </tr>
 <tr>
 <th><input name="" type="radio" value=""></th>
-<th>产品研发类</th>
-<td>简单描述文字简单描述文字简单描述文字简单描述文字简单描述文字</td>
+<th>ID</th>
+<th>图书名称</th>
+<th>图书作者</th>
+<th>图书封面</th>
+<th>图书介绍</th>
+<th>是否最热</th>
+<th>是否最新</th>
+<th>添加人</th>
+<th>上、下架</th>
+<th>图书数量</th>
+<th>可借数量</th>
+<th>操作</th>
 </tr>
-<tr>
-<th width="10"><input name="" type="radio" value=""></th>
-<th>订单研发类</th>
-<td>简单描述文字简单描述文字简单描述文字简单描述文字简单描述文字</td>
-</tr>
-<tr>
-<th><input name="" type="radio" value=""></th>
-<th>国拨研发类</th>
-<td>简单描述文字简单描述文字简单描述文字简单描述文字简单描述文字</td>
-</tr>
-<tr>
-<th width="10"><input name="" type="radio" value=""></th>
-<th>销售与服务订单类</th>
-<td>简单描述文字简单描述文字简单描述文字简单描述文字简单描述文字</td>
-</tr>
+@foreach($res as $v)
 <tr>
 <th><input name="" type="radio" value=""></th>
-<th>运维服务类</th>
-<td>简单描述文字简单描述文字简单描述文字简单描述文字简单描述文字</td>
+<th>{{ $v->b_id}}</th>
+<th>{{ $v->b_name}}</th>
+<th>{{ $v->b_auther}}</th>
+<th><img src="{{ URL::asset($v->b_img)}}" width="100px;"></th>
+<th>{{ $v->b_desc}}</th>
+<th>
+	@if($v->is_hot ==1)
+		是
+	@else
+		否
+	@endif
+</th>
+<th>
+	@if($v->is_new ==1)
+		是
+	@else
+		否
+	@endif
+</th>
+<th>{{ $v->a_id}}</th>
+<th>
+	@if($v->b_shelf ==1)
+		<a href="javascript:;" class="up_shelf" value="{{ $v->b_shelf}}" attr="{{ $v->b_id}}">上架</a>
+	@else
+		<a href="javascript:;" class="up_shelf" value="{{ $v->b_shelf}}" attr="{{ $v->b_id}}">下架</a>
+	@endif
+</th>
+<th>{{ $v->b_num}}</th>
+<th>{{ $v->b_borrow}}</th>
+<th><a href="{{ url('/admin/book/book_del',['b_id'=>$v->b_id])}}">删除</a></th>
 </tr>
+@endforeach
 </table>
+
+{!! $res->links() !!}
 </div>
 </div>
 <!-- SubPopup -->
@@ -70,3 +102,40 @@
 <!-- /Popup -->
 </body>
 </html>
+<script>
+	$(document).on('click','.up_shelf',function(){
+		var up_shelf = $(this).attr('value');
+		var id = $(this).attr('attr');
+		var _this = $(this);
+		var val = '';
+		if(up_shelf == 1){
+			var text = '下架';
+			up_shelf = '0';
+		}else{
+			var text = '上架';
+			up_shelf = '1';
+		}
+		$.ajax({
+			headers: {
+			//   csrf  token 生成
+	        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+	   		},
+			type:'post',
+			url:"{{ url('admin/book/book_up')}}",
+			data:{up_shelf:up_shelf,id:id},
+			dataType:'json',
+			success:function(msg){
+				if(msg.state)
+				{
+					alert(msg.msg)
+					_this.text(text);
+					_this.attr('value',up_shelf);
+				}
+				else
+				{
+					alert(msg.msg)
+				}
+			}
+		});
+	})
+</script>

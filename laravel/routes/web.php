@@ -53,5 +53,8 @@ Route::post('/admin/user/add_do','Admin\UserController@add_do');
 Route::get('/admin/user/show','Admin\UserController@show');
 Route::post('/admin/user/del','Admin\UserController@del');
 Route::post('/admin/user/update','Admin\UserController@update');
-
-
+Route::get('/admin/book/index','Admin\BookController@index');
+Route::get('/admin/book/show','Admin\BookController@show');
+Route::post('/admin/book/book_add','Admin\BookController@book_add');
+Route::get('/admin/book/book_del/{id}','Admin\BookController@book_del');
+Route::post('/admin/book/book_up','Admin\BookController@book_up');

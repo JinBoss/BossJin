@@ -43,12 +43,12 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('user/add')}" target="main"
+						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{{ url('/admin/book/index')}}" target="main"
 						class="cks">添加图书</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
 				<dd>
 					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('user/show')}" target="main"
+						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{{ url('/admin/book/show')}}" target="main"
 						class="cks">图书总汇</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
 			</dl>
