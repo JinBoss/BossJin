@@ -6,15 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="" />
-    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
     <!-- Custom Theme files -->
     <link href="{{URL::asset('/front/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
     <!-- shop css -->
@@ -63,7 +54,7 @@
                                 <a href="{{ url('/Home/home/index') }}">首页</a>
                             </li>
                             <li>
-                                <a href="{{ url('/Home/home/about') }}">图书馆</a>
+                                <a href="{{ url('/Home/home/about') }}">关于我们</a>
                             </li>
                             <li class="dropdown">
                                 <a href="{{ url('/Home/home/shop') }}">图书目录</a>
@@ -206,7 +197,7 @@
                                     <i class="fa fa-play-circle-o" aria-hidden="true"></i>Journals</li>
  -->
                             </ul>
-                            <a href="#">进入图书馆</a>
+                            <a href="{{ url('/Home/home/about') }}">进入图书馆</a>
                         </div>
                     @endforeach
                     <!-- about left bottom - services -->
@@ -217,9 +208,9 @@
                                     <div class="icon-holder agileits w3layouts">
                                         <span class="fa fa-book agileits w3layouts service-icon" aria-hidden="true"></span>
                                     </div>
-                                    <h4 class="mission agileits w3layouts">law library</h4>
+                                    <h4 class="mission agileits w3layouts">{{$LibraryData['LibraryData'][0]['library_name']}}</h4>
                                     <div class="description agileits w3layouts">
-                                        <a href="#">Read More</a>
+                                        <a href="{{ url('/Home/home/about') }}">进入</a>
                                     </div>
                                 </div>
                             </div>
@@ -228,9 +219,9 @@
                                     <div class="icon-holder agileits w3layouts">
                                         <span class="fa fa-book agileits w3layouts service-icon" aria-hidden="true"></span>
                                     </div>
-                                    <h4 class="mission agileits w3layouts">asian materials</h4>
+                                    <h4 class="mission agileits w3layouts">全部书籍</h4>
                                     <div class="description agileits w3layouts">
-                                        <a href="#">Read More</a>
+                                        <a href="{{ url('/Home/home/shop') }}">进入</a>
                                     </div>
                                 </div>
                             </div>
@@ -249,29 +240,29 @@
         <!-- //about ends here -->
         <!-- about bottom -->
         <div class="about-bottom section">
+
             <div class="container-fluid">
                 <h4 class="rad-txt">
-                    <span class="abtxt1">wonderful</span>
-                    <span class="abtext"> world of reading</span>
+                    <span class="abtxt1">All</span>
+                    <span class="abtext">全部分类</span>
                 </h4>
                 <!-- about-bottom grid1 -->
                 <div class="col-md-6 about-bottom-right">
-                    <p class="abt-p">Etiam massa quam, efficitur eu ante vestibulum, convallis molestie arcu. Morbi dapibus suscipit ante,
-                        sit efficitur eu ante vestibulum, convallis molestie arcu. Morbi dapibus suscipit an amet pulvinar
-                        risus.
+                    <p class="abt-p">分类信息是WEB 2的衍生物，是新一代互联网应用模式，它让网络变得跟老百姓更普及更贴近生活方便生活。分类信息又称分类广告，我们日常在电视、报刊上所看到的广告，往往是不管你愿不愿意，它都会强加给你，我们称这类广告为被动广告；而人们主动去查询招聘、租房、旅游等方面的信息，对这些信息，我们称它为主动广告。在信息社会逐步发展的今天，被动广告越来越引起人们的反感，而主动广告却受到人们的广泛青睐。几乎每个地方的晚报、日报、生活娱乐报都少不了分类信息的身影，而且办得越好的报纸，分类信息的篇幅往往越大。
                     </p>
+                @foreach($BookTypeData as $val)
                     <div class="col-md-6 col-sm-6 col-xs-6 services-w3ls">
                         <div class="ab1">
                             <div class="col-md-3 col-sm-3 col-xs-3 ab1-icon">
                                 <span class="fa fa-book" aria-hidden="true"></span>
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-9 ab1-text">
-                                <h5>e-books</h5>
-                                <p>loremipsum is a dummy text</p>
+                                <h5>{{$val['type_name']}}</h5>
+                                <p>{{$val['type_desc']}}</p>
                             </div>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="ab1">
+                        <!-- <div class="ab1">
                             <div class="col-md-3 col-sm-3 col-xs-3 ab1-icon">
                                 <span class="fa fa-book" aria-hidden="true"></span>
                             </div>
@@ -342,78 +333,17 @@
                                 <p>loremipsum is a dummy text</p>
                             </div>
                             <div class="clearfix"></div>
-                        </div>
+                         </div> -->
                     </div>
+                @endforeach
                     <div class="clearfix"></div>
                 </div>
                 <!-- //about-bottom grid1 ends here -->
-                <div class="col-md-6 home-about2">
-                <!-- about-bottom grid2 -->
-                <div class="col-md-6 col-sm-6 col-xs-6 bg-right"></div>
-                <!-- //about-bottom grid2 ends here -->
-                <!-- about-bottom grid3 -->
-                <div class="col-md-6 col-sm-6 col-xs-6 w3ls-section  stats">
-                    <div class="stats-aboutinfo services-main">
-                        <div class="agileits_w3layouts-stats-grids text-center">
-                            <div class="stats-icon">
-                                <span class="fa fa-book" aria-hidden="true"></span>
-                            </div>
-                            <div class="stats-right">
-                                <h6>volumes</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='221073' data-delay='.5' data-increment="300">221073</div>
 
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </div>
-                        <div class="agileits_w3layouts-stats-grids text-center">
-                            <div class="stats-icon">
-                                <span class="fa fa-university" aria-hidden="true"></span>
-                            </div>
-                            <div class="stats-right">
-                                <h6>branches</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='780' data-delay='.5' data-increment="50">980</div>
-
-                            </div>
-                            <div class="clearfix"></div>
-
-
-                        </div>
-                        <div class="agileits_w3layouts-stats-grids text-center">
-                            <div class="stats-icon">
-                                <span class="fa fa-laptop" aria-hidden="true"></span>
-                            </div>
-                            <div class="stats-right">
-                                <h6>e-books</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='9800' data-delay='.5' data-increment="50">9800</div>
-
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </div>
-                        <div class="agileits_w3layouts-stats-grids text-center">
-                            <div class="stats-icon">
-                                <span class="fa fa-users" aria-hidden="true"></span>
-                            </div>
-                            <div class="stats-right">
-                                <h6>visitors</h6>
-                                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='123623' data-delay='.5' data-increment="300">123623</div>
-
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                <div class="col-md-6 home-about2" style=" width: 650px; height: 750px;">
+                    <canvas id="canvas" width="650" height="750" >cccc</canvas>
                 </div>
-                <div class="clearfix"></div>
-               </div>
-                <!-- //about-bottom grid3 ends here -->
-                <!-- //Numscroller -->
-                <div class="clearfix"></div>
-            </div>
-            <!-- //about container ends here-->
-        </div>
+
         <!--//about bottom ends here-->
         <!-- team -->
         <div id="team" class="team section">
@@ -706,147 +636,148 @@
             </div>
         </div>
         <!-- //footer-layouts -->
-        <!-- footer -->
-        <div class="footer-bottom section">
-            <div class="container">
-                <!-- newsletter -->
-                <div class="subscribe-main section-w3layouts text-center">
-                    <h4 class="rad-txt">
-                        <span class="abtxt1">keep yourself</span>
-                        <span class="abtext">updated</span>
-                    </h4>
-                    <h5>subscribe to our newsletter to stay up-to-date with our projects.</h5>
-                    <div class="subscribe-form">
-                        <form action="#" method="post" class="subscribe_form">
-                            <div class="email-news">
-                                <input type="email" placeholder="Email" required="">
-                            </div>
-                            <div class="sub-news">
-                                <input type="submit" value="subscribe">
-                            </div>
-                        </form>
-                        <div class="clearfix"> </div>
+         <div class="footer-bottom section">
+    <div class="container">
+        <!-- newsletter -->
+        <div class="subscribe-main section-w3layouts text-center">
+            <h4 class="rad-txt">
+                <span class="abtxt1">时刻保持</span>
+                <span class="abtext">更新自己</span>
+            </h4>
+            <h5>订阅我们的通讯，以保持最新的项目。</h5>
+            <div class="subscribe-form">
+                <form action="#" method="post" class="subscribe_form">
+                    <div class="email-news">
+                        <input type="email" placeholder="邮箱" required="">
                     </div>
-                    <p>We respect your privacy.No spam ever!</p>
-                </div>
-                <!-- //newsletter ends here -->
-                <!-- footer grids-->
-                <div class="footer-cpy">
-                    <!-- footer-grid1 -->
-                    <div class="col-md-3 col-sm-6 footer-logo">
-                        <h3>
-                            <a href="index.html">Chronicle</a>
-                        </h3>
-                        <h4>about us</h4>
-                        <p>Vallis Molestie Arcu Morbi Dapibus Suscipit Ante Sit Efficitur Eu estie Arcu Mor Anestie Ate Vesti.</p>
+                    <div class="sub-news">
+                        <input type="submit" value="订阅">
                     </div>
-                    <!-- //footer-grid1 -->
-                    <!-- footer-grid2 -->
-                    <div class="col-md-3 col-sm-6 footer-nav text-center">
-                        <h4>navigation</h4>
-                        <ul>
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <a href="about.html">About us</a>
-                            </li>
-                            <li>
-                                <a href="shop.html">shop</a>
-                            </li>
-                            <li>
-                                <a href="contact.html">contact us</a>
-                            </li>
-                        </ul>
+                </form>
+                <div class="clearfix"> </div>
+            </div>
+            <p>我们尊重你的隐私。没有垃圾邮件!</p>
+        </div>
+        <!-- //newsletter ends here -->
+        <!-- footer grids-->
+        <div class="footer-cpy">
+            <!-- footer-grid1 -->
+            <div class="col-md-3 col-sm-6 footer-logo">
+                <h3>
+                    <a href="index.html">未来图书馆</a>
+                </h3>
+                <h4>关于我们</h4>
+                <p>希望您加入我们,未来图书馆会给您创造奇迹</p>
+            </div>
+            <!-- //footer-grid1 -->
+            <!-- footer-grid2 -->
+            <div class="col-md-3 col-sm-6 footer-nav text-center">
+                <h4>导航栏</h4>
+                <ul>
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="about.html">关于我们</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">图书目录</a>
+                    </li>
+                    <li>
+                        <a href="footer.html">图书活动</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">联系我们</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- //footer-grid2 -->
+            <!-- footer-grid3 -->
+            <div class="col-md-3 col-sm-6 blog-footer">
+                <h4>最新的书籍</h4>
+                <div class="blog1">
+                    <div class="col-md-3 col-sm-3 col-xs-2 bl1">
+                        <a href="#">
+                            <img src="{{URL::asset('/front/images/b1.jpg')}}" alt="" class="img-responsive" />
+                        </a>
                     </div>
-                    <!-- //footer-grid2 -->
-                    <!-- footer-grid3 -->
-                    <div class="col-md-3 col-sm-6 blog-footer">
-                        <h4>latest from blog</h4>
-                        <div class="blog1">
-                            <div class="col-md-3 col-sm-3 col-xs-2 bl1">
-                                <a href="#">
-                                    <img src="{{URL::asset('/front/images/b1.jpg')}}" alt="" class="img-responsive" />
-                                </a>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-10 bl2">
-                                <a href="#">Dapibus Suscipit Ante Sit by instagram</a>
-                                <p>February 15, 2018</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="blog1">
-                            <div class="col-md-3 col-sm-3 col-xs-2 bl1">
-                                <a href="#">
-                                    <img src="{{URL::asset('/front/images/b2.jpg')}}" alt="" class="img-responsive" />
-                                </a>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-10 bl2">
-                                <a href="#">Dapibus Suscipit Ante Sit by instagram</a>
-                                <p>February 20, 2018</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
+                    <div class="col-md-9 col-sm-9 col-xs-10 bl2">
+                        <a href="#">mysql高效编程</a>
+                        <p>2018年2月15日</p>
                     </div>
-                    <!-- //footer-grid3 -->
-                    <!-- footer-grid4 -->
-                    <div class="col-md-3 col-sm-6 contact-foot text-right">
-                        <h4>contact us</h4>
-                        <ul>
-                            <li>
-                                <span class="fa fa-home"></span>
-                                1185 Burlington
-                                <br> Canada.
-                            </li>
-                            <li>
-                                <span class="fa fa-phone"></span>
-                                +12 345 678
-                            </li>
-                            <li>
-                                <span class="fa fa-envelope"></span>
-                                <a href="mailto:info@example.com">mail@chronicle.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- //footer-grid4 -->
                     <div class="clearfix"></div>
                 </div>
-                <!-- //footer-grids -->
-                <!-- footer social -->
-                <div class="footer-social text-center">
-                    <h4>stay connected</h4>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <span class="fa fa-facebook icon_facebook"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa fa-twitter icon_twitter"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa fa-dribbble icon_dribbble"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa fa-google-plus icon_g_plus"></span>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="blog1">
+                    <div class="col-md-3 col-sm-3 col-xs-2 bl1">
+                        <a href="#">
+                            <img src="{{URL::asset('/front/images/b2.jpg')}}" alt="" class="img-responsive" />
+                        </a>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-10 bl2">
+                        <a href="#">哈弗心理学</a>
+                        <p>2018年2月20日</p>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <!-- //footer social -->
             </div>
-            <!-- //footer container -->
+            <!-- //footer-grid3 -->
+            <!-- footer-grid4 -->
+            <div class="col-md-3 col-sm-6 contact-foot text-right">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>
+                        <span class="fa fa-home"></span>
+                        中国传媒大学内
+                        <br> 琳达.
+                    </li>
+                    <li>
+                        <span class="fa fa-phone"></span>
+                        +86 182 3576 1589
+                    </li>
+                    <li>
+                        <span class="fa fa-envelope"></span>
+                        <a href="mailto:info@example.com">2323881993@qq.com</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- //footer-grid4 -->
+            <div class="clearfix"></div>
         </div>
-        <!-- //footer -->
-        <div class="cpy-right">
-            <p>Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
-            </p>
+        <!-- //footer-grids -->
+        <!-- footer social -->
+        <div class="footer-social text-center">
+            <h4>保持联系</h4>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="fa fa-facebook icon_facebook"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="fa fa-twitter icon_twitter"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="fa fa-dribbble icon_dribbble"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="fa fa-google-plus icon_g_plus"></span>
+                    </a>
+                </li>
+            </ul>
         </div>
+        <!-- //footer social -->
+    </div>
+    <!-- //footer container -->
+</div>
+<!-- //footer -->
+<div class="cpy-right">
+    <p>版权： @ 2018年。最终版权归未来图书馆所有。</p>
+</div>
     </div>
     <!-- //home -->
     <!-- js -->
@@ -932,6 +863,62 @@
  ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{URL::asset('/front/js/bootstrap.js')}}"></script>
+    <script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+ctx.strokeStyle = '#00ffff';
+ctx.lineWidth = 17;
+ctx.shadowBlur = 15;
+ctx.shadowColor = '#00ffff'
+
+function degToRad(degree) {
+    var factor = Math.PI / 180;
+    return degree * factor;
+}
+
+function renderTime() {
+    var now = new Date();
+    var today = now.toDateString();
+    var time = now.toLocaleTimeString();
+    var hrs = now.getHours();
+    var min = now.getMinutes();
+    var sec = now.getSeconds();
+    var mil = now.getMilliseconds();
+    var smoothsec = sec + (mil / 1000);
+    var smoothmin = min + (smoothsec / 60);
+
+    //Background
+    gradient = ctx.createRadialGradient(250, 250, 5, 250, 250, 300);
+    gradient.addColorStop(0, "#03303a");
+    gradient.addColorStop(1, "black");
+    ctx.fillStyle = gradient;
+    //ctx.fillStyle = 'rgba(00 ,00 , 00, 1)';
+    ctx.fillRect(0, 0, 500, 500);
+    //Hours
+    ctx.beginPath();
+    ctx.arc(250, 250, 200, degToRad(270), degToRad((hrs * 30) - 90));
+    ctx.stroke();
+    //Minutes
+    ctx.beginPath();
+    ctx.arc(250, 250, 170, degToRad(270), degToRad((smoothmin * 6) - 90));
+    ctx.stroke();
+    //Seconds
+    ctx.beginPath();
+    ctx.arc(250, 250, 140, degToRad(270), degToRad((smoothsec * 6) - 90));
+    ctx.stroke();
+    //Date
+    ctx.font = "25px Helvetica";
+    ctx.fillStyle = 'rgba(00, 255, 255, 1)'
+    ctx.fillText(today, 175, 250);
+    //Time
+    ctx.font = "25px Helvetica Bold";
+    ctx.fillStyle = 'rgba(00, 255, 255, 1)';
+    ctx.fillText(time + ":" + mil, 175, 280);
+
+}
+setInterval(renderTime, 40);
+</script>
 </body>
 
 </html>

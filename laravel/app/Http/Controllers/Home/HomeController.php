@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Gregwar\Captcha\CaptchaBuilder;
 use Session;
 use App\Http\Models\Home\HomeModel;  
-use App\Http\Models\Home\LibraryModel;  
+use App\Http\Models\Home\LibraryModel; 
+use App\Http\Models\Home\BookModel;  
 use Illuminate\Support\Facades\Storage;
 // use Illuminate\Http\Request;
 // use App\Http\Requests;
@@ -33,12 +34,9 @@ class HomeController extends Controller
     {
         //查询图书馆全部信息
         $LibraryData = LibraryModel::library_data();
-<<<<<<< HEAD
-        // print_r($LibraryData);die;
-        return view('Home/index')->with('LibraryData',$LibraryData);
-=======
-        return view('Home/index',['LibraryData'=>$LibraryData]);
->>>>>>> b6c74edcbdb9e1fb4798b5539bdb938ab48ff59f
+        //查询书籍的分类信息
+        $BookTypeData = BookModel::type_data();
+        return view('Home/index')->with('LibraryData',$LibraryData)->with('BookTypeData',$BookTypeData);
     }
     /**图书馆*/
     public function about()

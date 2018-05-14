@@ -44,7 +44,7 @@
 
                     <div class="navbar-header page-scroll">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                            <span class="sr-only">Chronicle</span>
+                            <span class="sr-only">未来图书馆</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -165,7 +165,7 @@
             <div class="banner-text-inner">
                 <div class="container">
                     <h2 class="title-inner">
-                        world of reading
+                        阅读的世界
                     </h2>
 
                 </div>
@@ -184,7 +184,7 @@
                             </a>
                         </li>
                         <li class="btn btn2">
-                            <a href="contact.html">contact us</a>
+                            <a href="contact.html">联系我们</a>
                         </li>
                     </ul>
                 </div>
@@ -195,20 +195,20 @@
         <div class="section contact" id="contact">
             <div class="container">
                 <h4 class="rad-txt text-center">
-                    <span class="abtxt1">contact</span>
-                    <span class="abtext">us</span>
+                    <span class="abtxt1">联系</span>
+                    <span class="abtext">我们</span>
                 </h4>
                 <div class="contact-form">
                     <div class="col-md-7">
                         <!-- contact form grid -->
                         <div class="contact-top1">
-                            <h5>send us a note</h5>
+                            <h5>寄给我们一份信息</h5>
                             <form action="#" class="form_w3layouts" method="post">
-                                <input type="text" placeholder="First Name" required="">
-                                <input type="text" placeholder="Last Name" required="">
+                                <input type="text" placeholder="你的名字" required="">
+                                <!-- <input type="text" placeholder="Last Name" required=""> -->
 
-                                <input class="email" type="email" placeholder="Email" required="">
-                                <textarea placeholder="Message" required=""></textarea>
+                                <input class="email" type="email" placeholder="你的邮箱" required="">
+                                <textarea placeholder="你的留言" required=""></textarea>
                                 <input type="submit" value="Submit">
                             </form>
                         </div>
@@ -217,9 +217,9 @@
                     <!-- contact map grid -->
                     <div class="col-md-5 map contact-right">
                         <div class="contact-top1">
-                            <h5>get directions</h5>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555"
-                                allowfullscreen></iframe>
+                            <h5>图书馆位置</h5>
+                            <div id="map" style="width:400px;height:320px;"></div>
+                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555" allowfullscreen></iframe> -->
                         </div>
                     </div>
                     <!--//contact map grid ends here-->
@@ -227,22 +227,22 @@
                 </div>
                 <!-- contact details -->
                 <div class="contact-bottom">
-                    <h6>contact info</h6>
+                    <h6>联系方式</h6>
                     <!-- contact details left -->
                     <div class="col-md-6 col-sm-6">
                         <div class="contact-left">
                             <div class="address">
-                                <h5>Address:</h5>
+                                <h5>地址:</h5>
                                 <p>
-                                    1185 Maria St
-                                    <br> Burlington Canada.</p>
+                                    1954年9月创建
+                                    <br>北京市朝阳区定福庄东街1号中国传媒大学内.</p>
                             </div>
                             <div class="address address-mdl">
-                                <h5>phone:</h5>
+                                <h5>电话:</h5>
                                 <p>
-                                    +1 234 5678</p>
+                                    +86 182 3576 1589 &nbsp;&nbsp;&nbsp;&nbsp; 184 1006 2068</p>
                                 <p>
-                                    +11 222 333</p>
+                                    +86 176 0007 4172 &nbsp;&nbsp;&nbsp;&nbsp; 177 7778 4829</p>
                             </div>
                         </div>
                     </div>
@@ -251,12 +251,12 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="contact-right">
                             <div class="address">
-                                <h5>Email:</h5>
+                                <h5>邮箱:</h5>
                                 <p>
-                                    <a href="mailto:info@example.com">mail@library.com</a>
+                                    <a href="mailto:info@example.com">2323881993@qq.com</a>
                                 </p>
                                 <p>
-                                    <a href="mailto:info@example.com">mail@chronicle.com</a>
+                                    <a href="mailto:info@example.com">1303475079@qq.com</a>
                                 </p>
                             </div>
                             <div class="footer-social address  address-mdl">
@@ -300,22 +300,22 @@
         <!-- newsletter -->
         <div class="subscribe-main section-w3layouts text-center">
             <h4 class="rad-txt">
-                <span class="abtxt1">keep yourself</span>
-                <span class="abtext">updated</span>
+                <span class="abtxt1">时刻保持</span>
+                <span class="abtext">更新自己</span>
             </h4>
-            <h5>subscribe to our newsletter to stay up-to-date with our projects.</h5>
+            <h5>订阅我们的通讯，以保持最新的项目。</h5>
             <div class="subscribe-form">
                 <form action="#" method="post" class="subscribe_form">
                     <div class="email-news">
-                        <input type="email" placeholder="Email" required="">
+                        <input type="email" placeholder="邮箱" required="">
                     </div>
                     <div class="sub-news">
-                        <input type="submit" value="subscribe">
+                        <input type="submit" value="订阅">
                     </div>
                 </form>
                 <div class="clearfix"> </div>
             </div>
-            <p>We respect your privacy.No spam ever!</p>
+            <p>我们尊重你的隐私。没有垃圾邮件!</p>
         </div>
         <!-- //newsletter ends here -->
         <!-- footer grids-->
@@ -323,34 +323,37 @@
             <!-- footer-grid1 -->
             <div class="col-md-3 col-sm-6 footer-logo">
                 <h3>
-                    <a href="index.html">Chronicle</a>
+                    <a href="index.html">未来图书馆</a>
                 </h3>
-                <h4>about us</h4>
-                <p>Vallis Molestie Arcu Morbi Dapibus Suscipit Ante Sit Efficitur Eu estie Arcu Mor Anestie Ate Vesti.</p>
+                <h4>关于我们</h4>
+                <p>希望您加入我们,未来图书馆会给您创造奇迹</p>
             </div>
             <!-- //footer-grid1 -->
             <!-- footer-grid2 -->
             <div class="col-md-3 col-sm-6 footer-nav text-center">
-                <h4>navigation</h4>
+                <h4>导航栏</h4>
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">首页</a>
                     </li>
                     <li>
-                        <a href="about.html">About us</a>
+                        <a href="about.html">关于我们</a>
                     </li>
                     <li>
-                        <a href="shop.html">shop</a>
+                        <a href="shop.html">图书目录</a>
                     </li>
                     <li>
-                        <a href="contact.html">contact us</a>
+                        <a href="footer.html">图书活动</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">联系我们</a>
                     </li>
                 </ul>
             </div>
             <!-- //footer-grid2 -->
             <!-- footer-grid3 -->
             <div class="col-md-3 col-sm-6 blog-footer">
-                <h4>latest from blog</h4>
+                <h4>最新的书籍</h4>
                 <div class="blog1">
                     <div class="col-md-3 col-sm-3 col-xs-2 bl1">
                         <a href="#">
@@ -358,8 +361,8 @@
                         </a>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-10 bl2">
-                        <a href="#">Dapibus Suscipit Ante Sit by instagram</a>
-                        <p>February 15, 2018</p>
+                        <a href="#">mysql高效编程</a>
+                        <p>2018年2月15日</p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -370,8 +373,8 @@
                         </a>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-10 bl2">
-                        <a href="#">Dapibus Suscipit Ante Sit by instagram</a>
-                        <p>February 20, 2018</p>
+                        <a href="#">哈弗心理学</a>
+                        <p>2018年2月20日</p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -379,20 +382,20 @@
             <!-- //footer-grid3 -->
             <!-- footer-grid4 -->
             <div class="col-md-3 col-sm-6 contact-foot text-right">
-                <h4>contact us</h4>
+                <h4>联系我们</h4>
                 <ul>
                     <li>
                         <span class="fa fa-home"></span>
-                        1185 Burlington
-                        <br> Canada.
+                        中国传媒大学内
+                        <br> 琳达.
                     </li>
                     <li>
                         <span class="fa fa-phone"></span>
-                        +12 345 678
+                        +86 182 3576 1589
                     </li>
                     <li>
                         <span class="fa fa-envelope"></span>
-                        <a href="mailto:info@example.com">mail@chronicle.com</a>
+                        <a href="mailto:info@example.com">2323881993@qq.com</a>
                     </li>
                 </ul>
             </div>
@@ -402,7 +405,7 @@
         <!-- //footer-grids -->
         <!-- footer social -->
         <div class="footer-social text-center">
-            <h4>stay connected</h4>
+            <h4>保持联系</h4>
             <ul>
                 <li>
                     <a href="#">
@@ -432,7 +435,7 @@
 </div>
 <!-- //footer -->
 <div class="cpy-right">
-    <p>Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+    <p>版权： @ 2018年。最终版权归未来图书馆所有。</p>
 </div>
 </div>
 <!-- //home -->
@@ -510,6 +513,29 @@
 
         });
     </script>
+    <!--map start-->
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+        function initialize() { 
+        var mp = new BMap.Map('map'); 
+        mp.centerAndZoom(new BMap.Point(116.564168,39.920564),26); 
+        }   
+        function loadScript() { 
+            var script = document.createElement("script"); 
+            script.src = "http://api.map.baidu.com/api?v=2.0&ak=yourAppKey&callback=initialize"; 
+            // 此为v2.0版本及以前版本的引用方式 
+            document.body.appendChild(script); 
+        }   
+        window.onload = loadScript; 
+    </script>
+    <!--map end-->
+
     <script src="{{URL::asset('/front/js/SmoothScroll.min.js')}}"></script>
     <!-- //smooth-scrolling-of-move-up -->
     <!-- Bootstrap core JavaScript

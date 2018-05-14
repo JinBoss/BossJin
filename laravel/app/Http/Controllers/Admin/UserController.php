@@ -40,9 +40,21 @@ class UserController extends Controller
     }
     public function show()
     {
-        $data = UserModel::list();
-        // print_r($data);die;
+        $page = Request::input('page',1);
+
+        $data = UserModel::list_page($page,$offset=5);
+        // print_r($data);die; 
+        if(Request::isMethod('post')){
+         // 要执行的代码
+            return $data;
+        }
         return view('Admin/user',['data'=>$data]);
+    }
+    public function ajaxP()
+    {
+        if($request->isMethod('post')){
+         // 要执行的代码
+        }
     }
     public function del()
     {
@@ -50,7 +62,7 @@ class UserController extends Controller
         $user = session('user')->au_id;
         if($id == $user)
             return json_encode(array('state'=>false,'msg'=>"不能删除自己"));
-        if(UserModel::del($id))
+        else if(UserModel::del($id))
             return json_encode(array('state'=>true,'msg'=>"删除成功"));
         else
             return json_encode(array('state'=>false,'msg'=>"删除失败"));

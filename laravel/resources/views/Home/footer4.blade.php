@@ -329,7 +329,7 @@
             <!-- /footerv4-top -->
         </div>
         <div class="cpy-right">
-            <p>Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+            <p>版权： @ 2018年。最终版权归未来图书馆所有。
             </p>
         </div>
     </div>
