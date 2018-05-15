@@ -99,7 +99,7 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('goods/show')}" target="main" class="cks">用户押金列表</a><img class="icon5"
+						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{{url('/admin/cash')}}" target="main" class="cks">用户押金列表</a><img class="icon5"
 						src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
 			</dl>
