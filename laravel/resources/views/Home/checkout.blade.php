@@ -167,7 +167,7 @@
             <div class="banner-text-inner">
                 <div class="container">
                     <h2 class="title-inner">
-                        world of reading
+                        阅读的世界
                     </h2>
 
                 </div>

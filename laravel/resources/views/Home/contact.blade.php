@@ -209,7 +209,7 @@
 
                                 <input class="email" type="email" placeholder="你的邮箱" required="">
                                 <textarea placeholder="你的留言" required=""></textarea>
-                                <input type="submit" value="Submit">
+                                <input type="submit" value="发送">
                             </form>
                         </div>
                         <!--  //contact form grid ends here -->

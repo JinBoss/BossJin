@@ -156,12 +156,12 @@
                 <div class="container">
                     <p class="b-txt">the</p>
                     <h2 class="title">
-                        Library
+                        图书馆
                     </h2>
                     <ul class="banner-txt">
-                        <li>share.</li>
-                        <li> explore. </li>
-                        <li>amplify.</li>
+                        <li>分享.</li>
+                        <li> 探索. </li>
+                        <li>扩大.</li>
                     </ul>
                 </div>
             </div>
@@ -243,8 +243,13 @@
 
             <div class="container-fluid">
                 <h4 class="rad-txt">
+<<<<<<< Updated upstream
                     <span class="abtxt1">All</span>
                     <span class="abtext">全部分类</span>
+=======
+                    <span class="abtxt1">精彩的</span>
+                    <span class="abtext">阅读的世界</span>
+>>>>>>> Stashed changes
                 </h4>
                 <!-- about-bottom grid1 -->
                 <div class="col-md-6 about-bottom-right">
