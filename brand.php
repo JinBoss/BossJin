@@ -14,7 +14,7 @@
 
     <p> 
 
-    <label>请选择一个文件：</label> 
+    <label>请选择一个文件 ：</label> 
         <input type="file" id="file" /> 
 
         <input type="button" value="读取图像" onclick="readAsDataURL()" /> 

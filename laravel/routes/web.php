@@ -16,7 +16,7 @@ Route::get('/', function () {
 
 Route::get('/admin/', 'Admin\AdminController@index');
 Route::get('/admin/index', 'Admin\AdminController@index');
-Route::get('/admin/captcha/{tem}', 'Admin\AdminController@captcha');
+Route::get('/admin/login/captcha/{tem}', 'Admin\LoginController@captcha');
 Route::get('/', 'Home\HomeController@index');
 Route::get('/user/usershow', 'Home\UserController@UserShow');
 Route::post('/user/userupdate', 'Home\UserController@UserUpdate');
@@ -36,6 +36,7 @@ Route::get('/home/captcha/{tem}', 'Home\HomeController@captcha');
 
 Route::get('/admin/left', 'Admin\AdminController@left');
 Route::get('/admin/main', 'Admin\AdminController@main');
+Route::get('/admin/cash', 'Admin\AdminController@cash');
 Route::get('/admin/head', 'Admin\AdminController@head');
 Route::get('/admin/head2', 'Admin\AdminController@head2');
 Route::post('/home/add/','Home\HomeController@add');
@@ -57,7 +58,12 @@ Route::post('/admin/user/ajaxP','Admin\UserController@ajaxP');
 Route::post('/admin/user/del','Admin\UserController@del');
 Route::post('/admin/user/update','Admin\UserController@update');
 Route::get('/admin/book/index','Admin\BookController@index');
-Route::get('/admin/book/show','Admin\BookController@show');
+Route::any('/admin/book/show','Admin\BookController@show');
 Route::post('/admin/book/book_add','Admin\BookController@book_add');
 Route::get('/admin/book/book_del/{id}','Admin\BookController@book_del');
 Route::post('/admin/book/book_up','Admin\BookController@book_up');
+Route::get('/admin/activity/index/','Admin\ActivityController@index');
+Route::get('/admin/activity/show/','Admin\ActivityController@show');
+Route::post('/admin/activity/activity_add','Admin\ActivityController@activity_add');
+Route::get('/admin/vip/show','Admin\VipController@show');
+Route::get('/admin/vip/del/{tem}','Admin\VipController@del');

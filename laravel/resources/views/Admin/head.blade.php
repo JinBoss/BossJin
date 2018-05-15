@@ -15,7 +15,7 @@
 			<img class="headLogo" src="{{ URL::asset('/back/assets/img/aa.png') }}"/>
 		</div>
 		<div class="headR">
-			<span style="color:#FFF">欢迎：admin</span> <a href="{{url('admin/head2')}}" rel="external">【退出】</a>
+			<span style="color:#FFF">欢迎：{{session('user')->au_name}}</span> <a href="{{url('admin/head2')}}" rel="external">【退出】</a>
 		</div>
 	</div>
 </body>

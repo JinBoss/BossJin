@@ -22,7 +22,13 @@ class BookController extends Controller
     }
 
     public function show(){
-        $res = DB::table('book')->simplePaginate(3);
+        $page = Request::input('page',1);
+        $seach = Request::input('seach','');
+        $res = $this->list_page($page,$seach,$offset=5);
+        if(Request::isMethod('post'))
+        {
+            return view('Admin/book',['res'=>$res,'seach'=>$seach,'page'=>$page]);
+        }
         return view('Admin/p3',['res'=>$res]);
     }
 
@@ -32,7 +38,7 @@ class BookController extends Controller
         $img = $_FILES['b_img'];
         $b_img = $this->getimage($img);
         $b_desc = Request::input('b_desc');
-        $adtime =strtotime(Request::input('adtime'));
+        $adtime = strtotime(Request::input('adtime'));
         $a_id = Request::input('a_id');
         $b_num = Request::input('b_num');
         $b_shelf = Request::input('b_shelf');
@@ -78,6 +84,17 @@ class BookController extends Controller
         }else{
             return json_encode(array('state'=>false,'msg'=>"修改失败"));
         }
+    }
+    public static function list_page($page=1,$where='',$size=5)
+    {
+        $num = DB::select("select count(*) as num from book where b_name like '%$where%'");
+        $last = ceil($num[0]->num/$size);
+        $offset = ($page-1)*$size;
+        $data = DB::select("select * from book where b_name like '%$where%' limit $offset,$size");
+        $up = $page-1<1 ? 1 : $page-1;
+        $next = $page+1>$last ? $last : $page+1;
+        $listdata = array('data'=>$data,'up'=>$up,'next'=>$next,'last'=>$last);
+        return $listdata;
     }
 }
 

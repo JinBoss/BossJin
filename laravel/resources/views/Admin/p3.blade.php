@@ -17,6 +17,7 @@
 <link href="{{ URL::asset('/back/assets/css/print.css') }}" rel="stylesheet" type="text/css"  media="print" />
 <script src="{{ URL::asset('/back/assets/js/jquery-1.10.1.min.js') }}"></script>
 <script src="{{ URL::asset('/back/assets/js/side.js') }}" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/assets/css/css.css') }}" />
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -31,6 +32,10 @@
 <!-- SubPopup -->
 <div id="SubPopup">
 <div class="form_boxD">
+<div class="cfD" style="margin-left:200px;" ">
+<input class="userinput"  type="text" placeholder="输入图书名称" p='1' />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<button class="userbtn" id="seach" >搜索</button>
+</div>
 <table cellpadding="0" cellspacing="0">
 <tr class="ttl">
 <th width="10">&nbsp;</th>
@@ -52,7 +57,8 @@
 <th>可借数量</th>
 <th>操作</th>
 </tr>
-@foreach($res as $v)
+<tbody id="_tr">
+@foreach($res['data'] as $v)
 <tr>
 <th><input name="" type="radio" value=""></th>
 <th>{{ $v->b_id}}</th>
@@ -87,9 +93,18 @@
 <th><a href="{{ url('/admin/book/book_del',['b_id'=>$v->b_id])}}">删除</a></th>
 </tr>
 @endforeach
+<tr>
+	<td colspan="13">
+			<ul id="PageNum">
+				<li><a href="javascript:;" class="pa" p="1">首页</a></li>	
+				<li><a href="javascript:;" class="pa" p="{{$res['up']}}">上一页</a></li>
+				<li><a href="javascript:;" class="pa" p="{{$res['next']}}">下一页</a></li>
+				<li><a href="javascript:;" class="pa" p="{{$res['last']}}">尾页</a></li>
+			</ul>
+	</td>
+</tr>
+</tbody>
 </table>
-
-{!! $res->links() !!}
 </div>
 </div>
 <!-- SubPopup -->
@@ -138,4 +153,24 @@
 			}
 		});
 	})
+	$(document).on('click',".pa,#seach",function(){
+	var seach = $('.userinput').val()
+	var p = $(this).attr('p');
+	var _this = $(this);
+	$.ajax({
+		// ajax post 方式请求 设置头信息
+			headers: {
+			//   csrf  token 生成
+	        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+	   		},
+  		type:"post",
+			url:"{{ url('admin/book/show')}}",
+			data:{page:p,seach:seach},
+			// dataType:"json",
+			success:function(msg){
+				// alert(msg)
+				$('#SubPopup').html(msg);
+			}
+	})
+})
 </script>

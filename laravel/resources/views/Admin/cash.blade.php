@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>友情链接</title>
+<title>用户押金</title>
 <link href="{{ URL::asset('/back/assets/css/styles.css') }}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/assets/css/css.css') }}" />
 <script type="text/javascript" src="{{ URL::asset('/back/assets/js/jquery.min.js') }}"></script>
@@ -11,33 +11,20 @@
 <body>
 <center>
 <div>
-<h2 id="x">友情链接</h2>
+<h2 id="x">用户押金</h2>
 </div>
 
 <table style="border:2px solid #444;border-collapse:collapse; text-align: center;width: 900px;" id="mytable">
 	<tr>
-		<td>友情链接ID</td>
-		<td>友情链接名称</td>
-		<td>友情链接地址</td>
-		<td>友情链接添加时间</td>
-		<td>相关操作</td>
+		<td>用户名称</td>
+		<td>押金钱数</td>
 	</tr>
-	<?php foreach($data as $key=>$val){ ?>
+	@foreach($data as $v)
 	<tr>
-		<td><?php echo $val['friend_id']?></td>
-		<?php if($val['friend_name']){?>
-		<td><?php echo $val['friend_name']?></td>
-		<?php } else {?>
-		<td><img src="<?php echo $val['friend_img']?>" alt="" width="35" height="40"></td>
-		<?php }?>
-		
-		<td><?php echo $val['friend_url']?></td>
-		<td><?php echo date("Y-m-d H:i:s",$val['friend_time'])?></td>
-		<td><a href="{:url('user/update')}"><img class="operation"
-										src="{{ URL::asset('/back/assets/img/update.png') }}"></a> <img class="operation delban"
-									src="{{ URL::asset('/back/assets/img/delete.png') }}" id='{$val.friend_id}'></td>
+		<td>{{ $v->u_name }}</td>
+		<td>{{ $v->c_num }}</td>
 	</tr>
-	<?php } ?>
+	@endforeach
 </table>
 <br />
 <hr />

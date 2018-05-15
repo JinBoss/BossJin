@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!-- <!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -11,36 +11,36 @@
 <link href="{{ URL::asset('/back/assets/css/haiersoft.css') }}" rel="stylesheet" type="text/css" media="screen,print" />
 <link href="{{ URL::asset('/back/assets/css/print.css') }}" rel="stylesheet" type="text/css"  media="print" />
 <script src="{{ URL::asset('/back/assets/js/jquery-1.10.1.min.js') }}"></script>
-<script src="{{ URL::asset('/back/assets/js/side.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('/back/assets/js/side.js') }}" type="text/javascript"></script> -->
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
-</head>
+<!-- </head> -->
 
-<body>
+<!-- <body> -->
 <!-- wrap_left -->
 
 <!-- /wrap_left -->
 
 <!-- picBox -->
-<div class="picBox" onClick="switchSysBar()" id="switchPoint"></div>
+<!-- <div class="picBox" onClick="switchSysBar()" id="switchPoint"></div> -->
 <!-- /picBox -->
 
 
 
 <!-- wrap_right -->
-<div class="wrap_right">
-<header>
+<!-- <div class="wrap_right">
+<header> -->
 <!-- Header -->
 
 <!-- /Header -->
-</header>
+<!-- </header> -->
 
 
 <!-- Contents -->
-<div id="Contents">
+<!-- <div id="Contents">
 <script type="text/javascript">
 $(function(){
 $(".select").each(function(){
@@ -54,9 +54,9 @@ dt.click(function(){dd.is(":hidden")?_show():_hide();});
 dd.find("a").click(function(){dt.html($(this).html());_hide();});
 $("body").click(function(i){ !$(i.target).parents(".select").first().is(s) ? _hide():"";});})})
 </script>
-
+ -->
 <!-- MainForm -->
-<div id="MainForm">
+<!-- <div id="MainForm">
 <div class="form_boxB">
 <h2>2017-11月费用列表</h2>
 <table cellpadding="0" cellspacing="0">
@@ -154,44 +154,44 @@ $("body").click(function(i){ !$(i.target).parents(".select").first().is(s) ? _hi
 </table>
 <p class="msg">共找到47条年度预算记录，当前显示从第1条至第10条</p>
 </div>
-</div>
+</div> -->
 <!-- /MainForm -->
 
 
 <!-- BtmMain -->
-<div id="BtmMain">
-<span class="ttl">全部审批</span>
+<!-- <div id="BtmMain">
+<span class="ttl">全部审批</span> -->
 
 <!-- txtbox -->
-<div class="txtbox floatL mag_r20">
+<!-- <div class="txtbox floatL mag_r20">
 <span class="sttl">审核时间：</span>
 <input name="" type="text" size="8">
-</div>
+</div> -->
 <!-- /txtbox -->
 
 <!-- txtbox -->
-<div class="txtbox floatL mag_r20">
+<!-- <div class="txtbox floatL mag_r20">
 <span class="sttl">审核人：</span>
 <input name="" type="text" size="8">
-</div>
+</div> -->
 <!-- /txtbox -->
 
 <!-- btn_box -->
-<div class="btn_box floatR mag_l20"><input name="" type="button" value="返回列表" onMouseMove="this.className='input_move'" onMouseOut="this.className='input_out'"></div>
+<!-- <div class="btn_box floatR mag_l20"><input name="" type="button" value="返回列表" onMouseMove="this.className='input_move'" onMouseOut="this.className='input_out'"></div> -->
 <!-- /btn_box -->
 
 <!-- btn_box -->
-<div class="btn_box floatR mag_l20"><input name="" type="button" value="驳回" onMouseMove="this.className='input_move'" onMouseOut="this.className='input_out'"></div>
+<!-- <div class="btn_box floatR mag_l20"><input name="" type="button" value="驳回" onMouseMove="this.className='input_move'" onMouseOut="this.className='input_out'"></div> -->
 <!-- /btn_box -->
 
 <!-- btn_box -->
-<div class="btn_box floatR mag_l20"><input name="" type="button" value="通过" onMouseMove="this.className='input_move'" onMouseOut="this.className='input_out'"></div>
+<!-- <div class="btn_box floatR mag_l20"><input name="" type="button" value="通过" onMouseMove="this.className='input_move'" onMouseOut="this.className='input_out'"></div> -->
 <!-- /btn_box -->
-</div>
+<!-- </div> -->
 <!-- /BtmMain -->
 
 <!-- PageNum -->
-<ul id="PageNum">
+<!-- <ul id="PageNum">
 <li><a href="#">首页</a></li>
 <li><a href="#">上一页</a></li>
 <li><a href="#">1</a></li>
@@ -202,18 +202,31 @@ $("body").click(function(i){ !$(i.target).parents(".select").first().is(s) ? _hi
 <li><a href="#">6</a></li>
 <li><a href="#">下一页</a></li>
 <li><a href="#">尾页</a></li>
-</ul>
+</ul> -->
 <!-- /PageNum -->
-</div>
+<!-- </div> -->
 <!-- /Contents -->
 
 <!-- /footer -->
-<footer>
+<!-- <footer>
 <address>2007 Corporation,All Rights</address>
-</footer>
+</footer> -->
 <!-- /footer -->
 
-</div>
+<!-- </div> -->
 <!-- /wrap_right -->
-</body>
+<!-- </body>
 </html>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>首页</title>
+ </head>
+ <body>
+ <center>
+ 	<h1> 欢迎来到未来图书馆</h1>
+ </center>
+ </body>
+ </html>
