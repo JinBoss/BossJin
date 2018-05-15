@@ -32,7 +32,7 @@ class BookController extends Controller
         $img = $_FILES['b_img'];
         $b_img = $this->getimage($img);
         $b_desc = Request::input('b_desc');
-        $adtime =strtotime(Request::input('adtime'));
+        $adtime = strtotime(Request::input('adtime'));
         $a_id = Request::input('a_id');
         $b_num = Request::input('b_num');
         $b_shelf = Request::input('b_shelf');

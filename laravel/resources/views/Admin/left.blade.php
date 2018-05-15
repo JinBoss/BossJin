@@ -61,12 +61,7 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('index/friendadd')}" target="main"
-						class="cks">添加会员</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
-				</dd>
-				<dd>
-					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('index/friend')}" target="main"
+						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{{ url('/admin/vip/show')}}" target="main"
 						class="cks">会员展示</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
 			</dl>
@@ -117,13 +112,13 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a class="cks">活动内容</a><img class="icon5"
-						src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
+						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{{ url('/admin/activity/index')}}" target="main"
+						class="cks">添加活动</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
 				<dd>
 					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{:url('goods/gadd')}" target="main" class="cks">活动展示</a><img class="icon5"
-						src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
+						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{{ url('/admin/activity/show')}}" target="main"
+						class="cks">活动获奖人员</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
 			</dl>
 			<dl class="system_log">
