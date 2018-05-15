@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Models\Admin\UserModel;
 use Request;
 use DB;
-class VipController extends Controller
+class IntegralController extends Controller
 {
     /**
      * 为指定用户显示详情
@@ -19,20 +19,20 @@ class VipController extends Controller
      */
     public function show()
     {
-        $sql = "select * from member inner join `user` on member.u_id = user.u_id";
+        $sql = "select * from integral inner join `user` on integral.u_id = user.u_id";
         $data = DB::select($sql);
         $res = json_decode(json_encode($data),true);
         // print_r($res);die;
-        return view('Admin/vip',['res'=>$res]);
+        return view('Admin/integral',['res'=>$res]);
     }
 
     public function del($id){
         // print_r($id);die;
-        $res = DB::table('member')->where('m_id',"$id")->delete();
+        $res = DB::table('integral')->where('i_id',"$id")->delete();
         if($res){
-            return redirect('/admin/vip/show');
+            return redirect('/admin/integral/show');
         }else{
-            return redirect('/admin/vip/show');
+            return redirect('/admin/integral/show');
         }
     }
 }

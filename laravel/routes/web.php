@@ -65,3 +65,4 @@ Route::get('/admin/activity/show/','Admin\ActivityController@show');
 Route::post('/admin/activity/activity_add','Admin\ActivityController@activity_add');
 Route::get('/admin/vip/show','Admin\VipController@show');
 Route::get('/admin/vip/del/{tem}','Admin\VipController@del');
+Route::get('/admin/integral/show','Admin\IntegralController@show');

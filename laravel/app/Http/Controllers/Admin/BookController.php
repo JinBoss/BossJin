@@ -42,6 +42,7 @@ class BookController extends Controller
         $a_id = Request::input('a_id');
         $b_num = Request::input('b_num');
         $b_shelf = Request::input('b_shelf');
+        // print_r($img);die;
         $sql = "insert into book(b_name,b_auther,b_img,b_desc,adtime,a_id,b_num,b_shelf) values('$b_name','$b_auther','$b_img','$b_desc','$adtime','1','$b_num','$b_shelf')";
         // $res = DB::insert('insert into `book`(b_name,b_auther,b_img,b_desc,adtime,a_id,b_num,b_shelf) values(?,?,?,?,?,?,?,?)',["$b_name","$b_auther","$b_img","$b_desc","$adtime","$a_id","$b_num","$b_shelf"]);
         $res = DB::insert($sql);
