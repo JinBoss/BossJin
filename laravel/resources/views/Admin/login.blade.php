@@ -30,7 +30,7 @@
 						placeholder="输入用户密码" name="u_pwd" /><span></span>
 				</div>
 				<div class="lgD">
-				<?php $url = url('admin/captcha/'); ?>
+				<?php $url = url('admin/login/captcha'); ?>
 					<img class="img1" src="{{ URL::asset('/back/assets/img/logPwd.png') }}" />
 					<input type="text"
 						 name="code" placeholder="请输入验证码" /><span></span>
