@@ -34,7 +34,7 @@
 					<img class="img1" src="{{ URL::asset('/back/assets/img/logPwd.png') }}" />
 					<input type="text"
 						 name="code" placeholder="请输入验证码" /><span></span>
-						<img style="margin-right:1px;" class="" src="{{ url('admin/captcha/1') }}" onclick="this.src='{{ $url }}/'+Math.random()" />
+						<img style="margin-right:1px;" class="" src="{{ url('admin/login/captcha/1') }}" onclick="this.src='{{ $url }}/'+Math.random()" />
 				</div>
 				<div class="logC">
 					<a href="#" target="_self"><button type="submit">登 录</button></a>

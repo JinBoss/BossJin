@@ -68,5 +68,15 @@ class LoginController extends Controller
             }
         }
     }
+    // 验证码
+    public function captcha($tem)
+    {
+        $builder = new CaptchaBuilder();
+        $builder->build(150,32);
+        $phrase = $builder->getPhrase();
+        Session::flash('code', $phrase); 
+        ob_clean();
+        return response($builder->output())->header('Content-type','image/jpeg');
+    }
 }
 

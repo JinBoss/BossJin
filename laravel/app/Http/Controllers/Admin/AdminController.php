@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;  
+use App\Http\Controllers\Admin\CommentController;  
 use Gregwar\Captcha\CaptchaBuilder;
 use Session;
 use App\Http\Models\Admin\AdminModel;  
 use Illuminate\Support\Facades\Storage;
 use Request;
-class AdminController extends Controller
+use DB;
+class AdminController extends CommentController
 {
     /**
      * 为指定用户显示详情
@@ -16,9 +17,13 @@ class AdminController extends Controller
      * @param int $id
      * @return Response
      */
+    public function __construct()
+    {
+        parent::__construct();
+    }
     public function index()
     {
-        $data = AdminModel::ce();
+        // var_dump(session('user'));die;
         return view('Admin/index');
     }
     public function left()
@@ -44,19 +49,10 @@ class AdminController extends Controller
     public function tab(){
         return view('Admin/tab');
     }
-    public function captcha($tem)
+    public function cash()
     {
-        $builder = new CaptchaBuilder();
-        $builder->build(150,32);
-        $phrase = $builder->getPhrase();
-        Session::flash('code', $phrase); 
-        ob_clean();
-        return response($builder->output())->header('Content-type','image/jpeg');
-    }
-     public function add()
-    {
-        $data =  Request::file('img');
-        var_dump($data);
+        $data = DB::select('select `u_name`,`c_num` from `user`,`cash` WHERE user.u_id = cash.u_id ');
+        return view('Admin/cash',['data'=>$data]);
     }
 }
 

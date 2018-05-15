@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!-- <!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,18 +12,18 @@
 <link href="{{ URL::asset('/back/assets/css/print.css') }}" rel="stylesheet" type="text/css"  media="print" />
 <script src="{{ URL::asset('/back/assets/js/jquery-1.10.1.min.js') }}"></script>
 <script src="{{ URL::asset('/back/assets/js/side.js') }}" type="text/javascript"></script>
-
+ -->
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
-</head>
+<!-- </head> -->
 
-<body>
-
+<!-- <body>
+ -->
 
 <!-- MainForm -->
-<div id="MainForm">
+<!-- <div id="MainForm">
 <div class="form_boxA">
 <h2>年度预算列表</h2>
 <table cellpadding="0" cellspacing="0">
@@ -151,8 +151,18 @@
 </table>
 <p class="msg">共找到47条年度预算记录，当前显示从第1条至第10条</p>
 </div>
-</div>
+</div> -->
 <!-- /MainForm -->
-
+<!-- 
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+</head>
+<body>
+	<h1>欢迎来到未来图书馆</h1>
 </body>
 </html>
