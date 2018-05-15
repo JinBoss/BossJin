@@ -110,9 +110,9 @@
 <!-- SubPopup -->
 
 <div id="BtmBtn">
-<div class="btn_box floatR mag_l20"><input name="" type="button" value="下一步" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'"></div>
+<!-- <div class="btn_box floatR mag_l20"><input name="" type="button" value="下一步" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'"></div>
 <div class="btn_boxB floatR"><input name="" type="button" value="取消" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'"></div>
-</div>
+</div> -->
 </div>
 <!-- /Popup -->
 </body>
