@@ -21,8 +21,10 @@ class LoginModel extends Model
     	$user_pwd  = substr($pwd,0,-8);
     	//查询用户信息
     	$user = DB::table('user')->where('u_name',$UserPostData['username'])->where('u_pwd',$user_pwd)->first();
+        //对象转化为数组
+        $UserData = json_decode(json_encode($user), true);
     	//用户信息存入SESSION中
-    	Session::put('UserData', $user);
-    	return $user;
+    	Session::put('UserData', $UserData);
+    	return $UserData;
     }
 }
