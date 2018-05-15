@@ -8,11 +8,6 @@ use Session;
 
 class LibraryModel extends Model
 {
-    //对象转数组
-   public function objectToArray($object) {
-        //先编码成json字符串，再解码成数组
-        
-    }
     /**
      * 查询图书馆信息
      * @param null

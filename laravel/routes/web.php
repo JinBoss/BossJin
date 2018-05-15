@@ -18,6 +18,9 @@ Route::get('/admin/', 'Admin\AdminController@index');
 Route::get('/admin/index', 'Admin\AdminController@index');
 Route::get('/admin/captcha/{tem}', 'Admin\AdminController@captcha');
 Route::get('/', 'Home\HomeController@index');
+Route::get('/user/usershow', 'Home\UserController@UserShow');
+Route::post('/user/userupdate', 'Home\UserController@UserUpdate');
+Route::post('/Home/login/LoginCheck', 'Home\LoginController@LoginCheck');
 Route::get('/home/', 'Home\HomeController@index');
 Route::get('/login/', 'Home\LoginController@login');
 Route::get('/home/index', 'Home\HomeController@index');
@@ -29,7 +32,6 @@ Route::get('/Home/home/about', 'Home\HomeController@about');
 Route::get('/Home/home/shop', 'Home\HomeController@shop');
 Route::get('/Home/home/footer', 'Home\HomeController@footer');
 Route::get('/Home/home/contact', 'Home\HomeController@contact');
-Route::get('/Home/home/prompt', 'Home\HomeController@prompt');
 Route::get('/home/captcha/{tem}', 'Home\HomeController@captcha');
 
 Route::get('/admin/left', 'Admin\AdminController@left');

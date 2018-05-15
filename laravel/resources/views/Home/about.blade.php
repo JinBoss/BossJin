@@ -117,6 +117,7 @@
                                 <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                             </li>
                             <li>
+                                
                                 <a href="login.html" title="我的资料">
                                     <span class="fa fa-user nav-icon" aria-hidden="true"></span>
                                 </a>
@@ -199,29 +200,33 @@
             <div class="container">
                 <!-- about-left-grid -->
                 <div class="col-md-7 about-left-grid">
-                    <div class="inner-about2">
-                        <h4>the splendid Central Library</h4>
-                        <p>Billed as the largest in the world,and the library's collection holds more than 3 million items.</p>
-                        <h5>the library catalogue</h5>
-                        <ul class="about-list">
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>International Collections</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>ebooks</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Manuscripts</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>scientific and Technical Information</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Comic Books</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Cartography</li>
-                            <li>
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Journals</li>
-
-                        </ul>
-                        <a href="#">view more</a>
-                    </div>
+                    @foreach($LibraryData['LibraryData'] as $key => $val)
+                        <div class="inner-about2">
+                            <h4>{{$val['library_name']}}</h4>
+                            <p>{{$val['library_desc']}}</p>
+                            <h5>相关标签</h5>
+                            <ul class="about-list">
+                            @foreach($LibraryData['LableData'] as $key => $val)
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>{{$val['lable_name']}}</li>
+                            @endforeach
+                              <!--   <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>ebooks</li>
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>Manuscripts</li>
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>scientific and Technical Information</li>
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>Comic Books</li>
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>Cartography</li>
+                                <li>
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>Journals</li>
+ -->
+                            </ul>
+                            <a href="{{ url('/Home/home/about') }}">进入图书馆</a>
+                        </div>
+                    @endforeach
                     <!-- about left bottom - services -->
                     <div class="principles-grids principles-grids1">
                         <div class="abt-btm agileits w3layouts aos-init aos-animate">
@@ -230,9 +235,9 @@
                                     <div class="icon-holder agileits w3layouts">
                                         <span class="fa fa-book agileits w3layouts service-icon" aria-hidden="true"></span>
                                     </div>
-                                    <h4 class="mission agileits w3layouts">law library</h4>
+                                    <h4 class="mission agileits w3layouts">{{$LibraryData['LibraryData'][0]['library_name']}}</h4>
                                     <div class="description agileits w3layouts">
-                                        <a href="#">Read More</a>
+                                        <a href="{{ url('/Home/home/about') }}">进入</a>
                                     </div>
                                 </div>
                             </div>
@@ -241,9 +246,9 @@
                                     <div class="icon-holder agileits w3layouts">
                                         <span class="fa fa-book agileits w3layouts service-icon" aria-hidden="true"></span>
                                     </div>
-                                    <h4 class="mission agileits w3layouts">asian materials</h4>
+                                    <h4 class="mission agileits w3layouts">全部书籍</h4>
                                     <div class="description agileits w3layouts">
-                                        <a href="#">Read More</a>
+                                        <a href="{{ url('/Home/home/shop') }}">进入</a>
                                     </div>
                                 </div>
                             </div>
