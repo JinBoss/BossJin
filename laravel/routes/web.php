@@ -20,6 +20,7 @@ Route::get('/admin/login/captcha/{tem}', 'Admin\LoginController@captcha');
 Route::get('/', 'Home\HomeController@index');
 Route::get('/user/usershow', 'Home\UserController@UserShow');
 Route::post('/user/userupdate', 'Home\UserController@UserUpdate');
+Route::get('/user/userout', 'Home\UserController@UserOut');
 Route::post('/Home/login/LoginCheck', 'Home\LoginController@LoginCheck');
 Route::get('/home/', 'Home\HomeController@index');
 Route::get('/login/', 'Home\LoginController@login');

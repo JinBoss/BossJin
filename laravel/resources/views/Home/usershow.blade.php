@@ -31,15 +31,17 @@
 						<li>你的电话：{{ session('UserData')['u_tel'] }}</li>
 					@endif
 					@if(session('UserData')['u_tel'] == "")
-						<li>你的邮箱：<input type="text" placeholder="请写上您的邮箱" name="u_email"></li>
+						<li>你的邮箱：<input type="email" placeholder="请写上您的邮箱" name="u_email"></li>
 					@else
 						<li>你的邮箱：{{ session('UserData')['u_email'] }}</li>
 					@endif
 				</ul>
 			</div>
-			<input type="submit" value="修改我的资料">
+			<input type="hidden" name="u_id" value="{{ session('UserData')['u_id'] }}">
+			<button type="submit" value="修改我的资料" id="submit">修改我的资料</button>
 		</div>
 		</form>
+		<a href="{{ url('/user/userout') }}"><button>退出当前用户</button></a>
 	</center>
 </body>
 <script type="text/javascript">  
@@ -55,5 +57,19 @@
             fr.readAsDataURL(file);  
         }  
     }  
+    submit.onclick=function(){
+    	var submit = document.getElementById("submit");
+    	//获取电话
+    	var u_tel = document.getElementsByName("u_tel")[0].value;
+    	//获取邮箱
+    	var u_email = document.getElementsByName("u_email")[0].value;
+    	// var u_email = document.getElementsByName("u_email").val();
+    	if (u_tel=="" || u_email=="") {
+    		alert("请完整您的个人资料")
+			return false;
+    	}else{
+    		return true;
+    	}
+    }
 </script>  
 </html>
