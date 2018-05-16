@@ -46,7 +46,7 @@ class UserController extends Controller
             }else{
                 echo '修改失败....';
                 $url = url('/user/usershow');
-                header("Refresh:2;url=$url");
+                header("Refresh:2;url=$url");   
             }
         }
     }

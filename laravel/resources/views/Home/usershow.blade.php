@@ -41,6 +41,7 @@
 			<button type="submit" value="修改我的资料" id="submit">修改我的资料</button>
 		</div>
 		</form>
+		<a href="{{ url('/home') }}"><button>进入首页</button></a>
 		<a href="{{ url('/user/userout') }}"><button>退出当前用户</button></a>
 	</center>
 </body>

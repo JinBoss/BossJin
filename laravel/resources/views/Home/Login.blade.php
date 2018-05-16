@@ -113,9 +113,12 @@
                                 <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                             </li>
                             <li>
-                                <a href="login.html" title="我的资料">
-                                    <span class="fa fa-user nav-icon" aria-hidden="true"></span>
-                                </a>
+                                @if(session('UserData') != "")
+                                <a href="{{ url('/user/usershow') }}?id={{session('UserData')['u_id']}}" title="我的资料"><img src="{{URL::asset(session('UserData')['u_img'])}}" width="30" height="30"></a>
+                                @else
+                                    <a href="{{ url('/login/') }}" title="去登录"><span class="fa fa-user nav-icon" aria-hidden="true"></span></a>
+                                @endif
+                                    <!-- <img src="{{URL::asset(session('UserData')['u_img'])}}" width="30" height="30"> -->
                             </li>
 
                         </ul>
