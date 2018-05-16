@@ -42,6 +42,7 @@ class BookController extends Controller
         $a_id = Request::input('a_id');
         $b_num = Request::input('b_num');
         $b_shelf = Request::input('b_shelf');
+        // print_r($img);die;
         $sql = "insert into book(b_name,b_auther,b_img,b_desc,adtime,a_id,b_num,b_shelf) values('$b_name','$b_auther','$b_img','$b_desc','$adtime','1','$b_num','$b_shelf')";
         // $res = DB::insert('insert into `book`(b_name,b_auther,b_img,b_desc,adtime,a_id,b_num,b_shelf) values(?,?,?,?,?,?,?,?)',["$b_name","$b_auther","$b_img","$b_desc","$adtime","$a_id","$b_num","$b_shelf"]);
         $res = DB::insert($sql);
@@ -90,7 +91,7 @@ class BookController extends Controller
         $num = DB::select("select count(*) as num from book where b_name like '%$where%'");
         $last = ceil($num[0]->num/$size);
         $offset = ($page-1)*$size;
-        $data = DB::select("select * from book where b_name like '%$where%' limit $offset,$size");
+        $data = DB::select("select * from book where b_name like '%$where%' order by b_borrow desc limit $offset,$size");
         $up = $page-1<1 ? 1 : $page-1;
         $next = $page+1>$last ? $last : $page+1;
         $listdata = array('data'=>$data,'up'=>$up,'next'=>$next,'last'=>$last);

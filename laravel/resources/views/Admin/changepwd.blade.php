@@ -3,14 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>修改密码</title>
-<link rel="stylesheet" type="text/css" href="/static/css/css.css" />
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/back/assets/css/css.css') }}" />
+<script type="text/javascript" src="{{ URL::asset('/back/assets/js/jquery.min.js') }}"></script>
 </head>
 <body>
 	<div id="pageAll">
 		<div class="pageTop">
 			<div class="page">
-				<img src="/static/img/coin02.png" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
+				<img src="{{ URL::asset('/back/assets/img/coin02.png') }}" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
 					href="#">公共管理</a>&nbsp;-</span>&nbsp;修改密码
 			</div>
 		</div>
@@ -18,26 +18,26 @@
 			<!-- 修改密码页面样式 -->
 			<div class="bacen">
 				<div class="bbD">
-					&nbsp;&nbsp;&nbsp;&nbsp;管理员UID：&nbsp;&nbsp;&nbsp;&nbsp;{$data['user_id']}</div>
-				<div class="bbD">管理员用户名：&nbsp;&nbsp;&nbsp;&nbsp;{$data['user_name']}</div>
+					&nbsp;&nbsp;&nbsp;&nbsp;管理员UID：&nbsp;&nbsp;&nbsp;&nbsp;{{session('user')->au_id}}</div>
+				<div class="bbD">管理员用户名：&nbsp;&nbsp;&nbsp;&nbsp;{{session('user')->au_name}}</div>
 				<div class="bbD">
 					&nbsp;&nbsp;&nbsp;&nbsp;输入旧密码：<input type="password" class="input3"
 						onblur="checkpwd1()" id="pwd1" placeholder="密码六至十二位" /> <img class="imga"
-						src="/static/img/ok.png" /><img class="imgb" src="/static/img/no.png" />
+						src="{{ URL::asset('/back/assets/img/ok.png') }}" /><img class="imgb" src="{{ URL::asset('/back/assets/img/no.png') }}" />
 				</div>
 				<div class="bbD">
 					&nbsp;&nbsp;&nbsp;&nbsp;输入新密码：<input type="password" class="input3"
 						onblur="checkpwd2()" id="pwd2"   placeholder="密码六至十二位" /> <img class="imga"
-						src="/static/img/ok.png" /><img class="imgb" src="/static/img/no.png" />
+						src="{{ URL::asset('/back/assets/img/ok.png') }}" /><img class="imgb" src="{{ URL::asset('/back/assets/img/no.png') }}" />
 				</div>
 				<div class="bbD">
 					再次确认密码：<input type="password" class="input3" onblur="checkpwd3()"
-						id="pwd3"  placeholder="密码六至十二位" /> <img class="imga" src="/static/img/ok.png" /><img
-						class="imgb" src="/static/img/no.png" />
+						id="pwd3"  placeholder="密码六至十二位" /> <img class="imga" src="{{ URL::asset('/back/assets/img/ok.png') }}" /><img
+						class="imgb" src="{{ URL::asset('/back/assets/img/no.png') }}" />
 				</div>
 				<div class="bbD">
 					<p class="bbDP">
-						<button class="btn_ok btn_yes" u_id="{$data['user_id']}">提交</button>
+						<button class="btn_ok btn_yes" u_id="{{session('user')->au_id}}">提交</button>
 						<a class="btn_ok btn_no" href="#">取消</a>
 					</p>
 				</div>
@@ -101,8 +101,12 @@ $('.btn_yes').click(function(){
 	if(checkpwd1() & checkpwd2() & checkpwd3())
 	{
 		$.ajax({
+			headers: {
+			//   csrf  token 生成
+	        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+	   		},
 			type:'post',
-			url:"{:url('/index/user/uppwd')}",
+			url:"{{ url('/admin/user/update_pwd')}}",
 			data:{id:id,pwdy:pwdy,pwdn:pwdn,pwdv:pwdv},
 			dataType:'json',
 			success:function(msg)

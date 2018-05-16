@@ -32,15 +32,14 @@
 <!-- SubPopup -->
 <div id="SubPopup">
 <div class="form_boxD">
-<div class="cfD" style="margin-left:200px;" ">
+<div class="cfD" style="margin-left:300px;" ">
 <input class="userinput"  type="text" placeholder="输入图书名称" p='1' />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<button class="userbtn" id="seach" >搜索</button>
 </div>
 <table cellpadding="0" cellspacing="0">
 <tr class="ttl">
 <th width="10">&nbsp;</th>
-<th><strong>项目类别</strong></th>
-<th><strong>描述</strong></th>
+
 </tr>
 <tr>
 <th><input name="" type="radio" value=""></th>
@@ -65,7 +64,7 @@
 <th>{{ $v->b_name}}</th>
 <th>{{ $v->b_auther}}</th>
 <th><img src="{{ URL::asset($v->b_img)}}" width="100px;"></th>
-<th>{{ $v->b_desc}}</th>
+<th style="width: 500px;">{{ $v->b_desc}}</th>
 <th>
 	@if($v->is_hot ==1)
 		是
@@ -110,9 +109,9 @@
 <!-- SubPopup -->
 
 <div id="BtmBtn">
-<div class="btn_box floatR mag_l20"><input name="" type="button" value="下一步" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'"></div>
+<!-- <div class="btn_box floatR mag_l20"><input name="" type="button" value="下一步" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'"></div>
 <div class="btn_boxB floatR"><input name="" type="button" value="取消" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'"></div>
-</div>
+</div> -->
 </div>
 <!-- /Popup -->
 </body>
