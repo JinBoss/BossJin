@@ -1,17 +1,12 @@
 <div class="form_boxD">
-<<<<<<< HEAD
-<div class="cfD" style="margin-left:200px;">
-=======
-<div class="cfD" style="margin-left:200px;" >
->>>>>>> 5e06db9de840820db5b65861a12c694d53b1a70f
+<div class="cfD" style="margin-left:300px;" >
 <input class="userinput"  type="text" placeholder="输入图书名称" p="{{$page}}" value="{{$seach}}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<button class="userbtn" id="seach" >搜索</button>
 </div>
 <table cellpadding="0" cellspacing="0">
 <tr class="ttl">
 <th width="10">&nbsp;</th>
-<th><strong>项目类别</strong></th>
-<th><strong>描述</strong></th>
+
 </tr>
 <tr>
 <th><input name="" type="radio" value=""></th>
@@ -35,7 +30,7 @@
 <th>{{ $v->b_name}}</th>
 <th>{{ $v->b_auther}}</th>
 <th><img src="{{ URL::asset($v->b_img)}}" width="100px;"></th>
-<th>{{ $v->b_desc}}</th>
+<th style="width: 500px;">{{ $v->b_desc}}</th>
 <th>
 	@if($v->is_hot ==1)
 		是
