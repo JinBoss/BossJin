@@ -165,7 +165,7 @@
             <div class="banner-text-inner">
                 <div class="container">
                     <h2 class="title-inner">
-                        world of reading
+                        阅读的世界
                     </h2>
 
                 </div>
@@ -184,7 +184,7 @@
                             </a>
                         </li>
                         <li class="btn btn2">
-                            <a href="login.html">sign in & sign up</a>
+                            <a href="{{ url('/login') }}">注册并登陆</a>
                         </li>
                     </ul>
                 </div>
@@ -195,8 +195,8 @@
         <div class="login-form section text-center">
             <div class="container">
                 <h4 class="rad-txt">
-                    <span class="abtxt1">Sign in</span>
-                    <span class="abtext">sign up</span>
+                    <span class="abtxt1">登录</span>
+                    <span class="abtext">注册</span>
                 </h4>
                 <div id="loginbox" style="margin-top:30px;" class="mainbox  loginbox">
                     <div class="panel panel-info">
@@ -214,14 +214,14 @@
                                     <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-user"></i>
                                     </span>
-                                    <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email" required="">
+                                    <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="用户名" required="">
                                 </div>
 
                                 <div style="margin-bottom: 25px" class="input-group">
                                     <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-lock"></i>
                                     </span>
-                                    <input id="login-password" type="password" class="form-control" name="password" placeholder="password" required="">
+                                    <input id="login-password" type="password" class="form-control" name="password" placeholder="密码" required="">
                                 </div>
                                 <div class="input-group">
                                     <div class="checkbox">
@@ -254,10 +254,10 @@
                 <div id="signupbox" style="display:none; margin-top:50px" class="mainbox loginbox">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <div class="panel-title">Sign Up</div>
-                            <div style="float:right; font-size: 85%; position: relative; top:-10px">
-                                <a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a>
-                            </div>
+                            <div class="panel-title">注册</div>
+                            <!-- <div style="float:right; font-size: 85%; position: relative; top:-10px">
+                                <a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">登录</a>
+                            </div> -->
                         </div>
                         <div class="panel-body">
                             <form id="signupform" class="form-horizontal" action="#" method="post">
@@ -266,43 +266,57 @@
                                     <span></span>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Email</label>
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">邮箱</label>
                                     <div class="col-md-9 col-sm-9 col-xs-9">
-                                        <input type="text" class="form-control" name="email" placeholder="Email Address" required="">
+                                        <input type="text" class="form-control" name="email" placeholder="邮箱地址" required="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">First Name</label>
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">名字</label>
                                     <div class="col-md-9 col-sm-9 col-xs-9">
-                                        <input type="text" class="form-control" name="firstname" placeholder="First Name" required="">
+                                        <input type="text" class="form-control" name="firstname" placeholder="名字" required="">
                                     </div>
                                 </div>
-                                <div class="form-group">
+                               <!--  <div class="form-group">
                                     <label class="col-md-3 col-sm-3 col-xs-3 control-label">Last Name</label>
                                     <div class="col-md-9 col-sm-9 col-xs-9">
                                         <input type="text" class="form-control" name="lastname" placeholder="Last Name" required="">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
-                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Password</label>
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">密码</label>
                                     <div class="col-md-9 col-sm-9 col-xs-9">
-                                        <input type="password" class="form-control" name="passwd" placeholder="Password" required="">
+                                        <input type="password" class="form-control" name="passwd" placeholder="密码" required="">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <!-- Button -->
                                     <div class="signup-btn">
                                         <button id="btn-signup" type="button" class="btn btn-info">
-                                            <i class="icon-hand-right"></i> &nbsp; Sign Up</button>
+                                            <i class="icon-hand-right"></i> &nbsp; 注册</button>
                                     </div>
                                 </div>
-                                <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
-
-                                    <div class="f-btn">
+                                 
+                                <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                            没有一个用户？
+                                            <a href="#" onClick="$('#signupbox').hide(); $('#loginbox').show()">
+                                                登录
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  <div style="border-top: 1px solid #999; padding-top:20px" class="form-group"> -->
+                                      <!--      <div class="f-btn">
                                         <button id="btn-fbsignup" type="button" class="btn btn-primary">
-                                            <i class="icon-facebook"></i>   Sign Up with Facebook</button>
-                                    </div>
-                                </div>
+                                            <i class="icon-facebook"></i> 好友列表</button>
+                                    </div> -->
+                                <!--  </div> -->
+                              
+
+                                 
+                               
                             </form>
                         </div>
                     </div>

@@ -186,10 +186,10 @@
                             </a>
                         </li>
                         <li class="btn btn2">
-                            <a href="shop.html">Product Catalogue</a>
+                            <a href="{{ url('/Home/home/shop') }}">图书目录</a>
                         </li>
                         <li class="btn btn3 btn3a">
-                            <a href="single_product.html">Single product</a>
+                            <a href="{{ url('/Home/home/single_product') }}">借书详情</a>
                         </li>
                         <li class="btn btn4">
                             <a href="checkout.html">Checkout</a>

@@ -190,7 +190,7 @@
 							</a>
 						</li>
 						<li class="btn btn2">
-							<a href="shop.html">图书目录</a>
+							<a href="{{ url('/Home/home/shop') }}">图书目录</a>
 						</li>
 					</ul>
 				</div>
@@ -205,23 +205,23 @@
 					<!--preference -->
 					<div class="left-side">
 						<h3 class="shopf-sear-headits-sear-head">
-							Categories</h3>
+							分类</h3>
 						<ul>
 							<li>
 								<input type="checkbox" class="checked">
-								<span class="span">Biographies</span>
+								<span class="span">列传</span>
 							</li>
 							<li>
 								<input type="checkbox" class="checked">
-								<span class="span">Fiction</span>
+								<span class="span">小说</span>
 							</li>
 							<li>
 								<input type="checkbox" class="checked">
-								<span class="span">Management</span>
+								<span class="span">管理</span>
 							</li>
 							<li>
 								<input type="checkbox" class="checked">
-								<span class="span">Business</span>
+								<span class="span">商业</span>
 							</li>
 
 						</ul>
@@ -229,16 +229,16 @@
 					<!-- // preference -->
 					<div class="search-hotel">
 						<h3 class="shopf-sear-headits-sear-head">
-							<span>author</span> in focus</h3>
+							<span>作者</span> 关注的焦点</h3>
 						<form action="#" method="post">
-							<input type="search" placeholder="search here" name="search" required="">
-							<input type="submit" value="Search">
+							<input type="search" placeholder="搜索书籍" name="search" required="">
+							<input type="submit" value="搜索">
 						</form>
 					</div>
 					<!-- price range -->
 					<div class="range">
 						<h3 class="shopf-sear-headits-sear-head">
-							<span>Price</span> range</h3>
+							<span>价格</span> 幅度</h3>
 						<ul class="dropdown-menu6">
 							<li>
 
@@ -251,19 +251,19 @@
 					<!--preference -->
 					<div class="left-side">
 						<h3 class="shopf-sear-headits-sear-head">
-							<span>latest</span> arrivals</h3>
+							<span>最新的</span> 书籍</h3>
 						<ul>
 							<li>
 								<input type="checkbox" class="checked">
-								<span class="span">last 30 days</span>
+								<span class="span">最近30天</span>
 							</li>
 							<li>
 								<input type="checkbox" class="checked">
-								<span class="span">last 90 days</span>
+								<span class="span">最近90天</span>
 							</li>
 							<li>
 								<input type="checkbox" class="checked">
-								<span class="span">last 150 days</span>
+								<span class="span">最近150天</span>
 							</li>
 
 						</ul>
@@ -271,7 +271,7 @@
 					<!-- // preference -->
 					<!-- discounts -->
 					<div class="left-side">
-						<h3 class="shopf-sear-headits-sear-head">Language</h3>
+						<h3 class="shopf-sear-headits-sear-head">语言</h3>
 						<ul>
 							<li>
 								<input type="checkbox" class="checked">
@@ -306,7 +306,7 @@
 					<!-- //discounts -->
 					<!-- Binding -->
 					<div class="left-side">
-						<h3 class="shopf-sear-headits-sear-head">Format</h3>
+						<h3 class="shopf-sear-headits-sear-head">格式</h3>
 						<ul>
 							<li>
 								<input type="checkbox" class="checked">
@@ -333,7 +333,7 @@
 					<!-- //Binding -->
 					<!-- discounts -->
 					<div class="left-side">
-						<h3 class="shopf-sear-headits-sear-head">Discount</h3>
+						<h3 class="shopf-sear-headits-sear-head">折扣</h3>
 						<ul>
 							<li>
 								<input type="checkbox" class="checked">
@@ -356,7 +356,7 @@
 					<!-- //discounts -->
 					<!-- reviews -->
 					<div class="customer-rev left-side">
-						<h3 class="shopf-sear-headits-sear-head">Customer Review</h3>
+						<h3 class="shopf-sear-headits-sear-head">顾客评论</h3>
 						<ul>
 							<li>
 								<a href="#">
@@ -421,16 +421,18 @@
 						<!-- product-sec1 -->
 						<div class="product-sec1">
 							<!-- row1-->
+							<!--foreach循环展示数据-->
+							@foreach($BookData['BookData'] as $key => $val)
 							<div class="col-md-3 product-men">
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib8.jpg')}}" alt="">
+											<img src="{{URL::asset($val['b_img'])}}" width="300" height="300" alt="">
 										</a>
 									</div>
 									<div class="caption">
-										<h4>be creative</h4>
-										<p>Clayton Barton</p>
+										<h4>{{$val['b_name']}}</h4>
+										<p>{{$val['b_auther']}}</p>
 										<div class="matrlf-mid">
 											<ul class="rating">
 												<li>
@@ -460,28 +462,38 @@
 												</li>
 											</ul>
 											<ul class="price-list">
-												<li>$ 100.00</li>
-												<li>
-													$200.00
-												</li>
+											<!-- if判断是否最新 -->
+											@if($val['is_hot'] == '1' AND $val['is_new'] == '1' )
+												<p>最热+最新</p>
+											@elseif($val['is_hot'] == '1')
+												<p>最热</p>
+											@elseif($val['is_new'] == '1')
+												<p>最新</p>
+											@else
+												<p>请查看</p>
+											@endif 
 											</ul>
 
 											<div class="clearfix"> </div>
 										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book1">
-											<input type="hidden" name="amount" value="100.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
+										<form action="{{ url('/Home/home/BorrowBooks') }}" method="post">
+										{{csrf_field()}} 
+											<!-- <input type="hidden" name="cmd" value="_cart"> -->
+											<!-- <input type="hidden" name="add" value="1"> -->
+											<!-- <input type="hidden" name="chr_item" value="Book1"> -->
+											<!-- <input type="hidden" name="amount" value="100.00"> -->
+											<button type="submit" class="chr-cart pchr-cart">去借书
+											<!-- <button type="submit">去借书</button> -->
+												<!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
 											</button>
 											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
+											<input type="hidden" name="b_id" value="{{$val['b_id']}}">
 										</form>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 product-men">
+							@endforeach
+							<!-- <div class="col-md-3 product-men">
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
@@ -660,10 +672,10 @@
 										</form>
 									</div>
 								</div>
-							</div>
-							<!-- //row1 -->
+							</div> -->
+							<!--//row1 -->
 							<!-- row2 -->
-							<div class="col-md-3 product-men women_two">
+						<!-- 	<div class="col-md-3 product-men women_two">
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
@@ -722,8 +734,8 @@
 										</form>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-3 product-men women_two">
+							</div> -->
+							<!-- <div class="col-md-3 product-men women_two">
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
@@ -902,10 +914,10 @@
 										</form>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<!-- //row2 -->
 							<!-- row3 -->
-							<div class="col-md-3 product-men">
+							<!-- <div class="col-md-3 product-men">
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
@@ -964,8 +976,8 @@
 										</form>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-3 product-men">
+							</div> -->
+							<!-- <div class="col-md-3 product-men">
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
@@ -1024,8 +1036,8 @@
 										</form>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-3 product-men">
+							</div> -->
+							<!-- <div class="col-md-3 product-men">
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
@@ -1084,8 +1096,8 @@
 										</form>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-3 product-men">
+							</div> -->
+						<!-- 	<div class="col-md-3 product-men">
 								<div class="product-chr-info chr">
 									<div class="thumbnail">
 										<a href="single_product.html">
@@ -1144,7 +1156,7 @@
 										</form>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<!-- //row3 -->
 							<div class="clearfix"></div>
 

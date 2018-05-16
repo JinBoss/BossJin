@@ -186,7 +186,7 @@
                             </a>
                         </li>
                         <li class="btn btn2">
-                            <a href="footer.html">活动专区</a>
+                            <a href="{{ url('/Home/home/footer') }}">活动专区</a>
                         </li>
                     </ul>
                 </div>

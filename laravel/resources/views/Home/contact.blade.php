@@ -184,7 +184,7 @@
                             </a>
                         </li>
                         <li class="btn btn2">
-                            <a href="contact.html">联系我们</a>
+                            <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                         </li>
                     </ul>
                 </div>
@@ -203,12 +203,13 @@
                         <!-- contact form grid -->
                         <div class="contact-top1">
                             <h5>寄给我们一份信息</h5>
-                            <form action="#" class="form_w3layouts" method="post">
-                                <input type="text" placeholder="你的名字" required="">
+                            <form action="{{ url('/Home/Home/ContactMessage') }}" class="form_w3layouts" method="post">
+                            {{csrf_field()}} 
+                                <input type="text" name="message_name" placeholder="你的名字" required="">
                                 <!-- <input type="text" placeholder="Last Name" required=""> -->
 
-                                <input class="email" type="email" placeholder="你的邮箱" required="">
-                                <textarea placeholder="你的留言" required=""></textarea>
+                                <input class="email" name="message_email" type="email" placeholder="你的邮箱" required="">
+                                <textarea placeholder="你的留言" name="message_content" required=""></textarea>
                                 <input type="submit" value="发送">
                             </form>
                         </div>

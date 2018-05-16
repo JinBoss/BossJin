@@ -7,8 +7,11 @@ use Gregwar\Captcha\CaptchaBuilder;
 use Session;
 use App\Http\Models\Home\HomeModel;  
 use App\Http\Models\Home\LibraryModel; 
-use App\Http\Models\Home\BookModel;  
+use App\Http\Models\Home\BookModel;
+use App\Http\Models\Home\MessageModel;  
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Input;
+
 // use Illuminate\Http\Request;
 // use App\Http\Requests;
 use Request;
@@ -48,7 +51,83 @@ class HomeController extends Controller
     /**商品页面*/
     public function shop()
     {
-        return view("Home/shop");
+        //查询图书全部信息
+        $BookData = BookModel::book_data();
+        return view("Home/shop")->with('BookData',$BookData);  
+    }
+    /**图书目录页面借书的操作*/
+    public function BorrowBooks()
+    {
+        //判断是否表单提交
+        if(request::isMethod('post')){
+            //接收图书id
+            $BookId = input::only("b_id");
+            //查询图书全部数量
+            $BookData = BookModel::book_first($BookId);
+            //查询图书全部信息
+            $BookHotData = BookModel::book_hot($BookId);
+            // print_r($BookHotData);die;
+            return view("Home/single_product")->with('BookData',$BookData)->with('BookHotData',$BookHotData);
+        } 
+    }
+    /**用户借书详情页面*/
+    public function UserBorrowBooks()
+    {
+        /**判断借书用户是否登录**/
+        if(!empty(Session::get('UserData')) && request::isMethod('post')){ 
+            //接收图书id
+            $BookId = input::only("b_id");
+            //借书
+            $BookData = BookModel::book_borrow($BookId);
+            switch ($BookData) {
+                case '0':
+                    echo '非法借书.....';
+                    $url = url('/home');
+                    header("Refresh:2;url=$url");
+                    break;
+                case '1':
+                    echo '借书成功.....';
+                    $url = url('/Home/home/shop');
+                    header("Refresh:2;url=$url");
+                    break;
+                case '-1':
+                    echo '非法借书.....';
+                    $url = url('/home');
+                    header("Refresh:2;url=$url");
+                    break;
+                case '-2':
+                    echo '该书数量不足.....';
+                    $url = url('/Home/home/shop');
+                    header("Refresh:2;url=$url");
+                    break;
+                case '-3':
+                    echo '已经借过该书.....';
+                    $url = url('/Home/home/shop');
+                    header("Refresh:2;url=$url");
+                    break;
+                case '-4':
+                    echo '非法借书.....';
+                    $url = url('/Home/home/shop');
+                    header("Refresh:2;url=$url");
+                    break;
+                case '-5':
+                    echo '当前用户已借阅5本.....';
+                    $url = url('/Home/home/shop');
+                    header("Refresh:2;url=$url");
+                    break;
+    
+                default:
+                    echo '非法借书.....';
+                    $url = url('/home');
+                    header("Refresh:2;url=$url");
+                    break;
+            }
+
+        }else{
+            echo '请先登录之后再借.....';
+            $url = url('/login');
+            header("Refresh:2;url=$url");
+        }
     }
     /**活动页面*/
     public function footer()
@@ -60,4 +139,28 @@ class HomeController extends Controller
     {
         return view("Home/contact");
     }
+    /**联系我们留言*/
+    public function ContactMessage()
+    {
+        //判断是否表单提交
+        if(request::isMethod('post')){
+            //接收所有提交信息
+            $MessagePostData = input::all();
+            // print_r($MessagePostData);die;
+            //查询用户信息
+            $MessageData = MessageModel::message_check($MessagePostData);
+            // var_dump($MessageData);die;
+            //判断信息是否存在
+            if (!empty($MessageData)) {
+                echo '留言成功.....';
+                $url = url('/Home/home/contact');
+                header("Refresh:2;url=$url");
+            }else{
+                echo '留言失败.....';
+                $url = url('/Home/home/contact');
+                header("Refresh:2;url=$url");
+            }   
+        }
+    }
+   
 }

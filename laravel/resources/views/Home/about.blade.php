@@ -188,7 +188,7 @@
                             </a>
                         </li>
                         <li class="btn btn2">
-                            <a href="about.html">关于我们</a>
+                            <a href="{{ url('/Home/home/about') }}">关于我们</a>
                         </li>
                     </ul>
                 </div>
