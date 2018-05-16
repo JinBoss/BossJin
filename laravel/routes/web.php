@@ -68,3 +68,6 @@ Route::post('/admin/activity/activity_add','Admin\ActivityController@activity_ad
 Route::get('/admin/vip/show','Admin\VipController@show');
 Route::get('/admin/vip/del/{tem}','Admin\VipController@del');
 Route::get('/admin/integral/show','Admin\IntegralController@show');
+Route::get('/admin/user/up_pwd','Admin\UserController@up_pwd');
+Route::get('/admin/user/quit','Admin\UserController@quit');
+Route::post('/admin/user/update_pwd','Admin\UserController@update_pwd');

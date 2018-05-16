@@ -8,6 +8,7 @@ use Session;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Models\Admin\UserModel;
 use Request;
+use DB;
 class UserController extends Controller
 {
     /**
@@ -75,6 +76,38 @@ class UserController extends Controller
             return json_encode(array('state'=>true,'msg'=>"修改成功"));
         else
             return json_encode(array('state'=>false,'msg'=>"修改失败"));
+    }
+
+    public function up_pwd(){
+        return view('Admin/changepwd');
+    }
+
+    public function update_pwd(){
+        $au_id = Request::input('id');
+        $pwdy = md5(sha1(Request::input('pwdy')));
+        $au_pwd = md5(sha1(Request::input('pwdn')));
+        $pwdv = md5(sha1(Request::input('pwdv')));
+        if($au_pwd != $pwdv){
+            return json_encode(array('state'=>false,'msg'=>"确认密码不正确"));
+        }else{
+            $res = DB::select("select * from admin_user where(au_id='$au_id')");
+            $data = json_decode(json_encode($res),true);
+            if($data['0']['au_id'] != $au_id){
+                return json_encode(array('state'=>false,'msg'=>"密码错误"));
+            }else{
+                $res = DB::table('admin_user')->where('au_id',$au_id)->update(['au_pwd'=>$au_pwd]);
+                if($res){
+                    return json_encode(array('state'=>true,'msg'=>"修改成功"));
+                }else{
+                    return json_encode(array('state'=>false,'msg'=>"修改失败"));
+                }
+            }
+        }
+    }
+
+    public function quit(){
+        Session::forget('user');
+        return redirect('/admin/login');
     }
 }
 
