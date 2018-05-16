@@ -32,7 +32,7 @@
 <!-- SubPopup -->
 <div id="SubPopup">
 <div class="form_boxD">
-<div class="cfD" style="margin-left:200px;" ">
+<div class="cfD" style="margin-left:200px;">
 <input class="userinput"  type="text" placeholder="输入图书名称" p='1' />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<button class="userbtn" id="seach" >搜索</button>
 </div>
@@ -65,7 +65,7 @@
 <th>{{ $v->b_name}}</th>
 <th>{{ $v->b_auther}}</th>
 <th><img src="{{ URL::asset($v->b_img)}}" width="100px;"></th>
-<th>{{ $v->b_desc}}</th>
+<th style="width:700px;">{{ $v->b_desc}}</th>
 <th>
 	@if($v->is_hot ==1)
 		是
