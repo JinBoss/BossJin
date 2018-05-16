@@ -1,5 +1,9 @@
 <div class="form_boxD">
+<<<<<<< HEAD
 <div class="cfD" style="margin-left:200px;">
+=======
+<div class="cfD" style="margin-left:200px;" >
+>>>>>>> 5e06db9de840820db5b65861a12c694d53b1a70f
 <input class="userinput"  type="text" placeholder="输入图书名称" p="{{$page}}" value="{{$seach}}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<button class="userbtn" id="seach" >搜索</button>
 </div>
