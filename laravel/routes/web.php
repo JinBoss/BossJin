@@ -78,3 +78,5 @@ Route::get('/admin/integral/show','Admin\IntegralController@show');
 Route::get('/admin/user/up_pwd','Admin\UserController@up_pwd');
 Route::get('/admin/user/quit','Admin\UserController@quit');
 Route::post('/admin/user/update_pwd','Admin\UserController@update_pwd');
+Route::get('/admin/borrow/show','Admin\BorrowController@show');
+Route::post('/admin/borrow/up','Admin\BorrowController@up');

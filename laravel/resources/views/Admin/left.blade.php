@@ -87,7 +87,7 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="{{ URL::asset('/back/assets/img/coin111.png') }}" /><img class="coin22"
-						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a class="cks">图书审核</a><img class="icon5" src="/assets/img/coin21.png" />
+						src="{{ URL::asset('/back/assets/img/coin222.png') }}" /><a href="{{url('/admin/borrow/show')}}" target="main" class="cks">图书审核</a><img class="icon5" src="{{ URL::asset('/back/assets/img/coin21.png') }}" />
 				</dd>
 			</dl>
 			<dl class="system_log">
