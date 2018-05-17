@@ -205,6 +205,15 @@
 			<div class="container-cart">
 				<!-- product left -->
 				<div class="side-bar col-md-3">
+				<!-- // preference -->
+					<div class="search-hotel">
+						<h3 class="shopf-sear-headits-sear-head" style="color: red;">
+							<span>读者</span> 关注的焦点</h3>
+						<form action="#" method="post">
+							<input type="search" placeholder="搜索书籍" name="search" required="">
+							<input type="submit" value="搜索">
+						</form>
+					</div>
 					<!--preference -->
 					<div class="left-side">
 						<h3 class="shopf-sear-headits-sear-head">
@@ -230,14 +239,14 @@
 						</ul>
 					</div>
 					<!-- // preference -->
-					<div class="search-hotel">
+					<!-- <div class="search-hotel">
 						<h3 class="shopf-sear-headits-sear-head">
-							<span>作者</span> 关注的焦点</h3>
+							<span>读者</span> 关注的焦点</h3>
 						<form action="#" method="post">
 							<input type="search" placeholder="搜索书籍" name="search" required="">
 							<input type="submit" value="搜索">
 						</form>
-					</div>
+					</div> -->
 					<!-- price range -->
 					<div class="range">
 						<h3 class="shopf-sear-headits-sear-head">
@@ -273,7 +282,7 @@
 					</div>
 					<!-- // preference -->
 					<!-- discounts -->
-					<div class="left-side">
+					<!-- <div class="left-side">
 						<h3 class="shopf-sear-headits-sear-head">语言</h3>
 						<ul>
 							<li>
@@ -305,10 +314,10 @@
 								<span class="span">French</span>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 					<!-- //discounts -->
 					<!-- Binding -->
-					<div class="left-side">
+				<!-- 	<div class="left-side">
 						<h3 class="shopf-sear-headits-sear-head">格式</h3>
 						<ul>
 							<li>
@@ -332,10 +341,10 @@
 								<span class="span">Audio Book</span>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 					<!-- //Binding -->
 					<!-- discounts -->
-					<div class="left-side">
+					<!-- <div class="left-side">
 						<h3 class="shopf-sear-headits-sear-head">折扣</h3>
 						<ul>
 							<li>
@@ -355,7 +364,7 @@
 								<span class="span">60% or more</span>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 					<!-- //discounts -->
 					<!-- reviews -->
 					<div class="customer-rev left-side">

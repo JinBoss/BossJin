@@ -188,13 +188,13 @@
                             </a>
                         </li>
                         <li class="btn btn2">
-                            <a href="{{ url('/Home/home/shop') }}">图书目录</a>
+                            <a href="{{ url('/Home/home/shop') }}">我的资料</a>
                         </li>
                         <li class="btn btn3 btn3a">
-                            <a href="{{ url('/Home/home/single_product') }}">借书详情</a>
+                            <a href="{{ url('/Home/home/single_product') }}">管理我的图书</a>
                         </li>
                         <li class="btn btn4">
-                            <a href="checkout.html">Checkout</a>
+                            <a href="{{ url('/Home/home/checkout') }}">还书</a>
                         </li>
                     </ul>
                 </div>
@@ -206,56 +206,62 @@
             <div class="container">
                 <div class="privacy about">
                     <h4 class="rad-txt">
-                        <span class="abtxt1">review</span>
-                        <span class="abtext">your order</span>
+                        <span class="abtxt1">我的资料</span>
+                        <span class="abtext">管理我的图书</span>
                     </h4>
 
                     <div class="checkout-right">
-                        <h4>Your shopping cart contains:
+                       <!--  <h4>Your shopping cart contains:
                             <span>3 Products</span>
-                        </h4>
+                        </h4> -->
                         <table class="timetable_sub table-responsive">
                             <thead>
                                 <tr>
-                                    <th>SL No.</th>
-                                    <th>Product</th>
-                                    <th>Quantity</th>
-                                    <th>Product Name</th>
-
-                                    <th>Price</th>
-                                    <th>Remove</th>
+                                    <th>借书人</th>
+                                    <th width="300">图书封面</th>
+                                    <th>图书名称</th>
+                                    <th>图书作者</th>
+                                    <th>借书时间</th>
+                                    <th>操作</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <!--foreach循环展示数据-->
+                                @foreach($UserBorrowData as $key => $val)
                                 <tr class="rem1">
-                                    <td class="invert">1</td>
+                                    <td class="invert">{{ session('UserData')['u_name'] }}</td>
                                     <td class="invert-image">
                                         <a href="single_product.html">
-                                            <img src="{{URL::asset('/front/images/lib8.jpg')}}" alt=" " class="img-responsive">
+                                            <img src="{{URL::asset($val['b_img'])}}" alt=" " class="img-responsive">
                                         </a>
                                     </td>
                                     <td class="invert">
-                                        <div class="quantity">
-                                            <div class="quantity-select">
-                                                <div class="entry value-minus">&nbsp;</div>
-                                                <div class="entry value">
-                                                    <span>1</span>
-                                                </div>
+                                        <!-- <div class="quantity">
+                                            <div class="quantity-select"> -->
+                                               <!--  <div class="entry value-minus">&nbsp;</div>
+                                                <div class="entry value"> -->
+                                                    <span>{{$val['b_name']}}</span>
+                                                <!-- </div>
                                                 <div class="entry value-plus active">&nbsp;</div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </td>
-                                    <td class="invert">Be Creative</td>
+                                    <td class="invert">{{$val['b_auther']}}</td>
 
-                                    <td class="invert">$100.00</td>
+                                    <td class="invert">{{ date("Y-m-d",$val['b_time'])}}</td>
                                     <td class="invert">
-                                        <div class="rem">
+                                        <!-- <div class="rem">
                                             <div class="close1"> </div>
-                                        </div>
-
+                                        </div> -->
+                                        @if($val['b_state']=='0')
+                                            <span>未审核</span>
+                                        @elseif($val['b_state'] == '1')
+                                            <a href="{{ url('/Home/home/checkoutDel') }}?b_id={{ $val['b_id'] }}"><button>还书</button></a>
+                                        @endif 
                                     </td>
                                 </tr>
-                                <tr class="rem2">
+                                @endforeach
+                               <!--  <tr class="rem2">
                                     <td class="invert">2</td>
                                     <td class="invert-image">
                                         <a href="single_product.html">
@@ -311,11 +317,11 @@
 
                                     </td>
                                 </tr>
-
+ -->
                             </tbody>
                         </table>
                     </div>
-                    <div class="checkout-left">
+                   <!--  <div class="checkout-left">
                         <div class="col-md-4 checkout-left-basket">
                             <h4>Continue to basket</h4>
                             <ul>
@@ -340,8 +346,8 @@
                                     <span>$355.00</span>
                                 </li>
                             </ul>
-                        </div>
-                        <div class="col-md-8 address_form">
+                        </div> -->
+                        <!-- <div class="col-md-8 address_form">
                             <h4>Billing Address</h4>
                             <form action="payment.html" method="post" class="creditly-card-form shopf-sear-headinfo_form">
                                 <div class="creditly-wrapper wrapper">
@@ -385,7 +391,7 @@
                                 </div>
                             </form>
 
-                        </div>
+                        </div> -->
 
                         <div class="clearfix"> </div>
 
@@ -540,7 +546,26 @@
 </div>
     </div>
     <!-- //home -->
-
+    <!-- <script src="{{URL::asset('/front/js/jquery-1.9.1.min.js')}}"></script> -->
+    <!--JQ的ajax删除-->
+   <!--  <script>
+        $(function(){
+            //单删
+            $(".del").click(function(){
+                var _this = $(this);
+                // _this.parent().parent().remove();
+                var b_id = $(this).attr('b_id');
+                $.ajax({
+                    type:"post",
+                    url:"{:url('/Home/home/checkoutDel')}",
+                    data:{b_id:b_id},
+                    success:function(msg){
+                        console.log(msg);
+                    }
+                })
+            })
+        })
+    </script> -->
     <!-- Common js -->
     <script src="{{URL::asset('/front/js/jquery-2.2.3.min.js')}}"></script>
     <!--// Common js -->
@@ -668,6 +693,7 @@
  ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{URL::asset('/front/js/bootstrap.js')}}"></script>
+   
 </body>
 
 </html>

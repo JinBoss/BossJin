@@ -19,7 +19,7 @@ class BookModel extends Model
         $BookTypeData = DB::table("book_type")->limit(8)->select("*")->get();
         //先把对象转化json格式在解码成数组格式
         return json_decode(json_encode($BookTypeData), true);
-   }
+    }
     /**
      * 查询图书信息
      * @param null
@@ -110,7 +110,7 @@ class BookModel extends Model
                             //用户借书成功之后借书次数减1
                             $UpdateUserSql ="UPDATE user SET b_num=b_num-1 WHERE u_id = $u_id";
                             if (DB::insert($UpdateUserSql)){
-                                //借书成功
+                                //借书成功，等待管理员审核
                                 return '1';
                             }else{
                                 //非法借书
@@ -137,5 +137,47 @@ class BookModel extends Model
             return '-5';
         }
        
+    }
+     /**
+     * 还书
+     * @param null
+     * @return array
+     */
+    public static function borrow_user()
+    {
+        /**
+         * 1.u_id 用户id
+         * 2.b_id 图书id
+         * 3.借还时间
+         * 4.审核状态 state为1才可还书
+         */
+        //借阅人
+        $UserData = Session::get('UserData');
+        $UserName = $UserData['u_name'];
+        $u_id = $UserData['u_id'];
+        //借书记录表查询
+        $BorrowUser = DB::table('borrow')->join('book', 'borrow.b_id', '=', 'book.b_id')->where("borrow.u_id",$u_id)->where('b_state','<>',2)->select('*')->get();
+        return json_decode(json_encode($BorrowUser), true);
+    } 
+     /**
+     * 还书操作
+     * @param null
+     * @return array
+     */
+    public static function borrow_delete($BookId)
+    {
+        // print_r($BookId);die;
+        $b_id = $BookId['b_id'];
+        $re_time = time();
+        //还书人ID  图书ID 
+        $sql = "UPDATE borrow SET b_state=2,re_time='$re_time' WHERE b_id = '$b_id'";
+        // print_r($sql);die;
+        if (DB::insert($sql)){
+            //还书成功
+            return '1';
+        }else{
+            //还书失败
+            return '0';
+        }
     }
 }

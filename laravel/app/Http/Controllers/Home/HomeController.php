@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;  
 use Gregwar\Captcha\CaptchaBuilder;
 use Session;
+use DB;
 use App\Http\Models\Home\HomeModel;  
 use App\Http\Models\Home\LibraryModel; 
 use App\Http\Models\Home\BookModel;
@@ -86,7 +87,7 @@ class HomeController extends Controller
                     header("Refresh:2;url=$url");
                     break;
                 case '1':
-                    echo '借书成功.....';
+                    echo '借书成功，等待管理员审核.....';
                     $url = url('/Home/home/shop');
                     header("Refresh:2;url=$url");
                     break;
@@ -129,6 +130,38 @@ class HomeController extends Controller
             header("Refresh:2;url=$url");
         }
     }
+    /**还书页面*/
+    public function checkout()
+    {
+        // echo "string";
+        //判断当前用户是否登录
+        if(!empty(Session::get('UserData'))){
+            //查询当前用户已借图书
+            $UserBorrowData = BookModel::borrow_user();
+            // print_r($UserBorrowData);die;
+            return view("Home/checkout")->with('UserBorrowData',$UserBorrowData);
+        }       
+    }
+    /**还书页面*/
+    public function checkoutDel()
+    {
+        //判断是否get提交
+        if(request::isMethod('get')){
+            //接收图书id
+            $BookId = input::only("b_id");
+            //修改还书状态
+            $res = BookModel::borrow_delete($BookId);
+            if($res==1){
+                echo '还书成功.....';
+                $url = url('/Home/home/checkout');
+                header("Refresh:2;url=$url");
+            }else{
+                echo '还书失败.....';
+                $url = url('/Home/home/checkout');
+                header("Refresh:2;url=$url"); 
+            }
+        } 
+    }
     /**活动页面*/
     public function footer()
     {
@@ -146,7 +179,6 @@ class HomeController extends Controller
         if(request::isMethod('post')){
             //接收所有提交信息
             $MessagePostData = input::all();
-            // print_r($MessagePostData);die;
             //查询用户信息
             $MessageData = MessageModel::message_check($MessagePostData);
             // var_dump($MessageData);die;

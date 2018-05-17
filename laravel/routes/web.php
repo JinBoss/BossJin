@@ -30,6 +30,8 @@ Route::get('/home/about', 'Home\HomeController@about');
 Route::post('/Home/login/LoginCheck', 'Home\LoginController@LoginCheck');
 Route::post('/Home/Home/ContactMessage', 'Home\HomeController@ContactMessage');
 Route::get('/Home/home/index', 'Home\HomeController@index');
+Route::get('/Home/home/checkout', 'Home\HomeController@checkout');
+Route::get('/Home/home/checkoutDel', 'Home\HomeController@checkoutDel');
 Route::get('/Home/home/about', 'Home\HomeController@about');
 Route::get('/Home/home/shop', 'Home\HomeController@shop');
 Route::post('/Home/home/BorrowBooks', 'Home\HomeController@BorrowBooks');
