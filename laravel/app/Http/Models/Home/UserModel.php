@@ -78,7 +78,7 @@ class UserModel extends Model
     /**
      * 查询新的用户资料
      * @param u_id
-     * @return $array 
+     * @return array 
      */
     public static function user_select()
     {
@@ -88,6 +88,7 @@ class UserModel extends Model
         return json_decode(json_encode($NewData), true);
     }
     /**
+<<<<<<< Updated upstream
      * 查询团队的信息左1
      * @param u_id
      * @return $array 
@@ -134,5 +135,32 @@ class UserModel extends Model
         // print_r($TeamData);die;
         //对象转化为数组
         return json_decode(json_encode($TeamData), true);
+=======
+     * 注册新的用户
+     * @param 
+     * @return $array 
+     */
+    public static function user_add($AddUserData,$img)
+    {
+        //将用户密码进行Crype加密（当前密码匹配当前用户）+Sha1加密
+        $pwd = sha1(crypt($AddUserData['u_pwd'],$AddUserData['u_pwd']));
+        //字符串转换为32位
+        $u_pwd  = substr($pwd,0,-8);
+        //查询用户信息
+        $u_sex = $AddUserData['u_sex'];
+        $u_age = $AddUserData['u_age'];
+        $u_name = $AddUserData['u_name'];
+        $u_email = $AddUserData['u_email'];
+        $arr = array('image/jpg','image/jpeg','image/gif','image/bmp','image/png');
+        if(in_array($img['type'],$arr)){
+            $postfix = substr($img['name'],strpos($img['name'],'.'));
+            $ad_content = "images/".time()."-".rand(1000,9999).$postfix;
+            move_uploaded_file($img["tmp_name"],  $ad_content);
+            $sql = "INSERT INTO user VALUES(NULL,'$u_sex','$u_age','$u_name','$u_pwd','','$u_email','$ad_content','5')";
+             return DB::insert($sql);
+        }else{
+            return 0;
+        }
+>>>>>>> Stashed changes
     }
 }

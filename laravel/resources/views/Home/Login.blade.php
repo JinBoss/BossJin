@@ -263,22 +263,34 @@
                             </div> -->
                         </div>
                         <div class="panel-body">
-                            <form id="signupform" class="form-horizontal" action="#" method="post">
+                            <form id="signupform" class="form-horizontal" action="{{ url('/user/useradd') }}" method="post"  enctype="multipart/form-data">
+                                {{csrf_field()}} 
                                 <div id="signupalert" style="display:none" class="alert alert-danger">
                                     <p>Error:</p>
                                     <span></span>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">邮箱</label>
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">用户名</label>
                                     <div class="col-md-9 col-sm-9 col-xs-9">
-                                        <input type="text" class="form-control" name="email" placeholder="邮箱地址" required="">
+                                        <input type="text" class="form-control" name="u_name" placeholder="用户名" required="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">名字</label>
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">密码</label>
                                     <div class="col-md-9 col-sm-9 col-xs-9">
-                                        <input type="text" class="form-control" name="firstname" placeholder="名字" required="">
+                                        <input type="password" class="form-control" name="u_pwd" placeholder="密码" required="">
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">年龄</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="text" class="form-control" name="u_age" placeholder="年龄" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">性别</label>
+                                        <input type="radio"  name="u_sex" value="2">男
+                                        <input type="radio"  name="u_sex" value="1">女
                                 </div>
                                <!--  <div class="form-group">
                                     <label class="col-md-3 col-sm-3 col-xs-3 control-label">Last Name</label>
@@ -286,24 +298,37 @@
                                         <input type="text" class="form-control" name="lastname" placeholder="Last Name" required="">
                                     </div>
                                 </div> -->
-                                <div class="form-group">
-                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">密码</label>
+                                <!-- <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">确认密码</label>
                                     <div class="col-md-9 col-sm-9 col-xs-9">
-                                        <input type="password" class="form-control" name="passwd" placeholder="密码" required="">
+                                        <input type="password" class="form-control" name="next_pwd" placeholder="确认密码" required="">
+                                    </div>
+                                </div> -->
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">输入邮箱</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="email" class="form-control" name="u_email" placeholder="输入邮箱" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">选择头像</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="file" class="form-control" name="file" placeholder="确认密码" required="">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <!-- Button -->
                                     <div class="signup-btn">
-                                        <button id="btn-signup" type="button" class="btn btn-info">
-                                            <i class="icon-hand-right"></i> &nbsp; 注册</button>
+                                        <!-- <button id="btn-signup" type="button" class="btn btn-info">
+                                            <i class="icon-hand-right"></i> &nbsp; 注册</button> -->
+                                            <input type="submit" value="注册" id="btn-signup" class="btn btn-info">
                                     </div>
                                 </div>
                                  
                                 <div class="form-group">
                                     <div class="col-md-12 control">
                                         <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
-                                            没有一个用户？
+                                            已经有用户？
                                             <a href="#" onClick="$('#signupbox').hide(); $('#loginbox').show()">
                                                 登录
                                             </a>
@@ -316,10 +341,6 @@
                                             <i class="icon-facebook"></i> 好友列表</button>
                                     </div> -->
                                 <!--  </div> -->
-                              
-
-                                 
-                               
                             </form>
                         </div>
                     </div>

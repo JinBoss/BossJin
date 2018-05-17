@@ -64,7 +64,11 @@ class HomeController extends Controller
     {
         //查询图书全部信息
         $BookData = BookModel::book_data();
-        return view("Home/shop")->with('BookData',$BookData);  
+        //查询图书分类信息
+        $BookData['TypeData'] = BookModel::type_data();
+        //获取分页的条数
+        $last = BookModel::one_page();
+        return view("Home/shop")->with('BookData',$BookData)->with("last",$last);  
     }
     /**图书目录页面借书的操作*/
     public function BorrowBooks()

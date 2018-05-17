@@ -21,6 +21,27 @@ class UserController extends Controller
             return view('Home/Login');
         }
     }
+    //添加个人资料
+    public function UserAdd()
+    {
+        //判断用户是否post提交
+        if(request::isMethod('post')){
+            //接收所有提交信息
+            $AddUserData = input::all();
+            $img = $_FILES['file'];
+            //抛给模型层去处理
+            $res = UserModel::user_add($AddUserData,$img);
+            if ($res=="1") {
+                echo '注册成功....';
+                $url = url('/login');
+                header("Refresh:2;url=$url"); 
+            }else{
+                echo '请更换用户名....';
+                $url = url('/login');
+                header("Refresh:2;url=$url"); 
+            }
+        }
+    }
     //修改个人资料
     public function UserUpdate()
     {

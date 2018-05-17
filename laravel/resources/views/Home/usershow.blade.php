@@ -20,9 +20,9 @@
 				<ul id="_ul" style="margin-top: 150px; line-height: 80px; font-weight: bold; list-style-type: none;">
 					<li>你的名字：{{ session('UserData')['u_name'] }}</li>
 					<li>你的年龄：{{ session('UserData')['u_age'] }}</li>
-					@if(session('UserData')['u_age'] == "1")
+					@if(session('UserData')['u_sex'] == "1")
 						<li>你的性别：女</li>
-					@elseif(session('UserData')['u_age'] == "2")
+					@elseif(session('UserData')['u_sex'] == "2")
 						<li>你的性别：男</li>
 					@endif
 					@if(session('UserData')['u_tel'] == "")

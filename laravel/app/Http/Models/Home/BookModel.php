@@ -28,10 +28,9 @@ class BookModel extends Model
     public static function book_data()
     {
         //查询图书信息
-        $BookData = DB::table('book')->where("b_shelf","1")->select('*')->get();
+        $BookData = DB::table('book')->where("b_shelf","1")->select('*')->limit(8)->get();
         //查询图书的分类信息
         $TypeData = DB::table('book')->join('book_type', 'book.b_type_id', '=', 'book_type.type_id')->select('type_name')->get();
-        // print_r($TypeData);die;
         $data = array('BookData'=>$BookData,'TypeData'=>$TypeData);
         //先把对象转化json格式在解码成数组格式
         return json_decode(json_encode($data), true);
@@ -179,5 +178,43 @@ class BookModel extends Model
             //还书失败
             return '0';
         }
+    }
+    /**
+     * 获取分页的基础条件
+     * @param null
+     * @return array
+     */
+    public static function one_page()
+    {
+        //一页展示8条数据
+        $size = "8";
+        //获取总条数
+        $num = DB::select('select count(*) as num from book');
+        $last = ceil($num[0]->num/$size);
+        return $last;
+    }
+    /**
+     * 获取分页数据
+     * @param null
+     * @return array
+     */
+    public static function page_data($page,$search="",$size="",$new_str="",$ThreeDay="",$OneWeek="",$OneMouth="")
+    {
+        if (!empty($new_str)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str)");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str) limit $offset,$size");
+        }else{
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' limit $offset,$size");
+        }
+        $up = $page-1<1 ? 1 : $page-1;
+        $next = $page+1>$last ? $last : $page+1;
+        $data = json_decode(json_encode($old_data), true);
+        $listdata = array('data'=>$data,'up'=>$up,'next'=>$next,'last'=>$last);
+        return $listdata;
     }
 }

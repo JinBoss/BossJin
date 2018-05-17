@@ -209,272 +209,89 @@
 					<div class="search-hotel">
 						<h3 class="shopf-sear-headits-sear-head" style="color: red;">
 							<span>读者</span> 关注的焦点</h3>
-						<form action="#" method="post">
-							<input type="search" placeholder="搜索书籍" name="search" required="">
-							<input type="submit" value="搜索">
-						</form>
+							<input type="search" placeholder="搜索书籍" id="search">
+							<button id="AllSeach" style="width: 276px; height: 50px; background-color: green;color: white; font-weight: bold;border-radius: 5px 5px;">搜索</button>
 					</div>
 					<!--preference -->
 					<div class="left-side">
 						<h3 class="shopf-sear-headits-sear-head">
 							分类</h3>
 						<ul>
+							@foreach($BookData['TypeData'] as $val)
 							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">列传</span>
+								<input type="checkbox" class="type_checkbox" type_id={{ $val['type_id'] }}>
+								<span class="span">{{ $val['type_name'] }}</span>
 							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">小说</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">管理</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">商业</span>
-							</li>
-
+							@endforeach
 						</ul>
 					</div>
-					<!-- // preference -->
-					<!-- <div class="search-hotel">
-						<h3 class="shopf-sear-headits-sear-head">
-							<span>读者</span> 关注的焦点</h3>
-						<form action="#" method="post">
-							<input type="search" placeholder="搜索书籍" name="search" required="">
-							<input type="submit" value="搜索">
-						</form>
-					</div> -->
-					<!-- price range -->
-					<div class="range">
-						<h3 class="shopf-sear-headits-sear-head">
-							<span>价格</span> 幅度</h3>
-						<ul class="dropdown-menu6">
-							<li>
 
-								<div id="slider-range"></div>
-								<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
-							</li>
-						</ul>
-					</div>
-					<!-- //price range -->
-					<!--preference -->
 					<div class="left-side">
 						<h3 class="shopf-sear-headits-sear-head">
 							<span>最新的</span> 书籍</h3>
 						<ul>
 							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">最近30天</span>
+								<input type="checkbox" class="checked"  id="ThreeDay" value="3">
+								<span class="span">最近3天</span>
 							</li>
 							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">最近90天</span>
+								<input type="checkbox" class="checked"  id="OneWeek" value="7">
+								<span class="span">最近一周</span>
 							</li>
 							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">最近150天</span>
+								<input type="checkbox" class="checked"  id="OneMouth" value="30">
+								<span class="span">最近一月</span>
 							</li>
 
 						</ul>
 					</div>
-					<!-- // preference -->
-					<!-- discounts -->
-					<!-- <div class="left-side">
-						<h3 class="shopf-sear-headits-sear-head">语言</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">English</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Spanish</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Japanese</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">German</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Korean</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Chinese</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">French</span>
-							</li>
-						</ul>
-					</div> -->
-					<!-- //discounts -->
-					<!-- Binding -->
-				<!-- 	<div class="left-side">
-						<h3 class="shopf-sear-headits-sear-head">格式</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Hardcover</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Board Book</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Bundle</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Paperback</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Audio Book</span>
-							</li>
-						</ul>
-					</div> -->
-					<!-- //Binding -->
-					<!-- discounts -->
-					<!-- <div class="left-side">
-						<h3 class="shopf-sear-headits-sear-head">折扣</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">5% - 20%</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">20% - 40%</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">40% - 60%</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">60% or more</span>
-							</li>
-						</ul>
-					</div> -->
-					<!-- //discounts -->
-					<!-- reviews -->
-					<div class="customer-rev left-side">
-						<h3 class="shopf-sear-headits-sear-head">顾客评论</h3>
-						<ul>
-							<li>
-								<a href="#">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<span>5.0</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star-o" aria-hidden="true"></i>
-									<span>4.0</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star-half-o" aria-hidden="true"></i>
-									<i class="fa fa-star-o" aria-hidden="true"></i>
-									<span>3.5</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star-o" aria-hidden="true"></i>
-									<i class="fa fa-star-o" aria-hidden="true"></i>
-									<span>3.0</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star-half-o" aria-hidden="true"></i>
-									<i class="fa fa-star-o" aria-hidden="true"></i>
-									<i class="fa fa-star-o" aria-hidden="true"></i>
-									<span>2.5</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<!-- //reviews -->
-
 
 				</div>
-				<!-- //product left -->
-				<!-- product right -->
-				<div class="left-ads-display col-md-9">
-					<div class="wrapper_top_shop">
-						<!-- product-sec1 -->
-						<div class="product-sec1">
-							<!-- row1-->
-							<!--foreach循环展示数据-->
+
+
+				<div class='left-ads-display col-md-9' id="_AllTr">
+					<div class='wrapper_top_shop'>
+						<div class='product-sec1'>
 							@foreach($BookData['BookData'] as $key => $val)
-							<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset($val['b_img'])}}" width="300" height="300" alt="">
+							<div class='col-md-3 product-men'>
+								<div class='product-chr-info chr'>
+									<div class='thumbnail'>
+										<a href='single_product.html'>
+											<img src="{{URL::asset($val['b_img'])}}" width='300' height='300' alt=''>
 										</a>
 									</div>
-									<div class="caption">
+									<div class='caption'>
 										<h4>{{$val['b_name']}}</h4>
 										<p>{{$val['b_auther']}}</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
+										<div class='matrlf-mid'>
+											<ul class='rating'>
 												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+													<a href='#'>
+														<span class='fa fa-star yellow-star' aria-hidden='true'></span>
 													</a>
 												</li>
 												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+													<a href='#'>
+														<span class='fa fa-star yellow-star' aria-hidden='true'></span>
 													</a>
 												</li>
 												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+													<a href='#'>
+														<span class='fa fa-star yellow-star' aria-hidden='true'></span>
 													</a>
 												</li>
 												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
+													<a href='#'>
+														<span class='fa fa-star gray-star' aria-hidden='true'></span>
 													</a>
 												</li>
 												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
+													<a href='#'>
+														<span class='fa fa-star gray-star' aria-hidden='true'></span>
 													</a>
 												</li>
 											</ul>
-											<ul class="price-list">
-											<!-- if判断是否最新 -->
+											<ul class='price-list'>
 											@if($val['is_hot'] == '1' AND $val['is_new'] == '1' )
 												<p>最热+最新</p>
 											@elseif($val['is_hot'] == '1')
@@ -486,690 +303,26 @@
 											@endif 
 											</ul>
 
-											<div class="clearfix"> </div>
+											<div class='clearfix'> </div>
 										</div>
-										<form action="{{ url('/Home/home/BorrowBooks') }}" method="post">
+										<form action="{{ url('/Home/home/BorrowBooks') }}" method='post'>
 										{{csrf_field()}} 
-											<!-- <input type="hidden" name="cmd" value="_cart"> -->
-											<!-- <input type="hidden" name="add" value="1"> -->
-											<!-- <input type="hidden" name="chr_item" value="Book1"> -->
-											<!-- <input type="hidden" name="amount" value="100.00"> -->
-											<button type="submit" class="chr-cart pchr-cart">去借书
-											<!-- <button type="submit">去借书</button> -->
-												<!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
+											<button type='submit' class='chr-cart pchr-cart'>去借书
 											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-											<input type="hidden" name="b_id" value="{{$val['b_id']}}">
+											<a href='#' data-toggle='modal' data-target='#myModal1'></a>
+											<input type='hidden' name='b_id' value="{{$val['b_id']}}">
 										</form>
 									</div>
 								</div>
 							</div>
 							@endforeach
-							<!-- <div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib7.jpg')}}" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>marketing</h4>
-										<p>Niel Fontine</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 200.00</li>
-												<li>
-													$250.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book2">
-											<input type="hidden" name="amount" value="200.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
-									</div>
-								</div>
+							<div id="_page">
+								<button style="margin-left: 380px;" page="1"  class="page">首页</button>
+								<button page="1" class="page">上一页</button>
+								<button page="2" class="page">下一页</button>
+								<button page="{{ $last }}" class="page">尾页</button>
 							</div>
-							<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib3.jpg')}}" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>work from home</h4>
-										<p>Jose portilla</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 80.00</li>
-												<li>
-													$100.00
-												</li>
-											</ul>
 
-											<div class="clearfix"> </div>
-										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book3">
-											<input type="hidden" name="amount" value="80.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib6.jpg')}}" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>online business</h4>
-										<p>Clayton Barton</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 120.00</li>
-												<li>
-													$130.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book4">
-											<input type="hidden" name="amount" value="120.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
-									</div>
-								</div>
-							</div> -->
-							<!--//row1 -->
-							<!-- row2 -->
-						<!-- 	<div class="col-md-3 product-men women_two">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib6.jpg')}}" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>e-commerce</h4>
-										<p>Chris Haroun</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 125.00</li>
-												<li>
-													$165.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book5">
-											<input type="hidden" name="amount" value="125.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
-									</div>
-								</div>
-							</div> -->
-							<!-- <div class="col-md-3 product-men women_two">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib2.jpg')}}" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>kids</h4>
-										<p>Alex Even</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 70.00</li>
-												<li>
-													$100.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book6">
-											<input type="hidden" name="amount" value="70.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men women_two">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib5.jpg')}}" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>media</h4>
-										<p>Alex Even</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 220.00</li>
-												<li>
-													$300.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book7">
-											<input type="hidden" name="amount" value="220.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men women_two">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib4.jpg')}}" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>membership</h4>
-										<p>Hadilen de</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 210.00</li>
-												<li>
-													$300.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book8">
-											<input type="hidden" name="amount" value="210.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
-									</div>
-								</div>
-							</div> -->
-							<!-- //row2 -->
-							<!-- row3 -->
-							<!-- <div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib7.jpg')}}" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>marketing</h4>
-										<p>Scott Harris</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 180.00</li>
-												<li>
-													$220.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book9">
-											<input type="hidden" name="amount" value="180.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
-									</div>
-								</div>
-							</div> -->
-							<!-- <div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib1.jpg')}}" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>online business</h4>
-										<p>Scott Harris</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 330.00</li>
-												<li>
-													$560.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book10">
-											<input type="hidden" name="amount" value="330.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
-									</div>
-								</div>
-							</div> -->
-							<!-- <div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib2.jpg')}}" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>kids</h4>
-										<p>Cordebard</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 280.00</li>
-												<li>
-													$500.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book11">
-											<input type="hidden" name="amount" value="280.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
-									</div>
-								</div>
-							</div> -->
-						<!-- 	<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product.html">
-											<img src="{{URL::asset('/front/images/lib3.jpg')}}" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>work from home</h4>
-										<p>Cordebard</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 140.00</li>
-												<li>
-													$200.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book12">
-											<input type="hidden" name="amount" value="140.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
-									</div>
-								</div>
-							</div> -->
-							<!-- //row3 -->
 							<div class="clearfix"></div>
 
 						</div>
@@ -1431,5 +584,78 @@
 	<!-- //smoothscroll -->
 
 </body>
-
+<script type="text/javascript" src="{{URL::asset('/front/js/jquery-2.2.3.min.js')}}"></script>
+<script type="text/javascript">
+	// //搜索
+	// $(document).on("click","#AllSeach",function(){
+		
+	// 	$.ajax({
+	// 		headers: {
+	// 		//   csrf  token 生成
+	//         'X-CSRF-TOKEN': "{{ csrf_token() }}"
+	//    		},
+	// 		type:'post',
+	// 		url:"{{ url('/Home/book/pageshow')}}",
+	// 		data:{arr:arr},
+	// 		success:function(msg)
+	// 		{
+	// 			console.log(msg)
+	// 		}
+	// 	})
+        
+	// })
+	//分页
+	$(document).on("click",".page,#AllSeach",function(){
+		//获取搜索的值（文本框、分类值、时间值）
+		var search = $("#search").val()
+		var str = "";  
+        $(".type_checkbox").each(function(){ 
+             if($(this).is(":checked"))  
+            {  
+                str += $(this).attr("type_id")+",";  
+            }  
+        })
+        //去除匹配出的最后一位逗号
+        var new_str = str.substring(0,str.length-1);
+       	if($("#ThreeDay").is(":checked")){  
+		   	var ThreeDay = $("#ThreeDay").val()  
+		}else{
+			var ThreeDay = ""
+		}
+		//判断一周是否为选中状态
+       	if($("#OneWeek").is(":checked")){  
+		   	var OneWeek = $("#OneWeek").val()  
+		}else{
+			var OneWeek = ""
+		}
+		//判断一月是否为选中状态
+       	if($("#OneMouth").is(":checked")){  
+		   	var OneMouth = $("#OneMouth").val()  
+		}else{
+			var OneMouth = ""
+		}
+		//定义一个数组存放搜索条件
+		// var arr = new Array(); 
+		// arr['search'] = search
+		// arr['new_str'] = new_str
+		// arr['ThreeDay'] = ThreeDay
+		// arr['OneWeek'] = OneWeek
+		// arr['OneMouth'] = OneMouth
+		//获取当前请求页数
+		var page = $(this).attr("page")
+		$.ajax({
+			headers: {
+			//   csrf  token 生成
+	        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+	   		},
+			type:'post',
+			url:"{{ url('/Home/book/pageshow')}}",
+			data:{page:page,search:search,new_str:new_str,ThreeDay:ThreeDay,OneWeek:OneWeek,OneMouth:OneMouth},
+			success:function(msg)
+			{
+				$('#_AllTr').html(msg)
+			}
+		})
+	})
+</script>
 </html>
