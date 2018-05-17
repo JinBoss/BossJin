@@ -188,7 +188,7 @@
                             </a>
                         </li>
                         <li class="btn btn2">
-                            <a href="{{ url('/Home/home/footer') }}">活动专区</a>
+                            <a href="footer.html">活动专区</a>
                         </li>
                     </ul>
                 </div>
@@ -289,7 +289,7 @@ function stopRotateWheel() {
     var degrees = startAngle * 180 / Math.PI + 90;    
     var arcd = arc * 180 / Math.PI;    
     var index = Math.floor((360 - degrees % 360) / arcd);    ctx.save();
-    ctx.font = 'bold 30px sans-serif';
+    ctx.font = 'bold 30px sans-serif';    
     var text = restaraunts[index]    
     ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);    ctx.restore();  
 }    
@@ -298,21 +298,6 @@ function easeOut(t, b, c, d) {
     var tc = ts*t;    
     return b+c*(tc + -3*ts + 3*t);  
 }   
-function restaraunts(){
-    var option = restaraunts
-    $.ajax({
-        headers: {
-            //   csrf  token 生成
-            'X-CSRF-TOKEN': "{{ csrf_token() }}"
-            },
-        type:'post',
-        url:{{url('/home/home/option')}},
-        data:{option:option},
-        success:function(msg){
-            console.log(msg)
-        }
-    })
-}
 draw();
 </script>
 </body>
@@ -360,21 +345,21 @@ draw();
             <!-- footer-grid2 -->
             <div class="col-md-3 col-sm-6 footer-nav text-center">
                 <h4>导航栏</h4>
-                 <ul>
+                <ul>
                     <li>
-                        <a href="{{ url('/Home/home/index') }}">首页</a>
+                        <a href="index.html">首页</a>
                     </li>
                     <li>
-                        <a href="{{ url('/Home/home/about') }}">关于我们</a>
+                        <a href="about.html">关于我们</a>
                     </li>
                     <li>
-                        <a href="{{ url('/Home/home/shop') }}">图书目录</a>
+                        <a href="shop.html">图书目录</a>
                     </li>
                     <li>
-                        <a href="{{ url('/Home/home/footer') }}">图书活动</a>
+                        <a href="footer.html">图书活动</a>
                     </li>
                     <li>
-                        <a href="{{ url('/Home/home/contact') }}">联系我们</a>
+                        <a href="contact.html">联系我们</a>
                     </li>
                 </ul>
             </div>
@@ -432,7 +417,7 @@ draw();
         </div>
         <!-- //footer-grids -->
         <!-- footer social -->
-       <!--  <div class="footer-social text-center">
+        <div class="footer-social text-center">
             <h4>保持联系</h4>
             <ul>
                 <li>
@@ -456,7 +441,7 @@ draw();
                     </a>
                 </li>
             </ul>
-        </div> -->
+        </div>
         <!-- //footer social -->
     </div>
     <!-- //footer container -->

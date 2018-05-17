@@ -39,7 +39,6 @@ Route::post('/Home/home/UserBorrowBooks', 'Home\HomeController@UserBorrowBooks')
 Route::get('/Home/home/footer', 'Home\HomeController@footer');
 Route::get('/Home/home/contact', 'Home\HomeController@contact');
 Route::get('/home/captcha/{tem}', 'Home\HomeController@captcha');
-Route::get('/Home/home/option', 'Home\HomeController@option');
 
 Route::get('/admin/left', 'Admin\AdminController@left');
 Route::get('/admin/main', 'Admin\AdminController@main');
