@@ -87,4 +87,52 @@ class UserModel extends Model
         //对象转化为数组
         return json_decode(json_encode($NewData), true);
     }
+    /**
+     * 查询团队的信息左1
+     * @param u_id
+     * @return $array 
+     */
+    public static function user_data_one()
+    {
+        $TeamData =  DB::table('team')->where('team_u_id', '=', '1')->select('*')->get();
+        // print_r($TeamData);die;
+        //对象转化为数组
+        return json_decode(json_encode($TeamData), true);
+    }
+    /**
+     * 查询团队的信息左2
+     * @param u_id
+     * @return $array 
+     */
+    public static function user_data_two()
+    {
+        $TeamData =  DB::table('team')->where('team_u_id', '=', '2')->select('*')->get();
+        // print_r($TeamData);die;
+        //对象转化为数组
+        return json_decode(json_encode($TeamData), true);
+    }
+     /**
+     * 查询团队的信息右1
+     * @param u_id
+     * @return $array 
+     */
+    public static function user_data_three()
+    {
+        $TeamData =  DB::table('team')->where('team_u_id', '=', '3')->select('*')->get();
+        // print_r($TeamData);die;
+        //对象转化为数组
+        return json_decode(json_encode($TeamData), true);
+    }
+     /**
+     * 查询团队的信息右2
+     * @param u_id
+     * @return $array 
+     */
+    public static function user_data_four()
+    {
+        $TeamData =  DB::table('team')->where('team_u_id', '=', '4')->select('*')->get();
+        // print_r($TeamData);die;
+        //对象转化为数组
+        return json_decode(json_encode($TeamData), true);
+    }
 }

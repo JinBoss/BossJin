@@ -165,12 +165,30 @@
                         <li>分享.</li>
                         <li> 探索. </li>
                         <li>扩大.</li>
-                    </ul>
+                    </ul>     
                 </div>
             </div>
             <!-- //banner-text -->
         </div>
         <!-- //banner -->
+        <!-- breadcrumbs -->
+        <div class="crumbs text-center">
+            <div class="container">
+                <div class="row">
+                    <ul class="btn-group btn-breadcrumb bc-list">
+                        <li class="btn btn1">
+                            <a href="index.html">
+                                <i class="glyphicon glyphicon-home"></i>
+                            </a>
+                        </li>
+                        <li class="btn btn2">
+                            <a href="{{ url('/Home/home/index') }}">首页</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--//breadcrumbs ends here-->
         <!-- about -->
         <div class="about-sec section" id="about">
             <div class="container">
@@ -213,7 +231,7 @@
                                     </div>
                                     <h4 class="mission agileits w3layouts">{{$LibraryData['LibraryData'][0]['library_name']}}</h4>
                                     <div class="description agileits w3layouts">
-                                        <a href="{{ url('/Home/home/about') }}">进入</a>
+                                        <a href="{{ url('/Home/home/index') }}">进入</a>
                                     </div>
                                 </div>
                             </div>
@@ -351,16 +369,20 @@
 
         <!--//about bottom ends here-->
         <!-- team -->
+        
         <div id="team" class="team section">
             <div class="team-container">
+            
                 <div class="team-row">
                     <!-- team grid1 -->
                     <div class="col-md-5 team-grid-left">
                         <!-- team individual grid -->
+                        <!--foreach循环展示数据-->
+                        @foreach($AllData['UserDataOne'] as $val)
                         <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
                             <div class="team-effect">
-                                <img src="{{URL::asset('/front/images/t3.jpg')}}" alt="img" class="img-responsive">
-                                <div class="social-icon">
+                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive" width="400" height="280">
+                               <!--  <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>
                                     </a>
@@ -370,26 +392,26 @@
                                     <a href="#" class="social-button google">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="team-text">
-                                <h4>John Smith</h4>
-                                <span>Designation</span>
-                                <p>vallis molestie arcu morbi dapibus suscipit ante sit efficitur eu ante vesti.</p>
-
+                                <h4>{{$val['team_u_name']}}</h4>
+                                <span>{{$val['team_u_position']}}</span>
+                                <p>{{$val['team_u_desc']}}</p>
                             </div>
                         </div>
-                        <!-- //team individual grid -->
+                         @endforeach
                         <!-- team individual grid -->
+                        @foreach($AllData['UserDataTwo'] as $val)
                         <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
                             <div class="team-text">
-                                <h4>Thomson Doe</h4>
-                                <span>Designation</span>
-                                <p>vallis molestie arcu morbi dapibus suscipit ante sit efficitur eu ante vesti.</p>
+                                <h4>{{$val['team_u_name']}}</h4>
+                                <span>{{$val['team_u_position']}}</span>
+                                <p>{{$val['team_u_desc']}}</p>
                             </div>
                             <div class="team-effect">
-                                <img src="{{URL::asset('/front/images/t1.jpg')}}" alt="img" class="img-responsive">
-                                <div class="social-icon">
+                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive">
+                                <!-- <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>
                                     </a>
@@ -399,10 +421,11 @@
                                     <a href="#" class="social-button google">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- //team individual grid -->
                         </div>
+                        @endforeach
                     </div>
                     <!-- //team-grid1 ends here-->
                     <!--team-grid2 -->
@@ -417,15 +440,17 @@
                     <!-- team grid3 -->
                     <!-- team individual grid -->
                     <div class="col-md-5 team-grid-right">
+                       <!--foreach循环展示数据-->
+                        @foreach($AllData['UserDataThree'] as $val)
                         <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
                             <div class="team-text">
-                                <h4>Smith Kevin</h4>
-                                <span>Designation</span>
-                                <p>vallis molestie arcu morbi dapibus suscipit ante sit efficitur eu ante vesti.</p>
+                                <h4>{{$val['team_u_name']}}</h4>
+                                <span>{{$val['team_u_position']}}</span>
+                                <p>{{$val['team_u_desc']}}</p>
                             </div>
                             <div class="team-effect">
-                                <img src="{{URL::asset('/front/images/t2.jpg')}}" alt="img" class="img-responsive">
-                                <div class="social-icon">
+                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive">
+                               <!--  <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>
                                     </a>
@@ -435,15 +460,17 @@
                                     <a href="#" class="social-button google">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
+                         @endforeach
                         <!-- //team individual grid -->
                         <!-- team individual grid -->
+                        @foreach($AllData['UserDataFour'] as $val)
                         <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
                             <div class="team-effect">
-                                <img src="{{URL::asset('/front/images/t4.jpg')}}" alt="img" class="img-responsive">
-                                <div class="social-icon">
+                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive">
+                               <!--  <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>
                                     </a>
@@ -453,34 +480,37 @@
                                     <a href="#" class="social-button google">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="team-text">
-                                <h4>Laura Hill</h4>
-                                <span>Designation</span>
-                                <p>vallis molestie arcu morbi dapibus suscipit ante sit efficitur eu ante vesti.</p>
+                                <h4>{{$val['team_u_name']}}</h4>
+                                <span>{{$val['team_u_position']}}</span>
+                                <p>{{$val['team_u_desc']}}</p>
                             </div>
                         </div>
+                        @endforeach
                         <!-- //team individual grid -->
                         <div class="clearfix"> </div>
                     </div>
                     <!-- //team grid3 -->
                     <div class="clearfix"> </div>
                 </div>
+
                 <!-- //team-row ends here -->
             </div>
+           
             <!-- // team container ends here -->
         </div>
         <!-- //team -->
         <!--testimonials -->
-        <div class="reviews section" id="testimonials">
+       <!--  <div class="reviews section" id="testimonials">
             <div class="container">
                 <h4 class="rad-txt">
                     <span class="abtxt1">visitors</span>
                     <span class="abtext">testimonials</span>
                 </h4>
                 <div id="Carousel" class="slide carousel">
-                    <!-- Carousel items -->
+                     //Carousel items 
                     <div class="carousel-inner">
                         <div class="item active">
                             <div class="row">
@@ -537,11 +567,11 @@
                                         <div class="clearfix"> </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!--.row-->
-                        </div>
+                       <!--  </div> -->
                         <!--.item-->
-                        <div class="item">
+                      <!--   <div class="item">
                             <div class="row">
                                 <div class="col-md-6  testi-main">
                                     <div class="testi-grids">
@@ -597,21 +627,21 @@
                                         <div class="clearfix"> </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!--.row-->
-                        </div>
-                    </div>
+                     <!--    </div>
+                    </div> -->
                     <!--.carousel-inner-->
-                    <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-                    <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-                </div>
+                   <!--  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                    <a data-slide="next" href="#Carousel" class="right carousel-control">›</a> -->
+                <!-- </div> -->
                 <!--.Carousel-->
-                <div class="clearfix"> </div>
+               <!--  <div class="clearfix"> </div>
             </div>
-        </div>
+        </div>  -->
         <!-- //testimonials-->
         <!-- footer-layouts -->
-        <div class="addon-sec section">
+       <!--  <div class="addon-sec section">
             <div class="container">
                 <h4 class="rad-txt">
                     <span class="abtxt1">footer</span>
@@ -639,7 +669,7 @@
                 </div>
                 <div class="clearfix"> </div>
             </div>
-        </div>
+        </div> -->
         <!-- //footer-layouts -->
          <div class="footer-bottom section">
     <div class="container">
@@ -678,21 +708,21 @@
             <!-- footer-grid2 -->
             <div class="col-md-3 col-sm-6 footer-nav text-center">
                 <h4>导航栏</h4>
-                <ul>
+                 <ul>
                     <li>
-                        <a href="index.html">首页</a>
+                        <a href="{{ url('/Home/home/index') }}">首页</a>
                     </li>
                     <li>
-                        <a href="about.html">关于我们</a>
+                        <a href="{{ url('/Home/home/about') }}">关于我们</a>
                     </li>
                     <li>
-                        <a href="shop.html">图书目录</a>
+                        <a href="{{ url('/Home/home/shop') }}">图书目录</a>
                     </li>
                     <li>
-                        <a href="footer.html">图书活动</a>
+                        <a href="{{ url('/Home/home/footer') }}">图书活动</a>
                     </li>
                     <li>
-                        <a href="contact.html">联系我们</a>
+                        <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                     </li>
                 </ul>
             </div>
@@ -750,7 +780,7 @@
         </div>
         <!-- //footer-grids -->
         <!-- footer social -->
-        <div class="footer-social text-center">
+        <!-- <div class="footer-social text-center">
             <h4>保持联系</h4>
             <ul>
                 <li>
@@ -774,7 +804,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> -->
         <!-- //footer social -->
     </div>
     <!-- //footer container -->

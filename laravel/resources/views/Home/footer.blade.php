@@ -263,21 +263,21 @@
             <!-- footer-grid2 -->
             <div class="col-md-3 col-sm-6 footer-nav text-center">
                 <h4>导航栏</h4>
-                <ul>
+                 <ul>
                     <li>
-                        <a href="index.html">首页</a>
+                        <a href="{{ url('/Home/home/index') }}">首页</a>
                     </li>
                     <li>
-                        <a href="about.html">关于我们</a>
+                        <a href="{{ url('/Home/home/about') }}">关于我们</a>
                     </li>
                     <li>
-                        <a href="shop.html">图书目录</a>
+                        <a href="{{ url('/Home/home/shop') }}">图书目录</a>
                     </li>
                     <li>
-                        <a href="footer.html">图书活动</a>
+                        <a href="{{ url('/Home/home/footer') }}">图书活动</a>
                     </li>
                     <li>
-                        <a href="contact.html">联系我们</a>
+                        <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                     </li>
                 </ul>
             </div>
@@ -335,7 +335,7 @@
         </div>
         <!-- //footer-grids -->
         <!-- footer social -->
-        <div class="footer-social text-center">
+       <!--  <div class="footer-social text-center">
             <h4>保持联系</h4>
             <ul>
                 <li>
@@ -359,7 +359,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> -->
         <!-- //footer social -->
     </div>
     <!-- //footer container -->

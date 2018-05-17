@@ -171,9 +171,9 @@
             <div class="banner-text-inner">
                 <div class="container">
                     <h2 class="title-inner">
-                        阅读的世界
+                        信任  始于了解 
                     </h2>
-
+                    <h3 style="color: red">About As</h3>
                 </div>
             </div>
             <!-- //banner-text -->
@@ -268,15 +268,16 @@
         </div>
         <!-- //about ends here -->
         <!-- about bottom -->
-        <div class="about-bottom section">
+      <div class="about-bottom section" style="margin-left: 85px;">
             <div class="container-fluid">
                 <h4 class="rad-txt">
-                    <span class="abtxt1">wonderful</span>
-                    <span class="abtext"> world of reading</span>
+                    <span class="abtxt1">关于我们</span>
+                    <span class="abtext">服务理念</span>
                 </h4>
-                <!-- about-bottom grid1 -->
+                 <!-- about-bottom grid1 -->
                 <div class="col-md-6 about-bottom-right">
-                    <p class="abt-p">Etiam massa quam, efficitur eu ante vestibulum, convallis molestie arcu. Morbi dapibus suscipit ante,
+                <img src="http://2017.xinaoyun.com/template/default/_themes/2017/images/about_07.png" alt="">
+                   <!--  <p class="abt-p">Etiam massa quam, efficitur eu ante vestibulum, convallis molestie arcu. Morbi dapibus suscipit ante,
                         sit efficitur eu ante vestibulum, convallis molestie arcu. Morbi dapibus suscipit an amet pulvinar
                         risus.
                     </p>
@@ -365,14 +366,14 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                </div>
+                </div> -->
                 <!-- //about-bottom grid1 ends here -->
-                <div class="col-md-6 home-about2">
+                <!-- <div class="col-md-6 home-about2"> -->
                 <!-- about-bottom grid2 -->
-                <div class="col-md-6 col-sm-6 col-xs-6 bg-right"></div>
+                <!-- <div class="col-md-6 col-sm-6 col-xs-6 bg-right"></div> -->
                 <!-- //about-bottom grid2 ends here -->
                 <!-- about-bottom grid3 -->
-                <div class="col-md-6 col-sm-6 col-xs-6 w3ls-section  stats">
+               <!--  <div class="col-md-6 col-sm-6 col-xs-6 w3ls-section  stats">
                     <div class="stats-aboutinfo services-main">
                         <div class="agileits_w3layouts-stats-grids text-center">
                             <div class="stats-icon">
@@ -425,7 +426,7 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                </div>
+                </div> -->
                 <div class="clearfix"></div>
                </div>
                 <!-- //about-bottom grid3 ends here -->
@@ -436,13 +437,13 @@
         </div>
         <!--//about bottom ends here-->
         <!-- team -->
-        <div id="team" class="team section">
+       <!--  <div id="team" class="team section">
             <div class="team-container">
                 <div class="team-row">
-                    <!-- team grid1 -->
-                    <div class="col-md-5 team-grid-left">
+                    team grid1 -->
+                    <!-- <div class="col-md-5 team-grid-left"> -->
                         <!-- team individual grid -->
-                        <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                      <!--   <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
                             <div class="team-effect">
                                 <img src="{{URL::asset('/front/images/t3.jpg')}}" alt="img" class="img-responsive">
                                 <div class="social-icon">
@@ -463,10 +464,10 @@
                                 <p>vallis molestie arcu morbi dapibus suscipit ante sit efficitur eu ante vesti.</p>
 
                             </div>
-                        </div>
+                        </div> -->
                         <!-- //team individual grid -->
                         <!-- team individual grid -->
-                        <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                        <!-- <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
                             <div class="team-text">
                                 <h4>Thomson Doe</h4>
                                 <span>Designation</span>
@@ -485,23 +486,23 @@
                                         <i class="fa fa-google-plus"></i>
                                     </a>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- //team individual grid -->
-                        </div>
-                    </div>
+                  <!--       </div>
+                    </div> -->
                     <!-- //team-grid1 ends here-->
                     <!--team-grid2 -->
-                    <div class="col-md-2 col-sm-2 team-mid-txt text-center">
+                <!--     <div class="col-md-2 col-sm-2 team-mid-txt text-center">
                         <span>our</span>
                         <h5>t</h5>
                         <h5>e</h5>
                         <h5>a</h5>
                         <h5>m</h5>
-                    </div>
+                    </div> -->
                     <!--//team-grid2 ends here-->
                     <!-- team grid3 -->
                     <!-- team individual grid -->
-                    <div class="col-md-5 team-grid-right">
+                    <!-- <div class="col-md-5 team-grid-right">
                         <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
                             <div class="team-text">
                                 <h4>Smith Kevin</h4>
@@ -522,10 +523,10 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- //team individual grid -->
                         <!-- team individual grid -->
-                        <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                  <!--       <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
                             <div class="team-effect">
                                 <img src="{{URL::asset('/front/images/t4.jpg')}}" alt="img" class="img-responsive">
                                 <div class="social-icon">
@@ -545,37 +546,40 @@
                                 <span>Designation</span>
                                 <p>vallis molestie arcu morbi dapibus suscipit ante sit efficitur eu ante vesti.</p>
                             </div>
-                        </div>
+                        </div>  -->
                         <!-- //team individual grid -->
-                        <div class="clearfix"> </div>
-                    </div>
+                        <!-- <div class="clearfix"> </div> -->
+                    <!-- </div> -->
                     <!-- //team grid3 -->
-                    <div class="clearfix"> </div>
-                </div>
+                    <!-- <div class="clearfix"> </div> -->
+                <!-- </div> -->
                 <!-- //team-row ends here -->
-            </div>
+            <!-- </div> -->
             <!-- // team container ends here -->
-        </div>
+        <!-- </div> -->
         <!-- //team -->
         <!-- gallery -->
         <div id="section_demo" class="section">
             <div class="container">
                 <h4 class="rad-txt">
-                    <span class="abtxt1">the library</span>
-                    <span class="abtext">gallery</span>
+                    <span class="abtxt1">未来图书馆</span>
+                    <span class="abtext">风景线</span>
                 </h4>
                 <div class="row">
                     <!-- Result 1 -->
                     <div class="col-lg-12 col-md-12">
                         <div class="row">
+                        
                             <div id="slideshow_1_thumbs_1" class="col-lg-2 col-md-2">
                                 <ul class="slideshow1_thumbs desoslide-thumbs-vertical list-inline text-center">
+                                @foreach($LibraryImgData['LibraryDataOne'] as $val)
                                     <li>
                                         <a href="images/l3.jpg">
-                                            <img src="{{URL::asset('/front/images/lt3.jpg')}}" alt="chronicle_image"  data-desoslide-caption-title="Library Gallery" class="img-responsive">
+                                            <img src="{{URL::asset($val['library_img_img'])}}" alt="chronicle_image"  data-desoslide-caption-title="Library Gallery" class="img-responsive">
                                         </a>
                                     </li>
-                                    <li>
+                                @endforeach
+                                    <!-- <li>
                                         <a href="images/l2.jpg">
                                             <img src="{{URL::asset('/front/images/lt2.jpg')}}" alt="chronicle_image"  data-desoslide-caption-title="Library Gallery" class="img-responsive">
                                         </a>
@@ -589,18 +593,22 @@
                                         <a href="images/l4.jpg">
                                             <img src="{{URL::asset('/front/images/lt4.jpg')}}" alt="chronicle_image"  data-desoslide-caption-title="Library Gallery" class="img-responsive">
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
+                            
                             <div id="slideshow1" class="col-lg-8 col-md-8"></div>
+                            
                             <div id="slideshow_1_thumbs_2" class="col-lg-2 col-md-2">
                                 <ul class="slideshow1_thumbs desoslide-thumbs-vertical list-inline">
+                                @foreach($LibraryImgData['LibraryDataTwo'] as $val)
                                     <li>
-                                        <a href="images/l1.jpg">
-                                            <img src="{{URL::asset('/front/images/lt1.jpg')}}" alt="chronicle_image"  data-desoslide-caption-title="Library Gallery" class="img-responsive">
+                                        <a href="">
+                                            <img src="{{URL::asset($val['library_img_img'])}}" alt="chronicle_image"  data-desoslide-caption-title="Library Gallery" class="img-responsive">
                                         </a>
                                     </li>
-                                    <li>
+                                @endforeach
+                                   <!--  <li>
                                         <a href="images/l6.jpg">
                                             <img src="{{URL::asset('/front/images/lt6.jpg')}}" alt="chronicle_image"  data-desoslide-caption-title="Library Gallery" class="img-responsive">
                                         </a>
@@ -614,9 +622,10 @@
                                         <a href="images/l8.jpg">
                                             <img src="{{URL::asset('/front/images/lt8.jpg')}}" alt="chronicle_image"  data-desoslide-caption-title="Library Gallery" class="img-responsive">
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
-                            </div>
+                            </div> 
+                            
                         </div>
                     </div>
                 </div>
@@ -626,15 +635,15 @@
         </div>
         <!-- //gallery -->
         <!--testimonials -->
-        <div class="reviews section" id="testimonials">
+        <!-- <div class="reviews section" id="testimonials">
             <div class="container">
                 <h4 class="rad-txt">
                     <span class="abtxt1">visitors</span>
                     <span class="abtext">testimonials</span>
                 </h4>
-                <div id="Carousel" class="slide carousel">
+                <div id="Carousel" class="slide carousel"> -->
                     <!-- Carousel items -->
-                    <div class="carousel-inner">
+                   <!--  <div class="carousel-inner">
                         <div class="item active">
                             <div class="row">
                                 <div class="col-md-6  testi-main">
@@ -690,11 +699,11 @@
                                         <div class="clearfix"> </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!--.row-->
-                        </div>
+                        <!-- </div> -->
                         <!--.item-->
-                        <div class="item">
+                        <!-- <div class="item">
                             <div class="row">
                                 <div class="col-md-6  testi-main">
                                     <div class="testi-grids">
@@ -750,21 +759,21 @@
                                         <div class="clearfix"> </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!--.row-->
-                        </div>
-                    </div>
+                        <!-- </div> -->
+                    <!-- </div> -->
                     <!--.carousel-inner-->
-                    <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                <!--     <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
                     <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-                </div>
+                </div> -->
                 <!--.Carousel-->
-                <div class="clearfix"> </div>
+             <!--    <div class="clearfix"> </div>
             </div>
-        </div>
+        </div> -->
         <!-- //testimonials-->
         <!-- footer-layouts -->
-        <div class="addon-sec section">
+       <!--  <div class="addon-sec section">
             <div class="container">
                 <h4 class="rad-txt">
                     <span class="abtxt1">footer</span>
@@ -792,7 +801,7 @@
                 </div>
                 <div class="clearfix"> </div>
             </div>
-        </div>
+        </div> -->
         <!-- //footer-layouts -->
         <div class="footer-bottom section">
     <div class="container">
@@ -833,19 +842,19 @@
                 <h4>导航栏</h4>
                 <ul>
                     <li>
-                        <a href="index.html">首页</a>
+                        <a href="{{ url('/Home/home/index') }}">首页</a>
                     </li>
                     <li>
-                        <a href="about.html">关于我们</a>
+                        <a href="{{ url('/Home/home/about') }}">关于我们</a>
                     </li>
                     <li>
-                        <a href="shop.html">图书目录</a>
+                        <a href="{{ url('/Home/home/shop') }}">图书目录</a>
                     </li>
                     <li>
-                        <a href="footer.html">图书活动</a>
+                        <a href="{{ url('/Home/home/footer') }}">图书活动</a>
                     </li>
                     <li>
-                        <a href="contact.html">联系我们</a>
+                        <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                     </li>
                 </ul>
             </div>
@@ -903,7 +912,7 @@
         </div>
         <!-- //footer-grids -->
         <!-- footer social -->
-        <div class="footer-social text-center">
+        <!-- <div class="footer-social text-center">
             <h4>保持联系</h4>
             <ul>
                 <li>
@@ -927,7 +936,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> -->
         <!-- //footer social -->
     </div>
     <!-- //footer container -->

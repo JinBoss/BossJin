@@ -9,6 +9,7 @@ use DB;
 use App\Http\Models\Home\HomeModel;  
 use App\Http\Models\Home\LibraryModel; 
 use App\Http\Models\Home\BookModel;
+use App\Http\Models\Home\UserModel;
 use App\Http\Models\Home\MessageModel;  
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Input;
@@ -40,14 +41,23 @@ class HomeController extends Controller
         $LibraryData = LibraryModel::library_data();
         //查询书籍的分类信息
         $BookTypeData = BookModel::type_data();
-        return view('Home/index')->with('LibraryData',$LibraryData)->with('BookTypeData',$BookTypeData);
+        //查询我们的团队
+        $AllData['UserDataOne'] = UserModel::user_data_one();
+        $AllData['UserDataTwo'] = UserModel::user_data_two();
+        $AllData['UserDataThree'] = UserModel::user_data_three();
+        $AllData['UserDataFour'] = UserModel::user_data_four();
+        // print_r($AllData);die;
+        return view('Home/index')->with('LibraryData',$LibraryData)->with('BookTypeData',$BookTypeData)->with('AllData',$AllData);
     }
     /**图书馆*/
     public function about()
     {
         //查询图书馆全部信息
         $LibraryData = LibraryModel::library_data();
-        return view("Home/about")->with('LibraryData',$LibraryData);
+        //查询图书馆图片
+        $LibraryImgData = LibraryModel::library_img_data();
+        // print_r($LibraryImgData);die;
+        return view("Home/about")->with('LibraryData',$LibraryData)->with('LibraryImgData',$LibraryImgData);
     }
     /**商品页面*/
     public function shop()
