@@ -42,6 +42,7 @@
 		</div>
 		</form>
 		<a href="{{ url('/home') }}"><button>进入首页</button></a>
+		<a href="{{ url('/Home/home/checkout') }}"><button>管理我的图书</button></a>
 		<a href="{{ url('/user/userout') }}"><button>退出当前用户</button></a>
 	</center>
 </body>

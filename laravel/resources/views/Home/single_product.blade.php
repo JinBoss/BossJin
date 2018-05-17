@@ -170,7 +170,7 @@
 			<div class="banner-text-inner">
 				<div class="container">
 					<h2 class="title-inner">
-						world of reading
+						阅读的世界
 					</h2>
 
 				</div>
@@ -189,10 +189,10 @@
 							</a>
 						</li>
 						<li class="btn btn2">
-							<a href="shop.html">Product Catalogue</a>
+							<a href="{{ url('/Home/home/shop') }}">图书目录</a>
 						</li>
 						<li class="btn btn3">
-							<a href="single_product.html">Single product</a>
+							<a href="{{ url('/Home/home/BorrowBooks') }}">借书详情</a>
 						</li>
 					</ul>
 				</div>
@@ -200,6 +200,8 @@
 		</div>
 		<!--//breadcrumbs ends here-->
 		<!-- Single -->
+		<!--foreach循环展示数据-->
+		@foreach($BookData['BookData'] as $key => $val)
 		<div class="innerf-pages section">
 			<div class="container">
 				<div class="col-md-4 single-right-left ">
@@ -208,32 +210,36 @@
 							<ul class="slides">
 								<li data-thumb="images/s1.jpg">
 									<div class="thumb-image">
-										<img src="{{URL::asset('/front/images/lib8.jpg')}}" data-imagezoom="true" alt=" " class="img-responsive"> </div>
+										<img src="{{URL::asset($val['b_img'])}}" data-imagezoom="true" alt=" " class="img-responsive" alt="">
+										<!-- <img src="{{URL::asset('/front/images/lib8.jpg')}}" data-imagezoom="true" alt=" " class="img-responsive"> -->
+									</div> 
 								</li>
-								<li data-thumb="images/s2.jpg">
+							<!-- 	<li data-thumb="images/s2.jpg">
 									<div class="thumb-image">
 										<img src="{{URL::asset('/front/images/s2.jpg')}}" data-imagezoom="true" alt=" " class="img-responsive"> </div>
 								</li>
 								<li data-thumb="images/s3.png">
 									<div class="thumb-image">
 										<img src="{{URL::asset('/front/images/s3.png')}}" data-imagezoom="true" alt=" " class="img-responsive"> </div>
-								</li>
+								</li> -->
 							</ul>
 							<div class="clearfix"></div>
 						</div>
 					</div>
 
 				</div>
+			
 				<div class="col-md-8 single-right-left simpleCart_shelfItem">
-					<h3>Be Creative
-						<span>Hardcover – Feb 2018</span>
+					<h3>{{$val['b_name']}}
+						
 					</h3>
-					<p>by
-						<a href="#">Clayton Barton</a>
+					<p>
+						作者：<a href="#">{{$val['b_auther']}}</a>
 					</p>
+					<span>精装书 – {{ date("Y-m-d",$val['adtime'])}}</span>
 					<div class="caption">
 
-						<ul class="rating-single">
+						<ul class="rating-single">星级：
 							<li>
 								<a href="#">
 									<span class="fa fa-star yellow-star" aria-hidden="true"></span>
@@ -261,31 +267,40 @@
 							</li>
 						</ul>
 						<div class="clearfix"> </div>
-						<h6>
-							$100.00</h6>
+						<h6>最新、最热or最全：
+							<!-- if判断是否最新 -->
+							@if($val['is_hot'] == '1' AND $val['is_new'] == '1' )
+								<p>最热+最新</p>
+							@elseif($val['is_hot'] == '1')
+								<p>最热</p>
+							@elseif($val['is_new'] == '1')
+								<p>最新</p>
+							@else
+								<p>最全</p>
+							@endif 
+						</h6>
 					</div>
 					<div class="desc_single">
-						<h5>Description</h5>
-						<p>Pellentesque quis orci sapien. Phasellus at libero in nunc egestas tincidunt. In dictum arcu purus, ultricies tincidunt
-							urna vehicula at. Aenean iaculis urna nec libero scelerisque, ac ullamcorper neque porta.</p>
+						<h5>内容简介</h5>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;{{$val['b_desc']}}</p>
 					</div>
 					<div class="occasional">
-						<h5>Specifications</h5>
+						<h5>图书相关</h5>
 						<ul class="single_specific">
 							<li>
-								<span>language :</span> english</li>
+								<span>语言 :</span> 英语</li>
 							<li>
-								<span>format :</span> Hardcover</li>
+								<span>格式 :</span> 精装的</li>
 							<li>
-								<span>publisher :</span> Lorempipsum</li>
+								<span>出版社 :</span> 中国人民出版社</li>
 							<li>
-								<span>edition :</span> february 2018</li>
+								<span>出版时间 :</span>{{ date("Y-m-d",$val['adtime'])}}</li>
 							<li>
-								<span>pages :</span> 765</li>
+								<span>总页数 :</span> 765页</li>
 						</ul>
 
 					</div>
-					<div class="color-quality">
+					<!-- <div class="color-quality">
 						<div class="color-quality-right">
 							<h5>Also Formats avaiable in:</h5>
 							<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
@@ -293,26 +308,29 @@
 								<option value="null">Audio Book &nbsp;$200.00</option>
 							</select>
 						</div>
-					</div>
-					<div class="clearfix"></div>
-					<div class="description">
+					</div> -->
+					<!-- <div class="clearfix"></div> -->
+					<!-- <div class="description">
 						<h5>Check delivery, payment options and charges at your location</h5>
 						<form action="#" method="post">
 							<input type="text" value="Enter pincode" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter pincode';}"
 							    required="">
 							<input type="submit" value="Check">
 						</form>
-					</div>
+					</div> -->
 					<div class="occasion-cart">
 						<div class="chr single-item single_page_b">
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
+							<form action="{{ url('/Home/home/UserBorrowBooks') }}" method="post">
+							{{csrf_field()}} 
+								<!-- <input type="hidden" name="cmd" value="_cart">
 								<input type="hidden" name="add" value="1">
 								<input type="hidden" name="chr_item" value="Single book">
 								<input type="hidden" name="amount" value="100.00">
 								<button type="submit" class="chr-cart pchr-cart">
 									<i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-								<a href="#" data-toggle="modal" data-target="#myModal1"></a>
+								<a href="#" data-toggle="modal" data-target="#myModal1"></a> -->
+								<button type="submit" class="chr-cart pchr-cart">借书</button>
+								<input type="hidden" name="b_id" value="{{$val['b_id']}}">
 							</form>
 						</div>
 					</div>
@@ -320,16 +338,88 @@
 				<div class="clearfix"> </div>
 			</div>
 		</div>
+		@endforeach
 		<!-- /new_arrivals -->
 		<div class="section singlep_btm">
 			<div class="container">
 				<div class="new_arrivals">
 					<h4 class="rad-txt">
-						<span class="abtxt1">featured</span>
-						<span class="abtext"> products</span>
+						<span class="abtxt1">推荐</span>
+						<span class="abtext"> 借阅</span>
 					</h4>
+					@foreach($BookHotData['BookData'] as $key => $val)
+							<div class="col-md-3 product-men">
+								<div class="product-chr-info chr">
+									<div class="thumbnail">
+										<a href="single_product.html">
+											<img src="{{URL::asset($val['b_img'])}}" width="300" height="300" alt="">
+										</a>
+									</div>
+									<div class="caption">
+										<h4>{{$val['b_name']}}</h4>
+										<p>{{$val['b_auther']}}</p>
+										<div class="matrlf-mid">
+											<ul class="rating">
+												<li>
+													<a href="#">
+														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="fa fa-star gray-star" aria-hidden="true"></span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="fa fa-star gray-star" aria-hidden="true"></span>
+													</a>
+												</li>
+											</ul>
+											<ul class="price-list">
+											<!-- if判断是否最新 -->
+											@if($val['is_hot'] == '1' AND $val['is_new'] == '1' )
+												<p>最热+最新</p>
+											@elseif($val['is_hot'] == '1')
+												<p>最热</p>
+											@elseif($val['is_new'] == '1')
+												<p>最新</p>
+											@else
+												<p>请查看</p>
+											@endif 
+											</ul>
+
+											<div class="clearfix"> </div>
+										</div>
+										<form action="{{ url('/Home/home/BorrowBooks') }}" method="post">
+										{{csrf_field()}} 
+											<!-- <input type="hidden" name="cmd" value="_cart"> -->
+											<!-- <input type="hidden" name="add" value="1"> -->
+											<!-- <input type="hidden" name="chr_item" value="Book1"> -->
+											<!-- <input type="hidden" name="amount" value="100.00"> -->
+											<button type="submit" class="chr-cart pchr-cart">去借书
+											<!-- <button type="submit">去借书</button> -->
+												<!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
+											</button>
+											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
+											<input type="hidden" name="b_id" value="{{$val['b_id']}}">
+										</form>
+									</div>
+								</div>
+							</div>
+							@endforeach
 					<!-- row3 -->
-					<div class="col-md-3 product-men">
+					<!-- <div class="col-md-3 product-men">
 						<div class="product-chr-info chr">
 							<div class="thumbnail">
 								<a href="single_product.html">
@@ -388,8 +478,8 @@
 								</form>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-3 product-men">
+					</div> -->
+					<!-- <div class="col-md-3 product-men">
 						<div class="product-chr-info chr">
 							<div class="thumbnail">
 								<a href="single_product.html">
@@ -568,7 +658,7 @@
 								</form>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- //row3 -->
 					<div class="clearfix"></div>
 				</div>
@@ -615,21 +705,21 @@
             <!-- footer-grid2 -->
             <div class="col-md-3 col-sm-6 footer-nav text-center">
                 <h4>导航栏</h4>
-                <ul>
+                 <ul>
                     <li>
-                        <a href="index.html">首页</a>
+                        <a href="{{ url('/Home/home/index') }}">首页</a>
                     </li>
                     <li>
-                        <a href="about.html">关于我们</a>
+                        <a href="{{ url('/Home/home/about') }}">关于我们</a>
                     </li>
                     <li>
-                        <a href="shop.html">图书目录</a>
+                        <a href="{{ url('/Home/home/shop') }}">图书目录</a>
                     </li>
                     <li>
-                        <a href="footer.html">图书活动</a>
+                        <a href="{{ url('/Home/home/footer') }}">图书活动</a>
                     </li>
                     <li>
-                        <a href="contact.html">联系我们</a>
+                        <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                     </li>
                 </ul>
             </div>
@@ -687,7 +777,7 @@
         </div>
         <!-- //footer-grids -->
         <!-- footer social -->
-        <div class="footer-social text-center">
+        <!-- <div class="footer-social text-center">
             <h4>保持联系</h4>
             <ul>
                 <li>
@@ -711,7 +801,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> -->
         <!-- //footer social -->
     </div>
     <!-- //footer container -->

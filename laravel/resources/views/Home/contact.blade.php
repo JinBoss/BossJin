@@ -187,7 +187,7 @@
                             </a>
                         </li>
                         <li class="btn btn2">
-                            <a href="contact.html">联系我们</a>
+                            <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                         </li>
                     </ul>
                 </div>
@@ -206,12 +206,13 @@
                         <!-- contact form grid -->
                         <div class="contact-top1">
                             <h5>寄给我们一份信息</h5>
-                            <form action="#" class="form_w3layouts" method="post">
-                                <input type="text" placeholder="你的名字" required="">
+                            <form action="{{ url('/Home/Home/ContactMessage') }}" class="form_w3layouts" method="post">
+                            {{csrf_field()}} 
+                                <input type="text" name="message_name" placeholder="你的名字" required="">
                                 <!-- <input type="text" placeholder="Last Name" required=""> -->
 
-                                <input class="email" type="email" placeholder="你的邮箱" required="">
-                                <textarea placeholder="你的留言" required=""></textarea>
+                                <input class="email" name="message_email" type="email" placeholder="你的邮箱" required="">
+                                <textarea placeholder="你的留言" name="message_content" required=""></textarea>
                                 <input type="submit" value="发送">
                             </form>
                         </div>
@@ -335,21 +336,21 @@
             <!-- footer-grid2 -->
             <div class="col-md-3 col-sm-6 footer-nav text-center">
                 <h4>导航栏</h4>
-                <ul>
+                 <ul>
                     <li>
-                        <a href="index.html">首页</a>
+                        <a href="{{ url('/Home/home/index') }}">首页</a>
                     </li>
                     <li>
-                        <a href="about.html">关于我们</a>
+                        <a href="{{ url('/Home/home/about') }}">关于我们</a>
                     </li>
                     <li>
-                        <a href="shop.html">图书目录</a>
+                        <a href="{{ url('/Home/home/shop') }}">图书目录</a>
                     </li>
                     <li>
-                        <a href="footer.html">图书活动</a>
+                        <a href="{{ url('/Home/home/footer') }}">图书活动</a>
                     </li>
                     <li>
-                        <a href="contact.html">联系我们</a>
+                        <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                     </li>
                 </ul>
             </div>
@@ -407,7 +408,7 @@
         </div>
         <!-- //footer-grids -->
         <!-- footer social -->
-        <div class="footer-social text-center">
+        <!-- <div class="footer-social text-center">
             <h4>保持联系</h4>
             <ul>
                 <li>
@@ -431,7 +432,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> -->
         <!-- //footer social -->
     </div>
     <!-- //footer container -->
