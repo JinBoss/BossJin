@@ -260,7 +260,7 @@
         </div>
         <!-- //about ends here -->
         <!-- about bottom -->
-        <div class="about-bottom section">
+        <div class="about-bottom section" style="margin-left: 70px;">
 
             <div class="container-fluid">
                 <h4 class="rad-txt">
@@ -363,14 +363,17 @@
                 </div>
                 <!-- //about-bottom grid1 ends here -->
 
-                <div class="col-md-6 home-about2" style=" width: 650px; height: 750px;">
+                <div class="col-md-6 home-about2" style=" width: 500px; height: 750px; float: left;">
                     <canvas id="canvas" width="650" height="750" >cccc</canvas>
                 </div>
 
         <!--//about bottom ends here-->
         <!-- team -->
-        
         <div id="team" class="team section">
+                <h4 class="rad-txt" style="margin-top: 580px; margin-right: 200px;">
+                    <span class="abtxt1">我们的</span>
+                    <span class="abtext">团队</span>
+                </h4>
             <div class="team-container">
             
                 <div class="team-row">
@@ -379,9 +382,9 @@
                         <!-- team individual grid -->
                         <!--foreach循环展示数据-->
                         @foreach($AllData['UserDataOne'] as $val)
-                        <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                        <div class="col-md-6 col-sm-6 col-xs-6 team-grids" style="float: left;">
                             <div class="team-effect">
-                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive" width="400" height="280">
+                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive" style="width: 400px;height: 196px;">
                                <!--  <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>
@@ -410,7 +413,7 @@
                                 <p>{{$val['team_u_desc']}}</p>
                             </div>
                             <div class="team-effect">
-                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive">
+                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive"  style="width: 400px;height: 208px;">
                                 <!-- <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>
@@ -449,7 +452,7 @@
                                 <p>{{$val['team_u_desc']}}</p>
                             </div>
                             <div class="team-effect">
-                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive">
+                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive" style="width: 400px;height: 196px;">
                                <!--  <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>
@@ -469,7 +472,7 @@
                         @foreach($AllData['UserDataFour'] as $val)
                         <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
                             <div class="team-effect">
-                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive">
+                                <img src="{{URL::asset($val['team_u_img'])}}" alt="img" class="img-responsive" style="width: 400px;height: 208px;">
                                <!--  <div class="social-icon">
                                     <a href="#" class="social-button twitter">
                                         <i class="fa fa-twitter"></i>

@@ -135,7 +135,8 @@ class UserModel extends Model
         // print_r($TeamData);die;
         //对象转化为数组
         return json_decode(json_encode($TeamData), true);
-=======
+    }
+    /*
      * 注册新的用户
      * @param 
      * @return $array 
@@ -143,7 +144,7 @@ class UserModel extends Model
     public static function user_add($AddUserData,$img)
     {
         //将用户密码进行Crype加密（当前密码匹配当前用户）+Sha1加密
-        $pwd = sha1(crypt($AddUserData['u_pwd'],$AddUserData['u_pwd']));
+        $pwd = sha1(crypt($AddUserData['u_pwd'],$AddUserData['u_name']));
         //字符串转换为32位
         $u_pwd  = substr($pwd,0,-8);
         //查询用户信息
@@ -161,6 +162,5 @@ class UserModel extends Model
         }else{
             return 0;
         }
->>>>>>> Stashed changes
     }
 }
