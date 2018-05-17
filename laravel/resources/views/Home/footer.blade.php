@@ -115,11 +115,13 @@
                                 <a href="{{ url('/Home/home/contact') }}">联系我们</a>
                             </li>
                             <li>
-                                <a href="login.html" title="我的资料">
-                                    <span class="fa fa-user nav-icon" aria-hidden="true"></span>
-                                </a>
+                                @if(session('UserData') != "")
+                                <a href="{{ url('/user/usershow') }}?id={{session('UserData')['u_id']}}" title="我的资料"><img src="{{URL::asset(session('UserData')['u_img'])}}" width="30" height="30"></a>
+                                @else
+                                    <a href="{{ url('/login/') }}" title="去登录"><span class="fa fa-user nav-icon" aria-hidden="true"></span></a>
+                                @endif
+                                    <!-- <img src="{{URL::asset(session('UserData')['u_img'])}}" width="30" height="30"> -->
                             </li>
-
                         </ul>
                         <!-- search-bar -->
                        <!--  <div class="search-bar-agileits">
@@ -192,36 +194,133 @@
                 </div>
             </div>
         </div>
+     
         <!--//breadcrumbs ends here-->
   <!-- footer-layouts -->
-  <div class="addon-sec section">
-    <div class="container">
-        <h4 class="rad-txt">
-            <span class="abtxt1">footer</span>
-            <span class="abtext">layouts</span>
-        </h4>
-        <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-            <a href="footer1.html">
-                <img src="{{URL::asset('/front/images/f1.png')}}" class="img-responsive" alt="chronicle-image">
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-            <a href="footer2.html">
-                <img src="{{URL::asset('/front/images/f2.png')}}" class="img-responsive" alt="chronicle-image">
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-            <a href="footer3.html">
-                <img src="{{URL::asset('/front/images/f3.png')}}" class="img-responsive" alt="chronicle-image">
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
-            <a href="footer4.html">
-                <img src="{{URL::asset('/front/images/f4.png')}}" class="img-responsive" alt="chronicle-image">
-            </a>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js+html5转盘抽奖代码下载 - 站长素材</title>
+<link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/stylel.css')}}" />
+</head>
+<body>
+<div style="width:620px;margin:20px auto 0 auto;">
+  <input type="button" value="开始旋转" onClick="spin();" style="width:100px; height:30px;" />
+  <canvas id="wheelcanvas" width="500" height="500"></canvas>
+</div>
+<script type="text/javascript">
+var colors = ["#B8D430", "#3AB745", "#029990", "#3501CB","#2E2C75", "#673A7E", "#CC0071", "#F80120","#F35B20", "#FB9A00", "#FFCC00", "#FEF200"];  
+var restaraunts = ["谢谢参与", "免费借阅", "1折借阅卡", "8折借阅卡","4折借阅卡", "6折借阅卡", "谢谢参与", "3折借阅卡","9折借阅卡", "7折借阅卡", "2折借阅卡", "5折借阅卡"];   
+var startAngle = 0;
+var arc = Math.PI / 6;
+var spinTimeout = null;    
+var spinArcStart = 10;  
+var spinTime = 0;  
+var spinTimeTotal = 0;    
+var ctx;    
+function draw() {    
+  drawRouletteWheel();  
+}    
+function drawRouletteWheel() {    
+  var canvas = document.getElementById("wheelcanvas");    
+  if (canvas.getContext) {      
+      var outsideRadius = 200;      
+      var textRadius = 160;      
+      var insideRadius = 125;            
+      ctx = canvas.getContext("2d");      
+      ctx.clearRect(0,0,500,500);
+      ctx.strokeStyle = "black";      
+      ctx.lineWidth = 2;            
+      ctx.font = 'bold 12px sans-serif';            
+      for(var i = 0; i < 12; i++) {       
+          var angle = startAngle + i * arc;        
+          ctx.fillStyle = colors[i];                
+          ctx.beginPath();        
+          ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);        
+          ctx.arc(250, 250, insideRadius, angle + arc, angle, true);        
+          ctx.stroke();        
+          ctx.fill();                
+          ctx.save();       
+          ctx.shadowOffsetX = -1;        
+          ctx.shadowOffsetY = -1;        
+          ctx.shadowBlur    = 0;        
+          ctx.shadowColor   = "rgb(220,220,220)";        
+          ctx.fillStyle = "black";        
+          ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius, 250 + Math.sin(angle + arc / 2) * textRadius);        
+          ctx.rotate(angle + arc / 2 + Math.PI / 2);        
+          var text = restaraunts[i];        
+          ctx.fillText(text, -ctx.measureText(text).width / 2, 0);        
+          ctx.restore();      
+          }             
+          //Arrow
+          ctx.fillStyle = "black";      
+          ctx.beginPath();      
+          ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));      
+          ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));      
+          ctx.lineTo(250 + 4, 250 - (outsideRadius - 5)); 
+          ctx.lineTo(250 + 9, 250 - (outsideRadius - 5));      
+          ctx.lineTo(250 + 0, 250 - (outsideRadius - 13));     
+          ctx.lineTo(250 - 9, 250 - (outsideRadius - 5));      
+          ctx.lineTo(250 - 4, 250 - (outsideRadius - 5));      
+          ctx.lineTo(250 - 4, 250 - (outsideRadius + 5));      
+          ctx.fill();    
+          } 
+}    
+function spin() {    
+    spinAngleStart = Math.random() * 30 + 30;    
+    spinTime = 0;    
+    spinTimeTotal = Math.random() * 3 + 4 * 1000;   
+    rotateWheel();  
+
+}    
+function rotateWheel() {    
+    spinTime += 30;    
+    if(spinTime >= spinTimeTotal) {      
+        stopRotateWheel();      
+        return;    
+    }    
+    var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);    
+    startAngle += (spinAngle * Math.PI / 180);
+    drawRouletteWheel();    spinTimeout = setTimeout('rotateWheel()', 30); 
+}    
+function stopRotateWheel() {    
+    clearTimeout(spinTimeout);    
+    var degrees = startAngle * 180 / Math.PI + 90;    
+    var arcd = arc * 180 / Math.PI;    
+    var index = Math.floor((360 - degrees % 360) / arcd);    ctx.save();
+    ctx.font = 'bold 30px sans-serif';
+    var text = restaraunts[index]    
+    ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);    ctx.restore();  
+}    
+function easeOut(t, b, c, d) {    
+    var ts = (t/=d)*t;    
+    var tc = ts*t;    
+    return b+c*(tc + -3*ts + 3*t);  
+}   
+function restaraunts(){
+    var option = restaraunts
+    $.ajax({
+        headers: {
+            //   csrf  token 生成
+            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+        type:'post',
+        url:{{url('/home/home/option')}},
+        data:{option:option},
+        success:function(msg){
+            console.log(msg)
+        }
+    })
+}
+draw();
+</script>
+</body>
+</html>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
 </div>
 <!-- //footer-layouts -->
  <div class="footer-bottom section">
@@ -286,7 +385,7 @@
                 <div class="blog1">
                     <div class="col-md-3 col-sm-3 col-xs-2 bl1">
                         <a href="#">
-                            <img src="{{URL::asset('/front/images/b1.jpg')}}" alt="" class="img-responsive" />
+                            <img ="{{URL::asset('/front/images/b1.jpg')}}" alt="" class="img-responsive" />
                         </a>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-10 bl2">

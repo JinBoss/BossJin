@@ -103,7 +103,7 @@
 </body>
 
 <script type="text/javascript">
-// ajax分页
+// ajax分页    
 $(document).on('click','.pa',function(){
 	var p = $(this).attr('p');
 	var _this = $(this);
@@ -121,6 +121,7 @@ $(document).on('click','.pa',function(){
 				// console.log(msg);
 				data = msg.data;
 				str = '';
+				times = "";
 				$.each(data,function(k,v){
 					// console.log(v.au_id)
 					str +='<tr height="40px">\
@@ -132,7 +133,7 @@ $(document).on('click','.pa',function(){
 									    普通管理员\
 									@endif\
 							    <\/td>\
-								<td><\/td>\
+								<td>'+v.addtime+'<\/td>\
 								<td><a href="#"><img class="operation"\
 										src="'+"{{ URL::asset('/back/assets/img/update.png') }}"+'"><\/a> <img class="operation delban"\
 									src="'+"{{ URL::asset('/back/assets/img/delete.png') }}"+'" id="'+v.au_id+'"><\/td>\

@@ -55,6 +55,10 @@ class HomeController extends Controller
     {
         return view("Home/footer");
     }
+    public function option(){
+        $option = Request::input('option');
+        print_r($option);die;
+    }
     /**联系我们*/
     public function contact()
     {

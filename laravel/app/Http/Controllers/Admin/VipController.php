@@ -30,9 +30,9 @@ class VipController extends Controller
         // print_r($id);die;
         $res = DB::table('member')->where('m_id',"$id")->delete();
         if($res){
-            return redirect('/admin/vip/show');
+            return redirect('/admin/admin/show');
         }else{
-            return redirect('/admin/vip/show');
+            return redirect('/admin/admin/show');
         }
     }
 }
