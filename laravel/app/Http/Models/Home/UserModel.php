@@ -136,7 +136,7 @@ class UserModel extends Model
         //对象转化为数组
         return json_decode(json_encode($TeamData), true);
     }
-    /*
+     /*
      * 注册新的用户
      * @param 
      * @return $array 
