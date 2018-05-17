@@ -30,9 +30,8 @@ class ActivityController extends Controller
         $a_desc = Request::input('a_desc');
         $addtime = strtotime(Request::input('addtime'));
         $endtime = strtotime(Request::input('endtime'));
-        $a_option = Request::input('a_option');
-        $sql = "insert into activity(a_name,a_desc,addtime,endtime,a_option) values('$a_name','$a_desc','$addtime','$endtime','$a_option')";
-        $res = DB::insert($sql);
+        $sql = "insert into activity(a_name,a_desc,addtime,endtime) values('$a_name','$a_desc','$addtime','$endtime')";
+        $res = DB::insert($sql);''
         if($res){
             return redirect('/admin/activity/index');
         }else{
@@ -40,4 +39,3 @@ class ActivityController extends Controller
         }
     }
 }
-

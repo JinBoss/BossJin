@@ -12,7 +12,7 @@
 	<!-- 头部 -->
 	<div class="head">
 		<div class="headL">
-			<img class="headLogo" src="{{ URL::asset('/back/assets/img/aa.png') }}"/>
+			<img class="headLogo" src="{{ URL::asset('/back/assets/img/aa2.png') }}"/>
 		</div>
 		<div class="headR">
 			<span style="color:#FFF">欢迎：{{session('user')->au_name}}</span> <a href="{{url('admin/head2')}}" rel="external">【退出】</a>

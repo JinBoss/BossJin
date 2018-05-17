@@ -58,13 +58,6 @@ $("body").click(function(i){ !$(i.target).parents(".select").first().is(s) ? _hi
 <th>结束时间 <span class="f_cB">*</span></th>
 <td><div class="txtbox floatL" style="width:200px;"><input name="endtime" type="date" size="12"></div></td>
 </tr>
-<tr>
-<th>活动选项</th>
-<td>
-	<input name="a_option" type="radio" value="1">轮盘
-	<input name="a_option" type="radio" value="0">抽奖
-</td>
-</tr>
 </table>
 </div>
 </div>

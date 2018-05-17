@@ -530,8 +530,7 @@ draw();
     </script>
     <script src="{{URL::asset('/front/js/SmoothScroll.min.js')}}"></script>
     <!-- //smooth-scrolling-of-move-up -->
-    <!-- Bootstrap core JavaScript
- ================================================== -->
+    <!-- Bootstrap core JavaScript-->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{URL::asset('/front/js/bootstrap.js')}}"></script>
 </body>
