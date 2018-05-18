@@ -634,13 +634,6 @@
 		}else{
 			var OneMouth = ""
 		}
-		//定义一个数组存放搜索条件
-		// var arr = new Array(); 
-		// arr['search'] = search
-		// arr['new_str'] = new_str
-		// arr['ThreeDay'] = ThreeDay
-		// arr['OneWeek'] = OneWeek
-		// arr['OneMouth'] = OneMouth
 		//获取当前请求页数
 		var page = $(this).attr("page")
 		$.ajax({

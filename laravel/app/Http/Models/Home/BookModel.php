@@ -200,12 +200,82 @@ class BookModel extends Model
      */
     public static function page_data($page,$search="",$size="",$new_str="",$ThreeDay="",$OneWeek="",$OneMouth="")
     {
-        if (!empty($new_str)) {
+        if (!empty($ThreeDay)) {
+            $ThreeDay = strtotime('-3 day');
+        }
+        if (!empty($OneWeek)) {
+            $OneWeek = strtotime('-7 day');
+        }
+        if (!empty($OneMouth)) {
+            $OneMouth = strtotime('-30 day');
+        }
+        if (!empty($new_str)&&empty($ThreeDay)&&empty($OneWeek)&&empty($OneMouth)) {
             $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str)");
             $last = ceil($num[0]->num/$size);
             $offset = ($page-1)*$size;
             $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str) limit $offset,$size");
-        }else{
+        }elseif (!empty($new_str)&&!empty($ThreeDay)&&empty($OneWeek)&&empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str) AND adtime >= '$ThreeDay'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str) AND adtime >= '$ThreeDay' limit $offset,$size");
+        }elseif (!empty($new_str)&&empty($ThreeDay)&&!empty($OneWeek)&&empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str) AND adtime >= '$OneWeek'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str) AND adtime >= '$OneWeek' limit $offset,$size");
+        }elseif (!empty($new_str)&&empty($ThreeDay)&&empty($OneWeek)&&!empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str) AND adtime >= '$OneMouth'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str) AND adtime >= '$OneMouth' limit $offset,$size");
+        }elseif (!empty($new_str)&&!empty($ThreeDay)&&!empty($OneWeek)&&!empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str) AND adtime >= '$OneMouth' AND adtime >= '$OneWeek' AND adtime >= '$ThreeDay'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND type_id in ($new_str) AND adtime >= '$OneMouth' AND adtime >= '$OneWeek' AND adtime >= '$ThreeDay' limit $offset,$size");
+        }elseif (empty($new_str)&&!empty($ThreeDay)&&empty($OneWeek)&&empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$ThreeDay'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$ThreeDay' limit $offset,$size");
+        }elseif (empty($new_str)&&empty($ThreeDay)&&!empty($OneWeek)&&empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$OneWeek'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$OneWeek' limit $offset,$size");
+        }elseif (empty($new_str)&&empty($ThreeDay)&&empty($OneWeek)&&!empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$OneMouth'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$OneMouth' limit $offset,$size");
+        }elseif (empty($new_str)&&!empty($ThreeDay)&&!empty($OneWeek)&&!empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$OneMouth' AND adtime >= '$OneWeek' AND adtime >= '$OneMouth'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$OneMouth' AND adtime >= '$OneWeek' AND adtime >= '$OneMouth' limit $offset,$size");
+        }elseif (empty($new_str)&&!empty($ThreeDay)&&!empty($OneWeek)&&empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$ThreeDay' AND adtime >= '$OneWeek'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$OneWeek' AND adtime >= '$ThreeDay' limit $offset,$size");
+        }elseif (empty($new_str)&&!empty($ThreeDay)&&empty($OneWeek)&&!empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$OneMouth' AND adtime >= '$ThreeDay'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$ThreeDay' AND adtime >= '$OneMouth' limit $offset,$size");
+        }elseif (empty($new_str)&&empty($ThreeDay)&&!empty($OneWeek)&&!empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$OneMouth' AND adtime >= '$OneWeek'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$OneWeek' AND adtime >= '$OneMouth' limit $offset,$size");
+        }elseif (empty($new_str)&&!empty($ThreeDay)&&!empty($OneWeek)&&empty($OneMouth)) {
+            $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$ThreeDay' AND adtime >= '$OneWeek'");
+            $last = ceil($num[0]->num/$size);
+            $offset = ($page-1)*$size;
+            $old_data = DB::select("select * from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%' AND adtime >= '$OneWeek' AND adtime >= '$ThreeDay' limit $offset,$size");
+        }
+        else{
             $num = DB::select("select count(*) as num from book INNER JOIN book_type on book.b_type_id = book_type.type_id WHERE book.b_name LIKE '%$search%'");
             $last = ceil($num[0]->num/$size);
             $offset = ($page-1)*$size;

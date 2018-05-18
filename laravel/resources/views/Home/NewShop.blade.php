@@ -64,7 +64,7 @@
 								</div>
 							</div>
 							@endforeach
-							<div id="_page">
+							<div id="_page" style="position: absolute;left: 0px;top: 602px;">
 								<button style="margin-left: 380px;" page="1"  class="page">首页</button>
 								<button page="{{ $BookData['up'] }}" class="page">上一页</button>
 								<button page="{{ $BookData['next'] }}" class="page">下一页</button>

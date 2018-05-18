@@ -31,7 +31,7 @@ class ActivityController extends Controller
         $addtime = strtotime(Request::input('addtime'));
         $endtime = strtotime(Request::input('endtime'));
         $sql = "insert into activity(a_name,a_desc,addtime,endtime) values('$a_name','$a_desc','$addtime','$endtime')";
-        $res = DB::insert($sql);''
+        $res = DB::insert($sql);
         if($res){
             return redirect('/admin/activity/index');
         }else{
