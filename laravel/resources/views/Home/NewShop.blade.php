@@ -69,4 +69,5 @@
 								<button page="{{ $BookData['up'] }}" class="page">上一页</button>
 								<button page="{{ $BookData['next'] }}" class="page">下一页</button>
 								<button page="{{ $BookData['last'] }}" class="page">尾页</button>
+								<span>{{ $BookData['NowPage'] }}/{{ $BookData['last'] }}</span>
 							</div>

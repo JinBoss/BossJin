@@ -321,6 +321,7 @@
 								<button page="1" class="page">上一页</button>
 								<button page="2" class="page">下一页</button>
 								<button page="{{ $last }}" class="page">尾页</button>
+								<span>1/{{ $last }}</span>
 							</div>
 
 							<div class="clearfix"></div>

@@ -286,8 +286,9 @@ class BookModel extends Model
         }
         $up = $page-1<1 ? 1 : $page-1;
         $next = $page+1>$last ? $last : $page+1;
+        $NowPage = $page;
         $data = json_decode(json_encode($old_data), true);
-        $listdata = array('data'=>$data,'up'=>$up,'next'=>$next,'last'=>$last);
+        $listdata = array('data'=>$data,'up'=>$up,'next'=>$next,'last'=>$last,'NowPage'=>$NowPage);
         return $listdata;
     }
 }
