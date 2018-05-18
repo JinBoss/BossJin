@@ -170,10 +170,13 @@ class BookModel extends Model
         $re_time = time();
         //还书人ID  图书ID 
         $sql = "UPDATE borrow SET b_state=2,re_time='$re_time' WHERE b_id = '$b_id'";
-        // print_r($sql);die;
         if (DB::insert($sql)){
+            //成功还书，库存+1
+            $Sumsql = "UPDATE book SET b_num=b_num+1  WHERE b_id = '$b_id'";
+            if (DB::insert($Sumsql)) {
             //还书成功
             return '1';
+            }
         }else{
             //还书失败
             return '0';
