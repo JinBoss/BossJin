@@ -19,7 +19,17 @@ class BorrowModel extends Model
     	return json_decode(json_encode($data) ,true);
     }
     public static function up($data)
+    {
+        return DB::transaction(function () use ($data) {
+            DB::table('borrow')->where('u_id',$data['u_id'])->where('b_id',$data['b_id'])->update(['b_state'=>$data['state']]);
+            DB::update("update book set `b_num`=`b_num`+1 where b_id= :id",['id'=>$data['b_id']]);
+        });
+    }
+    public static function up_de($data)
     {  
-    	return DB::table('borrow')->where('u_id',$data['u_id'])->where('b_id',$data['b_id'])->update(['b_state'=>$data['state'],'b_msg'=>$data['reason']]);
+        return DB::transaction(function () use ($data) {
+            DB::table('borrow')->where('u_id',$data['u_id'])->where('b_id',$data['b_id'])->update(['b_state'=>$data['state']]);
+            DB::update("update book set `b_borrow`=`b_borrow`+1 where b_id=:id",['id'=>$data['b_id']]);
+        });
     }
 }

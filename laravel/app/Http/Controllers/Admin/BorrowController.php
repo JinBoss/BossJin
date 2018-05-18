@@ -27,12 +27,17 @@ class BorrowController extends Controller
     public function up(){
         $data = Request::all();
         $data['reason'] = Request::input('reason','');
-        if(BorrowModel::up($data))
+        if($data['state'] == '1')
+            $res = BorrowModel::up_de($data);
+        else
+            $res = BorrowModel::up($data);
+        // return json_encode($res);
+        if($res=='')
         {
-            if($data['state'] == 1)
+            if($data['state'] == '1')
                 return json_encode(array('state'=>true,'msg'=>'审核通过'));
-            else if($data['state'] == 2)
-                return json_encode(array('state'=>true,'msg'=>'拒绝成功'));
+            else if($data['state'] == '2') 
+                return json_encode(array('state'=>true,'msg'=>'拒绝成功'));     
         }
         else
         {
