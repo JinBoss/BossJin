@@ -22,4 +22,4 @@
 <div style="background-color: red; width: 200px;height: 200px;" id="fileAs"></div>
 =======
 <img id="portrait" width="200" height="200">  
->>>>>>> 791cfa32f971c0dec67f174505bfd1b8b35d1baa
+<a href="www.baidu.com"></a>
